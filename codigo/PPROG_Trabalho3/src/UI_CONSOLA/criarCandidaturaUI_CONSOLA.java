@@ -20,19 +20,26 @@ public class criarCandidaturaUI_CONSOLA {
     
     public void run(){
         utilitariosConsola.inicioEscritaConsola("CRIAR CANDIDATURA");
+        //pede a lista de eventos com a submissao activa
         listaEventosActivos = criarCandController.getListaEventosSubmissaoActiva();
         
+        //imprime a lista de eventos
         utilitariosConsola.escreverConsola("###EVENTOS:");
+        int i = 0;
         for (evento e: listaEventosActivos){
-           utilitariosConsola.escreverConsola(e.toString());
+           utilitariosConsola.escreverConsola(i + e.toString());
+           i++;
         }
+        //pede para selecionar um
+        utilitariosConsola.escreverConsola("Escolha um evento?");
+        int numEvento = utilitariosConsola.lerConsolaNextIntEntreValores(0, listaEventosActivos.size());
         
-        eventoSelecionado = new evento();
-        candidaturaFeita = criarCandController.selecionarEvento(eventoSelecionado);
-        //seleciona evento
-        
+        //seleciona o evento e cria a candidatura no evento     
+        candidaturaFeita = criarCandController.selecionarEvento(listaEventosActivos.get(numEvento));
+
+        //solicita os dados sobre a candidatura
         utilitariosConsola.inicioEscritaConsola("DADOS CANDIDATURA");
-        utilitariosConsola.escreverConsola("nome?");
+        utilitariosConsola.escreverConsola("nome empresa?");
         String nomeEmpresa = utilitariosConsola.lerConsolaNextLine();
         utilitariosConsola.escreverConsola("responsavel Candidatura?");
         String responsavelCandidatura = utilitariosConsola.lerConsolaNextLine();
@@ -44,6 +51,7 @@ public class criarCandidaturaUI_CONSOLA {
         String textoExplicativoCandidatura = utilitariosConsola.lerConsolaNextLine();
         utilitariosConsola.fimEscritaConsola();
         
+        //faz set dos dados previamente solicitados 
         criarCandController.setDadosCandidatura(nomeEmpresa, responsavelCandidatura, morada, telefone, textoExplicativoCandidatura);
         //validação global da candidatura, (existe já alguma candidatura EQUALS candidatura)
         if( criarCandController.validaCandidatura(candidaturaFeita)){
@@ -63,8 +71,6 @@ public class criarCandidaturaUI_CONSOLA {
             utilitariosConsola.escreverConsola("OPERAÇÃO FRACASSADA: Já existe uma candidatura com os mesmos dados!");
         }
         utilitariosConsola.fimEscritaConsola();
-        
-        utilitariosConsola.escreverConsola("\n\no que foi introduzido\n\n" + candidaturaFeita.toString());
     }
     
      

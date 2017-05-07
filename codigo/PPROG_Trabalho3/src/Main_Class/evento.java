@@ -41,7 +41,10 @@ public class evento {
 
     @Override
     public String toString() {
-        return "evento{" + "titulo=" + titulo + ", textoDescritivo=" + textoDescritivo + ", dataInicio=" + dataInicio + ", dataFim=" + dataFim + ", local=" + local + ", dataLimiteSubmissaoCandidaturas=" + dataLimiteSubmissaoCandidaturas + ", tipo=" + tipo + '}';
+        return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
+                + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
+                + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
+                + "Tipo de Evento: " + tipo.toString() + "\n";
     }
 
     public String getTitulo() {
@@ -148,9 +151,8 @@ public class evento {
      *
      * @param FEA
      */
-    public void getListaCandidaturas(fae FEA) {
-        // TODO - implement evento.getListaCandidaturas
-        throw new UnsupportedOperationException();
+    public List getListaCandidaturas(fae FEA) {
+        return listaCandidaturas;
     }
 
     public void getListaCongressos() {
@@ -251,10 +253,6 @@ public class evento {
         throw new UnsupportedOperationException();
     }
 
-    public void createEvento() {
-        // TODO - implement evento.createEvento
-        throw new UnsupportedOperationException();
-    }
 
     public void validaDadosEvento() {
         // TODO - implement evento.validaDadosEvento

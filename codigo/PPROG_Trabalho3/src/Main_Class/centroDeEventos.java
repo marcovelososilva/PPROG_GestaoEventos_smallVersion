@@ -68,7 +68,7 @@ public class centroDeEventos {
             List <evento> eventosActivos = new ArrayList<>();
             for (evento e : ListaEventos){
                 Data hoje = Data.dataAtual();
-                if ( (e.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) > 1){
+                if ( (e.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) > -1){
                     eventosActivos.add(e);
                 }
             }

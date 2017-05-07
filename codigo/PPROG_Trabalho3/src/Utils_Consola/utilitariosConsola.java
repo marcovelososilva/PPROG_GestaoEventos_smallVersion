@@ -63,7 +63,6 @@ public class utilitariosConsola {
     public static int lerConsolaNextInt(){
         Scanner input = new Scanner (System.in);
         int resposta;
-        do{
             try{
                resposta = input.nextInt();
             } catch(InputMismatchException ex){
@@ -72,8 +71,7 @@ public class utilitariosConsola {
             } catch (Exception ex){
                 escreverConsola("ERRO! Por Favor Repita");
                 resposta = -1;
-            }
-        } while(resposta == -1);    
+            }  
         return resposta;
     }
     

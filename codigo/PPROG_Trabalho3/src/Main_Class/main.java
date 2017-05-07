@@ -30,7 +30,7 @@ public class main {
         ce.addRegistoUtilizadores(new utilizador("Hugo Ramos", "hugoramos@email.pt", "hramos", "ramos123"));
         ce.addRegistoUtilizadores(new utilizador("Igor Pedroso", "igorpedroso@email.pt", "ipedroso", "pedroso123"));
         
-        ce.createEvento(new evento("Expo Informática", "exposição de informática e material para informática", new Data("2017/06/17"), new Data("2017/06/18"), "Valongo", new Data("2017/06/11"), new exposicao()));
+        ce.createEvento(new evento("Expo Informática", "exposição de informática e material para informática", new Data("2017/06/17"), new Data("2017/06/18"), "Valongo", new Data("2017/05/05"), new exposicao()));
         ce.createEvento(new evento("Expo Desporto", "exposição de desporto e material para desporto", new Data("2017/06/24"), new Data("2017/06/25"), "Santo Tirso", new Data("2017/06/18"), new exposicao()));
         ce.createEvento(new evento("Cong Medicina", "congresso de medicina e sobre medicina", new Data("2017/07/01"), new Data("2017/07/02"), "Ermisinde", new Data("2017/06/25"), new congresso()));
         ce.createEvento(new evento("Cong Treinadores", "congresso de treinadores e sobre treinadores", new Data("2017/07/08"), new Data("2017/07/09"), "Vila Nova Gaia", new Data("2017/07/02"), new congresso()));     
@@ -49,6 +49,10 @@ public class main {
         
         criarCandidaturaUI_CONSOLA ccUI_CONSOLA = new criarCandidaturaUI_CONSOLA(ce);
         ccUI_CONSOLA.run();
+        
+        for ( int i = 0; i < event.size(); i++){
+            System.out.println(event.get(i).toString());
+        }
         
     }
     

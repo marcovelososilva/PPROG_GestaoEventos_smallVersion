@@ -9,12 +9,6 @@ public class criarCandidaturaController {
     private evento eventoSelecionado;
     private candidatura candidaturaEvento;
 
-    private String nomeEmpresa;
-    private String responsavelCandidatura;
-    private String morada;
-    private int telefone;
-    private String textoExplicativoCandidatura;
-
     public criarCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
     }
@@ -31,18 +25,23 @@ public class criarCandidaturaController {
     }
 
     /**
-     *
+     * 
      * @param e
+     * @return 
      */
     public candidatura selecionarEvento(evento e) {
         eventoSelecionado = e;
         candidaturaEvento = e.selecionaEventoCriaCandidatura();
         return candidaturaEvento;
     }
-
+    
     /**
-     *
-     * @param dados
+     * 
+     * @param nomeEmpresa
+     * @param responsavelCandidatura
+     * @param morada
+     * @param telefone
+     * @param textoExplicativoCandidatura 
      */
     public void setDadosCandidatura(String nomeEmpresa, String responsavelCandidatura, String morada, int telefone, String textoExplicativoCandidatura) {
         candidaturaEvento.setNomeEmpresa(nomeEmpresa);
@@ -59,15 +58,18 @@ public class criarCandidaturaController {
     /**
      * validação global da candidatura a ver se já não existe uma igual
      *
-     * @param c - candidatura
+     * @param CANDIDATURA
      */
     public boolean validaCandidatura(candidatura c) {
         return eventoSelecionado.validaCandidatura(c);
     }
 
     /**
-     *
-     * @param c
+     * Método que recebe um candidatura e vai á classe evento fazer uma validação global e adicionar à
+     * respectiva lista correspondente, devolve TRUE se a operação for efectuada com sucesso;
+     * 
+     * @param CANDIDATURA - a candidatura a ser registada
+     * @return BOOLEAN informando se a operação foi efectuada com sucesso
      */
     public boolean registaCandidatura(candidatura c) {
         return eventoSelecionado.registaCandidatura(c);
