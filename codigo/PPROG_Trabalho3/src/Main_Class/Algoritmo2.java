@@ -20,11 +20,8 @@ public class Algoritmo2 implements algoritmoAtribuicao{
         descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem aleatória sem qualquer parametro.";
     }
 
-    
-    
     @Override
-    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, decisao d) {
+    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

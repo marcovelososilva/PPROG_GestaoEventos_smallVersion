@@ -21,8 +21,7 @@ public class Algoritmo3 implements algoritmoAtribuicao{
     }
 
     @Override
-    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, decisao d) {
+    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

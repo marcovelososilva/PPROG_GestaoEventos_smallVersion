@@ -21,6 +21,7 @@ public class main {
      */
     public static void main(String[] args) {
         centroDeEventos ce = new centroDeEventos();
+        //criar um gestor de eventos;
         menu(ce);     
     
         
