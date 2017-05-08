@@ -1,15 +1,9 @@
 package Main_Class;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface algoritmoAtribuicao {
-
-	/**
-	 * 
-	 * @param listAalg
-	 * @param listFAE
-	 * @param listCand
-	 */
-	void executeAlgoritmo(ArrayList listAalg, ArrayList listFAE, ArrayList listCand);
+    
+    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, decisao d);
 
 }

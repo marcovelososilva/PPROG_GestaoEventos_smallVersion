@@ -5,7 +5,6 @@
  */
 package Main_Class;
 
-import UI.*;
 import UI_CONSOLA.criarCandidaturaUI_CONSOLA;
 import UI_CONSOLA.lerficheiroUI_CONSOLA;
 import Utils.Data;

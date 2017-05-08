@@ -16,6 +16,9 @@ public class centroDeEventos {
         ListaUtilizadores = new ArrayList<>();
         ListaEventos = new ArrayList<>();
         ListaAlgoritmos = new ArrayList<>();
+        ListaAlgoritmos.add(new Algoritmo1() );
+        ListaAlgoritmos.add(new Algoritmo2() );
+        ListaAlgoritmos.add(new Algoritmo3() );
     }
 
         
@@ -79,9 +82,15 @@ public class centroDeEventos {
 	 * 
 	 * @param o
 	 */
-	public void getListaEventosOrganizadorDataSubmissaoFinalizada(organizador o) {
-		// TODO - implement centroDeEventos.getListaEventosOrganizadorDataSubmissaoFinalizada
-		throw new UnsupportedOperationException();
+	public List getListaEventosOrganizadorDataSubmissaoFinalizada() {
+            List <evento> eventosFinalizados = new ArrayList<>();
+            for (evento e : ListaEventos){
+                Data hoje = Data.dataAtual();
+                if ( (e.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0){
+                    eventosFinalizados.add(e);
+                }
+            }
+            return eventosFinalizados;
 	}
 
 	/**
@@ -113,9 +122,9 @@ public class centroDeEventos {
 
 	/**
 	 * 
-	 * @param e
+	 * 
 	 */
-	public List getAlgoritmosAtribuicao(evento e) {
+	public List getAlgoritmosAtribuicao() {
             return ListaAlgoritmos;
 	}
 

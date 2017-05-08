@@ -142,18 +142,16 @@ public class evento {
      *
      * @param e
      */
-    public void getListaFAE(evento e) {
-        // TODO - implement evento.getListaFAE
-        throw new UnsupportedOperationException();
+    public List getListaFAE() {
+        return listaFAE;
     }
 
     /**
      *
      * @param e
      */
-    public void getListaCandidatura(evento e) {
-        // TODO - implement evento.getListaCandidatura
-        throw new UnsupportedOperationException();
+    public List getListaCandidatura() {
+        return listaCandidaturas;
     }
 
     /**
@@ -212,9 +210,11 @@ public class evento {
         throw new UnsupportedOperationException();
     }
 
-    public void novaAtribuicao() {
-        // TODO - implement evento.novaAtribuicao
-        throw new UnsupportedOperationException();
+    public List novasAtribuicoesSegundoNumFAES (int numAtribuicoes) {
+        for (int i = 0; i < numAtribuicoes; i++){
+            listaAtribuicao.add(new atribuicao());
+        }
+        return listaAtribuicao;
     }
 
     /**

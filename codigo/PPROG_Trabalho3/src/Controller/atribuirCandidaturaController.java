@@ -1,49 +1,40 @@
 package Controller;
 
+import Main_Class.centroDeEventos;
 import java.util.ArrayList;
 import Main_Class.evento;
+import java.util.List;
 
 public class atribuirCandidaturaController {
+    private final centroDeEventos ce;
+    
+    public atribuirCandidaturaController(centroDeEventos ce) {
+        this.ce = ce;
+    }
 
-	public void createAtribuirCandidaturaControlller() {
-		// TODO - implement atribuirCandidaturaController.createAtribuirCandidaturaControlller
-		throw new UnsupportedOperationException();
+	/**
+	 * 
+	 * @param e
+	 */
+	public List getAlgoritmosAtribuicao(evento e) {
+            return ce.getAlgoritmosAtribuicao();
+	}
+
+	/**
+         * 
+         * @param e
+         * @return 
+         */
+	public List getListaFAE(evento e) {
+            return e.getListaFAE();
 	}
 
 	/**
 	 * 
 	 * @param e
 	 */
-	public void selecionaEvento(evento e) {
-		// TODO - implement atribuirCandidaturaController.selecionaEvento
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param e
-	 */
-	public void getAlgoritmosAtribuicao(evento e) {
-		// TODO - implement atribuirCandidaturaController.getAlgoritmosAtribuicao
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param e
-	 */
-	public void getListaFAE(evento e) {
-		// TODO - implement atribuirCandidaturaController.getListaFAE
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param e
-	 */
-	public void getListaCandidatura(evento e) {
-		// TODO - implement atribuirCandidaturaController.getListaCandidatura
-		throw new UnsupportedOperationException();
+	public List getListaCandidatura(evento e) {
+            return e.getListaCandidatura();
 	}
 
 	/**
@@ -65,5 +56,13 @@ public class atribuirCandidaturaController {
 		// TODO - implement atribuirCandidaturaController.registaAlteracoes
 		throw new UnsupportedOperationException();
 	}
+
+    public List getListaEventosDataSubmissaoCaducada() {
+        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada();
+    }
+    
+    public List criarAtribuicao(int numAtribuicoes, evento e) {
+	return 	e.novasAtribuicoesSegundoNumFAES(numAtribuicoes);
+    }
 
 }

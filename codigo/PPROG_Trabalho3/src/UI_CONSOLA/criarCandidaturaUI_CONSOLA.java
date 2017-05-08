@@ -31,7 +31,7 @@ public class criarCandidaturaUI_CONSOLA {
            i++;
         }
         //pede para selecionar um
-        utilitariosConsola.escreverConsola("Escolha um evento?");
+        utilitariosConsola.escreverConsola("Escolha um evento!");
         int numEvento = utilitariosConsola.lerConsolaNextIntEntreValores(0, listaEventosActivos.size());
         
         //seleciona o evento e cria a candidatura no evento     

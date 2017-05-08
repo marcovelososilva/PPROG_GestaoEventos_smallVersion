@@ -8,7 +8,6 @@ package UI_CONSOLA;
 import Controller.lerFicheiroController;
 import Main_Class.*;
 import Utils_Consola.*;
-import Utils.LerDeFicheiro;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
