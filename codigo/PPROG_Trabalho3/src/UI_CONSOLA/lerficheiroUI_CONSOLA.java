@@ -3,25 +3,49 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Utils;
+package UI_CONSOLA;
 
-import Controller.*;
+import Controller.lerFicheiroController;
+import Main_Class.*;
+import Utils_Consola.*;
+import Utils.LerDeFicheiro;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+
+
 /**
  *
  * @author Marco
  */
-public class LerDeFicheiro {
-    
-    lerFicheiroController lfcontroller;
+public class lerficheiroUI_CONSOLA {
+     private final centroDeEventos ce;
+     private final lerFicheiroController lfcontroller;
 
-    public boolean inputFicheiroInicial (String fileName, lerFicheiroController lfcontroller) throws IOException {
-        this.lfcontroller = lfcontroller;
-        boolean tudoOk = false;
+    public lerficheiroUI_CONSOLA(centroDeEventos ce) {
+        this.ce = ce;
+        this.lfcontroller = new lerFicheiroController(ce);
+    }
+    
+    public void run (){      
+        utilitariosConsola.escreverConsola("Qual o nome do ficheiro? (default: input.txt)");
+        String ficheiro = utilitariosConsola.lerConsolaNextLine();
+        try{
+            boolean tudoOk = inputFicheiroInicial(ficheiro);
+            if (tudoOk){
+                utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
+            } else {
+                 utilitariosConsola.escreverConsola("OPERAÇÃO GEROU ERROS E NÃO FOI COMPLETADA");
+            }
+        }catch (IOException e){
+            utilitariosConsola.escreverConsola("O FICHEIRO " + ficheiro + " não existe ou não tem permissões para ser lido!");
+        }
+    }
+    
+    private boolean inputFicheiroInicial (String fileName) throws IOException {
+    boolean tudoOk = true;
         String estouLendo = "procura";
         
         try (Scanner input = new Scanner(new File(fileName))) {
@@ -29,7 +53,7 @@ public class LerDeFicheiro {
                 String linha = input.nextLine();
                 if (linha.trim().length() > 0) {
                         switch (linha) {
-                            case "utilizador": 
+                            case "utilizadores": 
                                 estouLendo = "lerUtilizador";
                                 break;
                             case "eventos":  
@@ -41,7 +65,7 @@ public class LerDeFicheiro {
                             case "fae":  
                                 estouLendo = "lerFAE";
                                      break;
-                            case "organizador":  
+                            case "organizadores":  
                                 estouLendo = "lerOrganizador";
                                      break;
                             case "end":
@@ -79,7 +103,7 @@ public class LerDeFicheiro {
         return tudoOk;
     }
 
-    public void lerUtilizador (String linha){
+    private void lerUtilizador (String linha){
         String conteudo [] = linha.split(";");
         lfcontroller.lerUtilizadorController(conteudo);
     }
@@ -103,67 +127,4 @@ public class LerDeFicheiro {
         String conteudo [] = linha.split(";");
         lfcontroller.lerGestorController(conteudo);
     }
-    
-    
-    
-/*
-    public static String topGravarFicheiro(int[] param, String[] topDados, double[][] matriz, double[] pesos, String[] nomesCriterios, String[] nomesAlternativas, String colunasCustos) {
-//copia para o string final os nomes dos criterios        
-        String[] tempNomesCriterios = new String[nomesCriterios.length];
-        tempNomesCriterios = topDados[3].trim().split(";");
-        for (int i = 0; i < nomesCriterios.length; i++) {
-            nomesCriterios[i] = tempNomesCriterios[i];
-        }
-//copia para o string final o nomes das alternativas        
-        String[] tempNomesAlternativas = new String[nomesAlternativas.length];
-        tempNomesAlternativas = topDados[4].trim().split(";");
-        for (int i = 0; i < nomesAlternativas.length; i++) {
-            nomesAlternativas[i] = tempNomesAlternativas[i];
-        }
-//copia os criterios que são custos para uma string caso não tenha a flag -1 (que avisa o metodo TOPSIS que não existem custos)
-        if (!topDados[0].equalsIgnoreCase("-1")) {
-            String[] tempCustos = new String[topDados[0].split(";").length];
-            tempCustos = topDados[0].split(";");
-            tempCustos = ordenarVetor(tempCustos);
-            colunasCustos = verificaIdentificaCustos(tempCustos, nomesCriterios);
-        } else {
-            colunasCustos = ("-1");
-        }
-//copia se tiver informação os nomes e pesos dos PESOS CRITERIOS organiza e armazena os dados, caso não os haja divide 1 pelo numero de criterios
-        if (!topDados[1].equalsIgnoreCase("0")) {
-            String[] tempVecPesos = new String[topDados[1].split(";").length];
-            String[] tempNumVecPesos = new String[topDados[2].split(";").length];
-            tempVecPesos = topDados[1].split(";");
-            tempNumVecPesos = topDados[2].split(";");
-
-            String[] ordenado = new String[param[0]];
-            for (int i = 0; i < param[0]; i++) {
-                for (int f = 0; f < param[0]; f++) {
-                    if (tempVecPesos[i].equalsIgnoreCase(nomesCriterios[f])) {
-                        ordenado[f] = tempNumVecPesos[i];
-                        break;
-                    }
-                }
-            }
-            copiaArrayStringParaDouble(ordenado, pesos);
-        } else {
-            for (int i = 0; i < param[0]; i++) {
-                pesos[i] = (double) 1 / param[0];
-            }
-        }
-//copia a informação da Matriz comparação        
-        String[] tempMatriz1 = new String[topDados[5].split(";").length];
-        tempMatriz1 = topDados[5].split(";");
-        double[] tempMatriz = new double[topDados[5].split(";").length];
-        copiaArrayStringParaDouble(tempMatriz1, tempMatriz);
-        int cont = 0;
-        for (int i = 0; i < param[1]; i++) {
-            for (int f = 0; f < param[0]; f++) {
-                matriz[i][f] = tempMatriz[cont];
-                cont++;
-            }
-        }
-        return colunasCustos;
-    }
-*/
 }

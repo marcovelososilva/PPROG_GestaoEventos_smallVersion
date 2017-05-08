@@ -32,6 +32,24 @@ public class evento {
         listaCandidaturas = new ArrayList<>();
     }
 
+    public evento(String titulo, String textoDescritivo, Data dataInicio, Data dataFim, String local, Data dataLimiteSubmissaoCandidaturas, String tipo) {
+        this.titulo = titulo;
+        this.textoDescritivo = textoDescritivo;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.local = local;
+        this.dataLimiteSubmissaoCandidaturas = dataLimiteSubmissaoCandidaturas;
+        if(tipo.equalsIgnoreCase("congresso")){
+            this.tipo = new congresso();
+        } else {
+            this.tipo = new exposicao();
+        }
+        listaFAE = new ArrayList<>();
+        listaOrganizadores = new ArrayList<>();
+        listaAtribuicao = new ArrayList<>();
+        listaCandidaturas = new ArrayList<>();
+    }
+    
     public evento() {
         listaFAE = new ArrayList<>();
         listaOrganizadores = new ArrayList<>();
@@ -45,6 +63,23 @@ public class evento {
                 + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
                 + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
                 + "Tipo de Evento: " + tipo.toString() + "\n";
+    }
+    
+    public String toStringComFaeOrganizador() {
+        return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
+                + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
+                + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
+                + "Tipo de Evento: " + tipo.toString() + "\n"
+                + "FAE: " + converterListaEmString(listaFAE) + "\n"
+                + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n";
+    }
+
+    private String converterListaEmString(List lista){
+        String porExtenso = "\n ";
+        for (Object o : lista){
+            porExtenso = porExtenso + " ;\n" + o.toString();
+        }
+        return porExtenso;
     }
 
     public String getTitulo() {
@@ -239,9 +274,9 @@ public class evento {
      * @param e
      * @param u
      */
-    public void addUtilizadorFAE(evento e, utilizador u) {
-        // TODO - implement evento.addUtilizadorFAE
-        throw new UnsupportedOperationException();
+    public void addUtilizadorFAE(utilizador u) {
+       fae novoFAE = new fae(u);
+       listaFAE.add(novoFAE);
     }
 
     /**
@@ -268,9 +303,9 @@ public class evento {
      *
      * @param u
      */
-    public void addOrganizador(utilizador u) {
-        // TODO - implement evento.addOrganizador
-        throw new UnsupportedOperationException();
+    public void addUtilizadorOrganizador(utilizador u) {
+       organizador novoOrganizador = new organizador(u);
+       listaOrganizadores.add(novoOrganizador);
     }
 
     /**

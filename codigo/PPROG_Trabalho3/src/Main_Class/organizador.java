@@ -1,19 +1,17 @@
 package Main_Class;
 
 public class organizador {
+    
+    utilizador user;
 
-	/**
-	 * 
-	 * @param u
-	 */
-	public void setUtilizadorOrganizador(utilizador u) {
-		// TODO - implement organizador.setUtilizadorOrganizador
-		throw new UnsupportedOperationException();
-	}
+    public organizador(utilizador user) {
+        this.user = user;
+    }
 
-	public void createNewOrganizador() {
-		// TODO - implement organizador.createNewOrganizador
-		throw new UnsupportedOperationException();
-	}
-
+    @Override
+    public String toString() {
+        return "::ORGANIZADOR::" + " Username=" + user.getUsername();
+    }
+    
+    
 }

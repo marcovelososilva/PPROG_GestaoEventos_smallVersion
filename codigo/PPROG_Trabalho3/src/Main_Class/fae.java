@@ -25,7 +25,7 @@ public class fae {
     }
 
     public String toStringUsername() {
-        return "::FAE::" + "username=" + user.getUsername();
+        return "::FAE::" + " Username=" + user.getUsername();
     }  
 
 }

@@ -140,6 +140,7 @@ public class centroDeEventos {
 		// TODO - implement centroDeEventos.addUtilizadorFAE
 		throw new UnsupportedOperationException();
 	}
+        
 
 	/**
 	 * 
@@ -158,5 +159,62 @@ public class centroDeEventos {
 	public void addRegistoUtilizadores(utilizador u) {
 		ListaUtilizadores.add(u);
 	}
+        
+        public void novoRegistoUtilizadorFicheiro (String nome, String email, String username, String password){
+            utilizador user = new utilizador(nome, email, username, password);
+            ListaUtilizadores.add(user);
+        }
+        
+        public void novoRegistoEventoFicheiro (String titulo,String textoDescritivo,String dataInicio,String dataFim,String local,String dataLimiteSubmissaoCandidaturas,String tipo){
+            evento event = new evento(titulo, textoDescritivo, new Data(dataInicio), new Data(dataFim), local, new Data(dataLimiteSubmissaoCandidaturas), tipo);
+            ListaEventos.add(event);
+        }
+
+        public void novoRegistoFaeEmEventoFicheiro(String event, String user) {
+            evento eventoEncontrado = encontrarEventoLista(event);
+            if(eventoEncontrado.getTitulo() != null){
+                utilizador userEncontrado = encontrarUtilizadorLista(user);
+                if (userEncontrado.getUsername() != null){
+                    eventoEncontrado.addUtilizadorFAE(userEncontrado);
+                }
+            }
+        }
+
+        public void novoRegistoOrganizadorEmEventoFicheiro(String event, String user) {
+            evento eventoEncontrado = encontrarEventoLista(event);
+            if(eventoEncontrado.getTitulo() != null){
+                utilizador userEncontrado = encontrarUtilizadorLista(user);
+                if (userEncontrado.getUsername() != null){
+                    eventoEncontrado.addUtilizadorOrganizador(userEncontrado);
+                }
+            }
+        }
+
+        public void novoRegistoGestorFicheiro(String user) {
+            utilizador novoUserGestor = encontrarUtilizadorLista(user);
+            if (novoUserGestor.getNome() != null){
+                gestorDeEventos novoGestor = new gestorDeEventos(novoUserGestor);
+                ListaGestorEventos.add(novoGestor);
+            }
+            
+        }
+        
+        private utilizador encontrarUtilizadorLista (String user){
+            for (utilizador u : ListaUtilizadores){
+                if (user.equalsIgnoreCase(u.getUsername())){
+                    return u;
+                }
+            }
+            return new utilizador();
+        }
+        
+        private evento encontrarEventoLista (String event){
+            for (evento e : ListaEventos){
+                if (event.equalsIgnoreCase(e.getTitulo())){
+                    return e;
+                }
+            }
+            return new evento();
+        }
 
 }

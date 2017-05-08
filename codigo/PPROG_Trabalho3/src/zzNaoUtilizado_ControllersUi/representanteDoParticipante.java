@@ -1,4 +1,4 @@
-package Main_Class;
+package zzNaoUtilizado_ControllersUi;
 
 public class representanteDoParticipante {
 }

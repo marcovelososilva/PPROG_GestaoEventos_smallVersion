@@ -1,0 +1,87 @@
+utilizadores
+André Zulu;andrezulu@email.pt;azulu;zulu123;
+Andreia Zambujal;andreiazambujal@email.pt;azambujal;zambujal123;
+Bruno Yazalde;brunoyazalde@email.pt;byazalde;yazalde123;
+Belinha Yaldi;belinhayaldi@email.pt;byaldi;yaldi123;
+Carlos Xaile;carlosxaile@email.pt;cxaile;xaile123;
+Cátia Xavier;catiaxavier@email.pt;cxavier;xavier123;
+Daniel Veiga;danielveiga@email.pt;dveiga;veiga123;
+Dánia Veloso;daniaveloso@email.pt;dveloso;veloso123;
+Emanuel Uva;emanueluva@email.pt;euva;uva123;
+Eduarda Urias;eduardaurias@email.pt;eurias;urias123;
+Francisco Torres;franciscotorres@email.pt;ftorres;torres123;
+Filipa Taborda;filipataborda@email.pt;ftaborda;taborda123;
+Guilherme Silva;guilhermesilva@email.pt;gsilva;silva123;
+Guida Sousa;guidasousa@email.pt;gsousa;sousa123;
+Hugo Ramos;hugoramos@email.pt;hramos;ramos123;
+Helena Raposo;helenaraposo@email.pt;hraposo;raposo123;
+Igor Pedroso;igorpedroso@email.pt;ipedroso;pedroso123;
+Idalia Pereira;idaliapereira@email.pt;ipereira;pereira123;
+João Oliveira;joliveira@email.com;joliveira;oliveira123;
+Jarminia Outeiro;jarminiaouteiro@email.pt;jouteiro;outeiro123;
+Leonardo Nunes;leonardonunses@email.pt;lnunes;nunes123;
+Luisa Neto;luisaneto@email.pt;lneto;neto123;
+Marco Medeiros;marcomedeiros@email.pt;mmedeiros;medieros123;
+Maria Madeira;mariamadeira@email.pt;mmadeira;madeira123;
+Nuno Lima;nunolima@email.pt;nlima;lima123;
+Natália Lopes;natalialopes@email.pt;nlopes;lopes123;     
+Olivier Januário;olivierjanuario@email.pt;ojanuario;januario123;
+Olga Jesus;olgajesus@email.pt;ojesus;jesus123;
+Pedro Iguana;pedroiguana@email.pt;piguana;iguana123;
+Paula Infante;paulainfante@email.pt;pinfante;infante123;
+Rui Henriques;ruihenriques@email.pt;rhenriques;henriques123;
+Raquel Horta;raquelhorta@email.pt;rhorta;horta123;
+Salvador Gomes;salvadorgomes@email.pt;sgomes;gomes123;
+Sónia Gonçalves;soniagancalves@email.pt;sgoncalves;goncalves123; 
+Tomé Franco;tomefranco@email.pt;tfranco;franco123;
+Tânia Fonseca;taniafonseca@email.pt;tfonseca;fonseca123;
+Urbano Estrela;urbasnoestrela@email.pt;uestrela;estrela123;
+Umbelina Eanes;umbelinaeanes@email.pt;ueanes;eanes123;
+Vasco Dias;vascodias@email.pt;vdias;dias123;
+Vânia Delgado;vaniadelgado@email.pt;vdelgado;delgado123;
+Xavier Cardoso;xaviercardoso@email.pt;xcardoso;cardoso123;
+Xica Cândido;xicacandico@email.pt;xcandido;candido123;
+Yuri Basto;yuribasto@email.pt; ybasto;basto123;
+Yara Bolas; yarabolas@email.pt; ybolas;bolas123;
+Zacarias Andrade;zacariasandrade@email.pt;zandrade;andrade123;
+Zézinha Almeida;zezinhaalmeida@email.pt;zalmeida;almeida123;
+end
+
+eventos
+Expo Carros;exposição de carros e material para carros;2017/06/03;2017/06/04;Porto;2017/05/28;exposicao;
+Expo Casamento;exposição de casamentos e material para casamentos;2017/06/10;2017/06/11;Matosinhos;2017/06/04;exposicao;
+Expo Informática;exposição de informática e material para informática;2017/06/17;2017/06/18;Valongo;2017/06/11;exposicao;
+Expo Desporto;exposição de desporto e material para desporto;2017/06/24;2017/06/25;Santo Tirso;2017/06/18;exposicao;
+Cong Medicina;congresso de medicina e sobre medicina;2017/07/01;2017/07/02;Ermisinde;2017/06/25;congresso;
+Cong Treinadores;congresso de treinadores e sobre treinadores;2017/07/08;2017/07/09;Vila Nova Gaia;2017/07/02;congresso;
+Cong Ensino;congresso de ensino e sobre ensino;2017/07/15;2017/07/16;Espinho;2017/07/09;congresso
+Cong Internet;congresso de internet e sobre internet;2017/07/22;2017/07/23;Porto;2017/07/16;congresso;
+end
+
+gestoreseventos
+azulu;
+zalmeida;
+dveiga
+end
+
+fae
+Expo Carros;uestrela;
+Expo Carros;tfonseca;
+Cong Medicina;zandrade
+Cong Medicina;uestrela;
+Cong Medicina;ftaborda;
+Cong Medicina;sgomes;
+Cong Medicina;rhorta;
+Cong Medicina;rhenriques;
+Cong Medicina;ojesus;
+Cong Medicina;piguana;
+Cong Medicina;pinfante;
+end
+
+
+organizadores
+Expo Carros;nlima;
+Expo Carros;nlopes;
+Cong Medicina;dveiga;
+Cong Medicina;euva;
+end

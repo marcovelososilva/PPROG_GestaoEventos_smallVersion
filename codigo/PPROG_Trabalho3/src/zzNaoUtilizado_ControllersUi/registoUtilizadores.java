@@ -1,4 +1,6 @@
-package Main_Class;
+package zzNaoUtilizado_ControllersUi;
+
+import Main_Class.utilizador;
 
 public class registoUtilizadores {
 
