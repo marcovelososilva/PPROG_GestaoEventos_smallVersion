@@ -72,13 +72,14 @@ public class evento {
                 + "Tipo de Evento: " + tipo.toString() + "\n"
                 + "FAE: " + converterListaEmString(listaFAE) + "\n"
                 + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
-                 + "Candidaturas: "+ converterListaEmString(listaCandidaturas)+"\n";
+                + "Candidaturas: "+ converterListaEmString(listaCandidaturas)+"\n"
+                + "Atrribuições: " + converterListaEmString(listaAtribuicao)+"\n";
     }
 
     private String converterListaEmString(List lista){
-        String porExtenso = "\n ";
+        String porExtenso = "";
         for (Object o : lista){
-            porExtenso = porExtenso + " ;\n" + o.toString();
+            porExtenso = porExtenso + "; \n" + o.toString();
         }
         return porExtenso;
     }
@@ -316,6 +317,12 @@ public class evento {
     public void adicionarOrganizador(organizador o) {
         // TODO - implement evento.adicionarOrganizador
         throw new UnsupportedOperationException();
+    }
+
+    void addatribuicaoFicheiro(fae faeSelecionado, candidatura candidaturaSelecionada) {
+       atribuicao a = new atribuicao();
+       a.setFAEeCandidatura(faeSelecionado, candidaturaSelecionada);
+       listaAtribuicao.add(a);
     }
 
 }

@@ -28,6 +28,10 @@ public class candidatura {
     public String toString() {
         return "Candidatura: " + " Pessoa Responsavel pela Candidatura: " + responsavelCandidatura + ", da empresa: " + nomeEmpresa + ", com a morada: " + morada + ", telefone: " + telefone + ", com o seguinte texto explicativo: " + textoExplicativoCandidatura + ", efectuada na data: " + dataCandidatura;
     }
+    
+    public String toStringEmpresaData(){
+        return " Empresa: " + nomeEmpresa + ", candidatura data: " + dataCandidatura;
+    }
 
     public String getNomeEmpresa() {
         return nomeEmpresa;

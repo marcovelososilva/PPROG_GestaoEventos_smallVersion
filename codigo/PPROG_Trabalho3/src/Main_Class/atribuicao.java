@@ -20,4 +20,11 @@ public class atribuicao {
         this.candidatura = candidatura;
         this.fae = fae;
     }
+
+    @Override
+    public String toString() {
+        return " FAE: " + fae.toStringUsername() + ", responsável por decidir sobre candidatura: " + candidatura.toStringEmpresaData() + ";";
+    }
+    
+    
 }

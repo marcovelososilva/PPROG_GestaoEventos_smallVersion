@@ -93,5 +93,15 @@ Expo Carros;Porcas12;Ramos;Marrocos;447788992;textoExplicativoCandidatura3;2017/
 Cong Medicina;MesasePernas;Manual Marco;Porto;441133660;textoExplicativoCandidatura4;2016/11/22
 Expo Carros;BelasBonitas;Maria;Lisboa;778899445;textoExplicativoCandidatura5;2017/02/05
 Cong Medicina;CaneleirasBiqueiras;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25
-Expo Carros;VrumVrum;KeyMaster;Portalegre;987654321;textoExplicativoCandidatura7;2014/01/13
+Cong Medicina;VrumVrum;KeyMaster;Portalegre;987654321;textoExplicativoCandidatura7;2014/01/13
+end
 
+atribuicao
+Expo Carros;JulinhoSA;2017/06/24;uestrela;
+Expo Carros;AmbroisioLDA;2017/04/30;uestrela
+Expo Carros;Porcas12;2017/01/22;tfonseca;
+Expo Carros;BelasBonitas;2017/02/05;tfonseca;
+Cong Medicina;VrumVrum;2014/01/13;sgomes;
+Cong Medicina;CaneleirasBiqueiras;2017/03/25;rhorta;
+Cong Medicina;MesasePernas;2016/11/22;rhenriques;
+end

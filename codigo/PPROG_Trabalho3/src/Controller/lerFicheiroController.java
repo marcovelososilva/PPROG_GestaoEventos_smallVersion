@@ -6,6 +6,7 @@
 package Controller;
 
 import Main_Class.centroDeEventos;
+import Utils.Data;
 
 /**
  *
@@ -63,5 +64,13 @@ public class lerFicheiroController {
     public void lerGestorController (String[] conteudo){
         String utilizador = conteudo[0];
         ce.novoRegistoGestorFicheiro(utilizador);
+    }
+
+    public void lerAtribuicoes(String[] conteudo) {
+        String evento = conteudo[0];
+        String candidatura = conteudo[1];
+        Data dataCandidatura = new Data(conteudo[2]);
+        String fae = conteudo[3];
+        ce.novoRegistoAtribuicoesFicheiro(evento, candidatura, dataCandidatura, fae);
     }
 }
