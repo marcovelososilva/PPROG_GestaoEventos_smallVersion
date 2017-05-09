@@ -40,10 +40,16 @@ public class LerDeFicheiro {
                                      break;
                             case "fae":  
                                 estouLendo = "lerFAE";
+                                System.out.println("encontrouxxxx");
                                      break;
-                            case "organizador":  
+                            case "organizadores":  
                                 estouLendo = "lerOrganizador";
+                                System.out.println("encontrouxxxx");
                                      break;
+                            case "candidatura":
+                                estouLendo = "lerCandidatura";
+                                System.out.println("encontrouxxxx");
+                                    break;
                             case "end":
                                 estouLendo = "procura";
                                      break;
@@ -64,6 +70,8 @@ public class LerDeFicheiro {
                                     case "lerOrganizador":  
                                         lerOrganizador(linha);
                                         break;
+                                    case "lerCandidatura":
+                                        lerCandidatura(linha);
                                     default:
                                         break;
                                 }
@@ -103,7 +111,10 @@ public class LerDeFicheiro {
         String conteudo [] = linha.split(";");
         lfcontroller.lerGestorController(conteudo);
     }
-    
+    private void lerCandidatura (String linha){
+        String conteudo [] = linha.split(";");
+        lfcontroller.lerCandidatura(conteudo);
+    }
     
     
 /*

@@ -43,7 +43,17 @@ public class lerFicheiroController {
         String utilizador = conteudo[1];
         ce.novoRegistoFaeEmEventoFicheiro(evento, utilizador);
     }
-    
+    public void lerCandidatura (String[] conteudo){
+        String evento = conteudo[0]; 
+        String nomeEmpresa = conteudo[1];
+        String responsavelCandidatura = conteudo[2];
+        String morada = conteudo[3];
+        int telefone = Integer.parseInt(conteudo[4]);
+        String textoExplicativoCandidatura= conteudo[5];
+        String dataCandidatura= conteudo[6];
+        ce.novoRegistoCandidaturaEmEventoFicheiro(evento,nomeEmpresa,responsavelCandidatura,morada,telefone, textoExplicativoCandidatura, dataCandidatura);
+
+    }
     public void lerOrganizadorController (String[] conteudo){
         String evento = conteudo[0]; 
         String utilizador = conteudo[1];

@@ -188,7 +188,13 @@ public class centroDeEventos {
                 }
             }
         }
-
+        public void novoRegistoCandidaturaEmEventoFicheiro(String event, String nomeEmpresa, String responsavelCandidatura, String morada, int telefone, String textoExplicativoCandidatura, String dataCandidatura) {
+            evento eventoEncontrado = encontrarEventoLista(event);
+            if(eventoEncontrado.getTitulo() != null){
+                candidatura cand=new candidatura(nomeEmpresa, responsavelCandidatura, morada, telefone, textoExplicativoCandidatura, new Data(dataCandidatura));
+                eventoEncontrado.registaCandidatura(cand);
+            }
+        }
         public void novoRegistoOrganizadorEmEventoFicheiro(String event, String user) {
             evento eventoEncontrado = encontrarEventoLista(event);
             if(eventoEncontrado.getTitulo() != null){

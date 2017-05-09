@@ -71,7 +71,8 @@ public class evento {
                 + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
                 + "Tipo de Evento: " + tipo.toString() + "\n"
                 + "FAE: " + converterListaEmString(listaFAE) + "\n"
-                + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n";
+                + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
+                 + "Candidaturas: "+ converterListaEmString(listaCandidaturas)+"\n";
     }
 
     private String converterListaEmString(List lista){
