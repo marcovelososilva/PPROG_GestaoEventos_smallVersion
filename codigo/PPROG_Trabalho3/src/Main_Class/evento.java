@@ -62,7 +62,7 @@ public class evento {
         return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
                 + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
                 + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
-                + "Tipo de Evento: " + tipo.toString() + "\n";
+                + "Tipo de Evento: " + tipo.toStringNomeTipo() + "\n";
     }
     
     public String toStringComFaeOrganizador() {

@@ -7,6 +7,8 @@ package UI_CONSOLA;
 
 import Main_Class.*;
 import Controller.*;
+import Utils_Consola.utilitariosConsola;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -40,46 +42,80 @@ public class escreverFicheiroUI_CONSOLA {
 //lista de atribuições (atribuicao);     
         List<String> listaAtribuicoes = efController.getListaAtribuicoes();
         
-        gravarFicheiro(listaUtilizadores, listaGestoresEventos, listaEventos, listaFae, listaOrganizadores, listaCandidaturas, listaAtribuicoes);
+        utilitariosConsola.escreverConsola("qual o nome do ficheiro que quer guardar?");
+        String nomeFile = utilitariosConsola.lerConsolaNextLine();
+        
+        if (!nomeFile.endsWith(".txt")){
+            nomeFile = nomeFile + ".txt";
+        }
+        
+        boolean tudoOK = gravarFicheiro(listaUtilizadores, listaGestoresEventos, listaEventos, listaFae, listaOrganizadores, listaCandidaturas, listaAtribuicoes, nomeFile);
+        
+        if (tudoOK){
+            utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
+        }else{
+            utilitariosConsola.escreverConsola("OPERAÇÃO NÃO CONCLUIDA! ERRO!");
+        }
         
     }
     
-    private boolean gravarFicheiro (List<String> listaUtilizadores, List<String> listaGestoresEventos, List<String> listaEventos, List<String> listaFae, List<String> listaOrganizadores, List<String> listaCandidaturas, List<String> listaAtribuicoes){
+    private boolean gravarFicheiro (List<String> listaUtilizadores, List<String> listaGestoresEventos, List<String> listaEventos, List<String> listaFae, List<String> listaOrganizadores, List<String> listaCandidaturas, List<String> listaAtribuicoes, String nomeFile){
         boolean tudoOK = true;
-        
-        System.out.println("olé era capaz de imprimir isto agora..lol\n");
-        
-        listaUtilizadores.forEach((u) -> {
-            System.out.println(u);
-        });
-        System.out.println("");
-        listaGestoresEventos.forEach((s) -> {
-            System.out.println(s);
-        });
-        System.out.println("");
-        listaEventos.forEach((s) -> {
-            System.out.println(s);
-        });
-        System.out.println("");
-        listaFae.forEach((s) -> {
-            System.out.println(s);
-        });
-        System.out.println("");
-        listaOrganizadores.forEach((s) -> {
-            System.out.println(s);
-        });
-        System.out.println("");
-        listaCandidaturas.forEach((s) -> {
-            System.out.println(s);
-        });
-        System.out.println("");
-        listaAtribuicoes.forEach((s) -> {
-            System.out.println(s);
-        });
-        
-        /*
-        aqui o resto do codigo para gravar para o ficheiro
-        */
+        try {
+            FileWriter fileWriter =
+                new FileWriter(nomeFile);
+
+            // Always wrap FileWriter in BufferedWriter.
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            for (String s : listaUtilizadores){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.newLine();
+            
+            for (String s : listaGestoresEventos){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.newLine();
+            
+            for (String s : listaEventos){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.newLine();
+            
+            for (String s : listaFae){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.newLine();
+            
+            for (String s : listaOrganizadores){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.newLine();
+            
+            for (String s : listaCandidaturas){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.newLine();
+            
+            for (String s : listaAtribuicoes){
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            }
+            
+            bufferedWriter.close();
+        }
+        catch(IOException ex) {
+            System.out.println("ERRO ao ESCREVER O FICHEIRO '" + nomeFile + "'");
+            tudoOK = false;
+        }
+
         return tudoOK;
     }
 }
