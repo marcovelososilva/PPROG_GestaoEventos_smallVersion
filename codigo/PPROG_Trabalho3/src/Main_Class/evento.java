@@ -325,8 +325,11 @@ public class evento {
        listaAtribuicao.add(a);
     }
 
+<<<<<<< HEAD
     public List getListaAtribuicoes() {
         return listaAtribuicao;
     }
 
+=======
+>>>>>>> 35b8145509f2bbc454780069c7c625fc4a2cc24d
 }

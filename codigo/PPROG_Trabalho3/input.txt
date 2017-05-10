@@ -100,6 +100,7 @@ Expo data submissao caducada;euva;
 end
 
 candidaturas
+<<<<<<< HEAD
 Expo Carros;JulinhoSA;julio;Porto;225511447;textoExplicativoCandidatura1;2017/06/24;
 Expo Carros;AmbroisioLDA;Ambrosio;Leiria;251469873;textoExplicativoCandidatura2;2017/04/30;
 Expo Carros;Porcas12;Ramos;Marrocos;447788992;textoExplicativoCandidatura3;2017/01/22;
@@ -116,6 +117,15 @@ Expo data submissao caducada;Lambido Lda;Luisinho;Calle 5;411223145;textoExplica
 Expo data submissao caducada;Melhor do mundo;Pedrão;Calle 6;311223145;textoExplicativoCandidatura77;2017/05/08;
 Expo data submissao caducada;Maior que tu;Almeida;Calle 7;211223146;textoExplicativoCandidatura88;2017/05/08;
 Expo data submissao caducada;Mais que o mundo;Souza;Calle 8;111223145;textoExplicativoCandidatura99;2017/05/08;
+=======
+Expo Carros;JulinhoSA;julio;Porto;225511447;textoExplicativoCandidatura1;2017/06/24
+Expo Carros;AmbroisioLDA;Ambrosio;Leiria;251469873;textoExplicativoCandidatura2;2017/04/30
+Expo Carros;Porcas12;Ramos;Marrocos;447788992;textoExplicativoCandidatura3;2017/01/22
+Cong Medicina;MesasePernas;Manual Marco;Porto;441133660;textoExplicativoCandidatura4;2016/11/22
+Expo Carros;BelasBonitas;Maria;Lisboa;778899445;textoExplicativoCandidatura5;2017/02/05
+Cong Medicina;CaneleirasBiqueiras;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25
+Cong Medicina;VrumVrum;KeyMaster;Portalegre;987654321;textoExplicativoCandidatura7;2014/01/13
+>>>>>>> 35b8145509f2bbc454780069c7c625fc4a2cc24d
 end
 
 atribuicao
