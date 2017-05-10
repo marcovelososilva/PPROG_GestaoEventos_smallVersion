@@ -214,6 +214,21 @@ public class centroDeEventos {
             
         }
         
+        public void novoRegistoAtribuicoesFicheiro(String evento, String candidatura, Data dataCandidatura, String fae) {
+            evento eventoSelecionado = encontrarEventoLista(evento);
+            if(eventoSelecionado.getTitulo() != null){
+                candidatura candidaturaSelecionada = encontrarCandidaturaEvento(candidatura, dataCandidatura, eventoSelecionado);
+                if (candidaturaSelecionada.getNomeEmpresa() != null){
+                    fae faeSelecionado = encontrarFAEEvento(fae, eventoSelecionado);
+                    if (faeSelecionado.getUser() != null){
+                        eventoSelecionado.addatribuicaoFicheiro(faeSelecionado, candidaturaSelecionada);
+                    }  
+                }
+            }
+            
+        }
+
+        
         private utilizador encontrarUtilizadorLista (String user){
             for (utilizador u : ListaUtilizadores){
                 if (user.equalsIgnoreCase(u.getUsername())){
@@ -230,6 +245,28 @@ public class centroDeEventos {
                 }
             }
             return new evento();
+        }
+        
+        private candidatura encontrarCandidaturaEvento (String newCandidatura, Data newDataCandida, evento NewEvento){
+            List<candidatura> listaCandidaturasEvento = NewEvento.getListaCandidatura();
+            for (candidatura c : listaCandidaturasEvento){
+                if (newCandidatura.equalsIgnoreCase(c.getNomeEmpresa()) && c.getDataCandidatura().equals(newDataCandida)){
+                    return c;
+                }
+            }
+            return new candidatura();
+        }
+        
+        private fae encontrarFAEEvento (String newFAE, evento NewEvento){
+            List<fae> listaFaeEvento = NewEvento.getListaFAE();
+            for (fae f : listaFaeEvento){
+                utilizador userFAE = f.getUser();
+                String nomeUser = userFAE.getUsername();
+                if (nomeUser.equalsIgnoreCase(newFAE)){
+                    return f;
+                }
+            }
+            return new fae();
         }
 
 }

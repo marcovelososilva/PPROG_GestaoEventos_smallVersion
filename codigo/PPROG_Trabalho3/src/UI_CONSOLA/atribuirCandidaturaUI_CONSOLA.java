@@ -45,25 +45,49 @@ public class atribuirCandidaturaUI_CONSOLA {
         utilitariosConsola.escreverConsola("###ALGORITMOS:");
         int j = 0;
         for (algoritmoAtribuicao a : listaAlgoritmos) {
-            utilitariosConsola.escreverConsola(i + a.toString());
+            utilitariosConsola.escreverConsola(j+ "\n" + a.toString() + "\n");
             j++;
         }
         //pede para selecionar um
         utilitariosConsola.escreverConsola("Escolha um algoritmo!");
-        int numAlgoritmo = utilitariosConsola.lerConsolaNextIntEntreValores(0, listaAlgoritmos.size());
-//          7. cria objecto atribuição
-        acController.criarAtribuicao(numAlgoritmo, listaEventosDataCaducados.get(numEvento));
+        int numAlgoritmo = utilitariosConsola.lerConsolaNextIntEntreValores(0, listaAlgoritmos.size()-1);
+        //get lista e atribuicoes
+        List listaAtribuicoesEvento = acController.getListaAtribuicoes(listaEventosDataCaducados.get(numEvento));
+        
         boolean confirma = false;
-        
-        do{     
-            
+        do{
+            listaAtribuicoesEvento.clear();
+//          7.run o algoritmo e cria objecto atribuição
+//            utilitariosConsola.escreverConsola(listaAlgoritmos.get(numAlgoritmo).toString());
+            List<atribuicao> atribuicaoTEMP = listaAlgoritmos.get(numAlgoritmo).runAlgoritmo(listaFAEdoEvento, listaCandidaturasEEvento, listaAtribuicoesEvento);
 //          8. apresenta as distribuições
-        
-//          pergunta se ok ou outra vez!
+        utilitariosConsola.escreverConsola("ALGORITMO ESCOLHIDO: " + listaAlgoritmos.get(numAlgoritmo).toString() + "\n");
+        for (atribuicao atri : atribuicaoTEMP) {
+            utilitariosConsola.escreverConsola(i + atri.toString());
+        }
 //          9. confirma
+            utilitariosConsola.escreverConsola("Está satisfeito com esta atribuição?");
+            confirma = utilitariosConsola.lerConsolaBoolean();
+            //se nao confirmar diz qual o proximo algoritmo a executar
+            if (!confirma){
+                numAlgoritmo = fornecerProximoIntAlgoritmo(numAlgoritmo, listaAlgoritmos.size());
+                utilitariosConsola.escreverConsola("RESULTADO COM UM NOVO ALGORITMO");
+            } else {
+//                listaAtribuicoesEvento.addAll(atribuicaoTEMP);
+//          10.informa do sucesso da operação               
+                utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO");
+            }          
         }while (!confirma);
-//          10.informa do sucesso da operação
         utilitariosConsola.fimEscritaConsola();
+    }
+    
+    private static int fornecerProximoIntAlgoritmo (int vaiNo, int numAlgoritmos){
+        vaiNo++;
+        if (vaiNo > numAlgoritmos-1){
+            return 0;
+        } else {
+            return vaiNo;
+        }   
     }
 
 }

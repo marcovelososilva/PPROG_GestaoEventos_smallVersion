@@ -17,11 +17,35 @@ public class Algoritmo2 implements algoritmoAtribuicao{
 
     public Algoritmo2() {
         nome = "Algoritmo 2 - Ordem Aleatória";
-        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem aleatória sem qualquer parametro.";
+        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem aleatória sem qualquer parametro 1 a cada até acabar.";
+    }
+    
+    @Override
+    public String toString() {
+        return nome + ",\nDescritivo:\n" + descritivo;
     }
 
     @Override
-    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
+        listaAtribuicoes.clear();
+        int contaFAE = listaFAE.size()-1;
+        for (candidatura c : listaCandidaturas){
+            atribuicao a = new atribuicao();
+            a.setFAEeCandidatura(listaFAE.get(contaFAE), c);
+            listaAtribuicoes.add(a);
+            contaFAE = contaFAEs(listaFAE.size(), 0);
+        }
+        
+        
+        return listaAtribuicoes;
+    }
+    
+    private static int contaFAEs (int contagemActual, int contMaximo){
+        contagemActual --;
+        if (contagemActual < contMaximo){
+            return contagemActual;
+        } else {
+            return 0;
+        }
     }
 }

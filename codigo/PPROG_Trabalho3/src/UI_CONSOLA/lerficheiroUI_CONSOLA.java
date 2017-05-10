@@ -69,6 +69,9 @@ public class lerficheiroUI_CONSOLA {
                         case "candidaturas":
                             estouLendo = "lerCandidaturas";
                             break;
+                        case "atribuicao":
+                            estouLendo = "lerAtribuicoes";
+                            break;    
                         case "end":
                             estouLendo = "procura";
                             break;
@@ -91,6 +94,10 @@ public class lerficheiroUI_CONSOLA {
                                     break;
                                 case "lerCandidaturas":
                                     lerCandidaturas(linha);
+                                    break;
+                                case "lerAtribuicoes":
+                                    lerAtribuicoes(linha);
+                                    break;    
                                 default:
                                     break;
                             }
@@ -134,5 +141,10 @@ public class lerficheiroUI_CONSOLA {
     private void lerGestor(String linha) {
         String conteudo[] = linha.split(";");
         lfcontroller.lerGestorController(conteudo);
+    }
+
+    private void lerAtribuicoes(String linha) {
+        String conteudo[] = linha.split(";");
+        lfcontroller.lerAtribuicoes(conteudo);
     }
 }

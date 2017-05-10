@@ -61,8 +61,12 @@ public class atribuirCandidaturaController {
         return ce.getListaEventosOrganizadorDataSubmissaoFinalizada();
     }
     
-    public List criarAtribuicao(int numAtribuicoes, evento e) {
-	return 	e.novasAtribuicoesSegundoNumFAES(numAtribuicoes);
+//    public List criarAtribuicao(int numAtribuicoes, evento e) {
+//	return 	e.novasAtribuicoesSegundoNumFAES(numAtribuicoes);
+//    }
+
+    public List getListaAtribuicoes(evento e) {
+        return e.getListaAtribuicoes();
     }
 
 }

@@ -12,12 +12,29 @@ public class Algoritmo1 implements algoritmoAtribuicao {
     private final String descritivo;
 
     public Algoritmo1() {
-        nome = "Algoritmo 1 - Ordem Alfabética 2 cada";
-        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem alfabética de FAE's 2 para cada minimo";
+        nome = "Algoritmo 1 - TUDO A 1";
+        descritivo = "Algoritmo distribui as candidaturas apenas por um FAE.";
+    }
+    
+    @Override
+    public String toString() {
+        return nome + ",\nDescritivo:\n" + descritivo;
     }
 
     @Override
-    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    } 
+    public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
+        listaAtribuicoes.clear();
+        for (candidatura c : listaCandidaturas){
+            atribuicao a = new atribuicao();
+            a.setFAEeCandidatura(listaFAE.get(0), c);
+            listaAtribuicoes.add(a);
+        }
+        
+        
+        return listaAtribuicoes;
+    }
+
+
+   
+    
 }

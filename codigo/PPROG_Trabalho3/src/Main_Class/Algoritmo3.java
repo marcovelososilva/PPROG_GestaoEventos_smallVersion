@@ -16,12 +16,37 @@ public class Algoritmo3 implements algoritmoAtribuicao{
     private final String descritivo;
 
     public Algoritmo3() {
-        nome = "Algoritmo 3 - Ordem Alfabética invertida";
-        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem alfabética invertida 1 cada ate acabar";
+        nome = "Algoritmo 3 - Ordem Aleatória invertida";
+        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem Aleatória invertida 1 cada ate acabar";
     }
 
     @Override
-    public atribuicao runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String toString() {
+        return nome + ",\nDescritivo:\n" + descritivo;
     }
+    
+    @Override
+    public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
+        listaAtribuicoes.clear();
+        int indiceFAE = 0;
+        for (candidatura c : listaCandidaturas){
+            atribuicao a = new atribuicao();
+            a.setFAEeCandidatura(listaFAE.get(indiceFAE), c);
+            listaAtribuicoes.add(a);
+            indiceFAE = contaFAEs(indiceFAE, listaFAE.size());
+        }
+        
+        
+        return listaAtribuicoes;
+    }
+    
+    private static int contaFAEs (int contagemActual, int contMaximo){
+        contagemActual ++;
+        if (contagemActual > contMaximo-1){
+            return 0;
+        } else {
+            return contagemActual;
+        }
+    }
+    
 }
