@@ -48,4 +48,14 @@ public class congresso implements EventType {
 		throw new UnsupportedOperationException();
 	}
 
+    @Override
+    public String toString() {
+        return "congresso{" + "listaWorshops=" + listaWorshops + '}';
+    }
+
+    @Override
+    public String toStringNomeTipo() {
+        return "congresso";
+    }
+
 }

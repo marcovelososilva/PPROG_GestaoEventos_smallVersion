@@ -269,4 +269,8 @@ public class centroDeEventos {
             return new fae();
         }
 
+    public List<gestorDeEventos> getListaGestoresEventos() {
+        return ListaGestorEventos;
+    }
+
 }

@@ -19,4 +19,11 @@ public class workshop {
 		throw new UnsupportedOperationException();
 	}
 
+    @Override
+    public String toString() {
+        return "workshop";
+    }
+        
+        
+        
 }

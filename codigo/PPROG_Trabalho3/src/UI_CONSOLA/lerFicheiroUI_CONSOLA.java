@@ -17,12 +17,12 @@ import java.util.Scanner;
  *
  * @author Marco
  */
-public class lerficheiroUI_CONSOLA {
+public class lerFicheiroUI_CONSOLA {
 
     private final centroDeEventos ce;
     private final lerFicheiroController lfcontroller;
 
-    public lerficheiroUI_CONSOLA(centroDeEventos ce) {
+    public lerFicheiroUI_CONSOLA(centroDeEventos ce) {
         this.ce = ce;
         this.lfcontroller = new lerFicheiroController(ce);
     }

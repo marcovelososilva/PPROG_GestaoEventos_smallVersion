@@ -329,5 +329,9 @@ public class evento {
         return listaAtribuicao;
     }
 
+    public List<organizador> getListaOrganizadores() {
+       return listaOrganizadores;
+    }
+
 
 }

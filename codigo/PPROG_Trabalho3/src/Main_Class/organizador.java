@@ -8,9 +8,13 @@ public class organizador {
         this.user = user;
     }
 
+    public utilizador getUser() {
+        return user;
+    }
+    
     @Override
     public String toString() {
-        return "::ORGANIZADOR::" + " Username=" + user.getUsername();
+        return "::ORGANIZADOR:: Username=" + user.getUsername();
     }
     
     

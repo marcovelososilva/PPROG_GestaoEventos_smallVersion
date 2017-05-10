@@ -38,6 +38,10 @@ public class Data implements Comparable<Data> {
      * O dia por omissão.
      */
     private static final int DIA_POR_OMISSAO = 1;
+
+    public String toStringEmNumeros() {
+        return getAno()+"/"+getMes()+"/"+getDia();
+    }
     
     /**
      * Representa os dias da semana.

@@ -7,7 +7,8 @@ package Main_Class;
 
 import UI_CONSOLA.atribuirCandidaturaUI_CONSOLA;
 import UI_CONSOLA.criarCandidaturaUI_CONSOLA;
-import UI_CONSOLA.lerficheiroUI_CONSOLA;
+import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
+import UI_CONSOLA.lerFicheiroUI_CONSOLA;
 import Utils.Data;
 import java.util.List;
 import java.util.Scanner;
@@ -41,7 +42,7 @@ public class main {
             System.out.println("3. CARREGAR DE FICHEIRO");
             System.out.println("4. CRIAR CANDIDATURA");
             System.out.println("5. ATRIBUIR CANDIDATURA");
-            System.out.println("6. --XXX--");
+            System.out.println("6. ESCREVER EM FICHEIRO");
             System.out.println("7. --XXX--");
             System.out.println("8. --XXX--");
             System.out.println("9. --XXX--");
@@ -59,7 +60,7 @@ public class main {
                     break;
                 case "3":
                     System.out.println("\n==CARREGAR DE FICHEIRO==");
-                    lerficheiroUI_CONSOLA lfUI_CONSOLA = new lerficheiroUI_CONSOLA(ce);
+                    lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
                     lfUI_CONSOLA.run();
                     break;
                 case "4":
@@ -73,7 +74,9 @@ public class main {
                     acUI_CONSOLA.run();
                     break;
                 case "6":
-                    System.out.println("\n==--XXX--==");
+                    System.out.println("\n==ESCREVER EM FICHEIRO==");
+                    escreverFicheiroUI_CONSOLA efUI_CONSOLA = new escreverFicheiroUI_CONSOLA(ce);
+                    efUI_CONSOLA.run();
                     break;
                 case "7":
                     System.out.println("\n==--XXX--==");
