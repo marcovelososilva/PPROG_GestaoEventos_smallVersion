@@ -26,7 +26,12 @@ public class candidatura {
 
     @Override
     public String toString() {
-        return "Candidatura: " + " Pessoa Responsavel pela Candidatura: " + responsavelCandidatura + ", da empresa: " + nomeEmpresa + ", com a morada: " + morada + ", telefone: " + telefone + ", com o seguinte texto explicativo: " + textoExplicativoCandidatura + ", efectuada na data: " + dataCandidatura;
+        return "Candidatura da empresa: " + nomeEmpresa + "\n"
+                +"Com a morada: " + morada + "\n"
+                +"Telefone: " + telefone + "\n"
+                +"Pessoa Responsavel pela Candidatura: " + responsavelCandidatura  + "\n"
+                +"Com o seguinte texto explicativo: " + textoExplicativoCandidatura + "\n"
+                +"Efectuada na data: " + dataCandidatura;
     }
     
     public String toStringEmpresaData(){
@@ -112,9 +117,9 @@ public class candidatura {
      *
      * @param d
      */
-    public decisao addDecisao() {
-        decisaoCandidatura = new decisao();
-        return decisaoCandidatura;
+    public decisao selecionaCandidaturaCriaDecisao() {
+        return new decisao();
+         
     }
 
     @Override

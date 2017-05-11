@@ -7,6 +7,7 @@ package Main_Class;
 
 import UI_CONSOLA.atribuirCandidaturaUI_CONSOLA;
 import UI_CONSOLA.criarCandidaturaUI_CONSOLA;
+import UI_CONSOLA.decidirCandidaturaUI_CONSOLA;
 import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
 import UI_CONSOLA.lerFicheiroUI_CONSOLA;
 import Utils.Data;
@@ -43,7 +44,7 @@ public class main {
             System.out.println("4. CRIAR CANDIDATURA");
             System.out.println("5. ATRIBUIR CANDIDATURA");
             System.out.println("6. ESCREVER EM FICHEIRO");
-            System.out.println("7. --XXX--");
+            System.out.println("7. DECIDIR CANDIDATURA");
             System.out.println("8. --XXX--");
             System.out.println("9. --XXX--");
             System.out.println("0. Sair");
@@ -79,7 +80,9 @@ public class main {
                     efUI_CONSOLA.run();
                     break;
                 case "7":
-                    System.out.println("\n==--XXX--==");
+                    System.out.println("\n==DECIDIR CANDIDATURA==");
+                    decidirCandidaturaUI_CONSOLA dcUI_CONSOLA = new decidirCandidaturaUI_CONSOLA(ce);
+                    dcUI_CONSOLA.run();
                     break;
                 case "8":
                     System.out.println("\n==--XXX--==");
