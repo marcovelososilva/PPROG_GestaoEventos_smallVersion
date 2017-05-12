@@ -5,11 +5,15 @@ public class decisao {
     private String textoDecisao;
     private boolean aprovada;
     private fae faeAtribuido;
-    
-        public decisao() {
+
+    public decisao() {
     }
 
-
+    public decisao(String textoDecisao,boolean aprovada){
+        this.aprovada=aprovada;
+        this.textoDecisao=textoDecisao;
+    }
+    
     public String getTextoDecisao() {
         return textoDecisao;
     }
@@ -36,16 +40,18 @@ public class decisao {
 
     @Override
     public String toString() {
-        return "::Decisao:: FAE Atribuido a esta candidatura: " + faeAtribuido.toStringUsername() + " texto de decisao: " + textoDecisao + ", candidatura aprovada: " + aprovada + ".";
-    }    
-    
+        return "::Decisao:: " +aprovada+" - texto de decisao: " + textoDecisao;
+                //faeAtribuido.toStringUsername();
+        //+ " texto de decisao: " + textoDecisao + ", candidatura aprovada: " + aprovada + ".";
+    }
+
     //////////////////////////////
-        public boolean validarDadosDecisao() {
+    public boolean validarDadosDecisao() {
         // TODO - implement decisao.validarDadosDecisao
         throw new UnsupportedOperationException();
     }
 
-@Override
+    @Override
     public boolean equals(Object outroObjeto) {
         if (this == outroObjeto) {
             return true;
@@ -54,10 +60,8 @@ public class decisao {
             return false;
         }
         decisao outraDecisao = (decisao) outroObjeto;
-        return this.aprovada == outraDecisao.aprovada &&
-               this.faeAtribuido == outraDecisao.getFaeAtribuido();
+        return this.aprovada == outraDecisao.aprovada
+                && this.faeAtribuido == outraDecisao.getFaeAtribuido();
     }
-        
-        
 
 }

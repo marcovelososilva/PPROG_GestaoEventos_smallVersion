@@ -71,7 +71,10 @@ public class lerFicheiroUI_CONSOLA {
                             break;
                         case "atribuicao":
                             estouLendo = "lerAtribuicoes";
-                            break;    
+                            break;
+                        case "decisao":
+                            estouLendo = "lerDecisao";
+                            break;
                         case "end":
                             estouLendo = "procura";
                             break;
@@ -97,7 +100,10 @@ public class lerFicheiroUI_CONSOLA {
                                     break;
                                 case "lerAtribuicoes":
                                     lerAtribuicoes(linha);
-                                    break;    
+                                    break;
+                                case "lerDecisao":
+                                    lerDecisao(linha);
+                                    break;
                                 default:
                                     break;
                             }
@@ -146,5 +152,10 @@ public class lerFicheiroUI_CONSOLA {
     private void lerAtribuicoes(String linha) {
         String conteudo[] = linha.split(";");
         lfcontroller.lerAtribuicoes(conteudo);
+    }
+
+    private void lerDecisao(String linha) {
+        String conteudo[] = linha.split(";");
+        lfcontroller.lerDecisoes(conteudo);
     }
 }

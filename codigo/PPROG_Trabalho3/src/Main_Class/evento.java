@@ -73,7 +73,7 @@ public class evento {
                 + "FAE: " + converterListaEmString(listaFAE) 
                 + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
                 + "Candidaturas: "+ converterListaEmString(listaCandidaturas)+"\n"
-                + "Atrribuições: " + converterListaEmString(listaAtribuicao)+"\n";
+                + "Atribuições: " + converterListaEmString(listaAtribuicao)+"\n";
     }
 
     private String converterListaEmString(List lista){
@@ -319,7 +319,7 @@ public class evento {
         throw new UnsupportedOperationException();
     }
 
-    void addatribuicaoFicheiro(fae faeSelecionado, candidatura candidaturaSelecionada) {
+    public void addAtribuicaoFicheiro(fae faeSelecionado, candidatura candidaturaSelecionada) {
        atribuicao a = new atribuicao();
        a.setFAEeCandidatura(faeSelecionado, candidaturaSelecionada);
        listaAtribuicao.add(a);

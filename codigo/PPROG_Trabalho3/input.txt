@@ -63,8 +63,8 @@ end
 gestoreseventos
 azulu;
 zalmeida;
-dveiga
-end
+dveiga;
+end;
 
 fae
 Expo Carros;uestrela;
@@ -120,10 +120,19 @@ end
 
 atribuicao
 Expo Carros;JulinhoSA;2017/06/24;uestrela;
-Expo Carros;AmbroisioLDA;2017/04/30;uestrela
+Expo Carros;AmbroisioLDA;2017/04/30;uestrela;
 Expo Carros;Porcas12;2017/01/22;tfonseca;
 Expo Carros;BelasBonitas;2017/02/05;tfonseca;
 Cong Medicina;VrumVrum;2014/01/13;sgomes;
 Cong Medicina;CaneleirasBiqueiras;2017/03/25;rhorta;
 Cong Medicina;MesasePernas;2016/11/22;rhenriques;
 end
+
+decisao
+Expo Carros;JulinhoSA;2017/06/24;uestrela;True;Porque sim
+Expo Carros;AmbroisioLDA;2017/04/30;uestrela;False; Porque nao
+Expo Carros;Porcas12;2017/01/22;tfonseca;True;Porque sim é alface
+Expo Carros;BelasBonitas;2017/02/05;tfonseca;True;Porque e interessante
+Cong Medicina;VrumVrum;2014/01/13;sgomes;False;Porque é velho
+Cong Medicina;CaneleirasBiqueiras;2017/03/25;rhorta;False;Porque magoa
+Cong Medicina;MesasePernas;2016/11/22;rhenriques;True;Porque sao boas

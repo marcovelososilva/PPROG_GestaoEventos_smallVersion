@@ -24,8 +24,8 @@ public class decidirCandidaturaController {
         throw new UnsupportedOperationException();
     }
 
-    public List getListaEventosSubmissaoActiva() {
-        return ce.getListaEventosSubmissaoActiva();
+    public List getListaEventosOrganizadorDataSubmissaoFinalizada() {
+        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada();
     }
 
     /**

@@ -31,7 +31,8 @@ public class candidatura {
                 +"Telefone: " + telefone + "\n"
                 +"Pessoa Responsavel pela Candidatura: " + responsavelCandidatura  + "\n"
                 +"Com o seguinte texto explicativo: " + textoExplicativoCandidatura + "\n"
-                +"Efectuada na data: " + dataCandidatura;
+                +"Efectuada na data: " + dataCandidatura+"\n"
+                +"Decisao" + decisaoCandidatura;
     }
     
     public String toStringEmpresaData(){
@@ -108,10 +109,10 @@ public class candidatura {
      *
      * @param d
      */
-    public void gravarDecisao(decisao d) {
-        // TODO - implement candidatura.gravarDecisao
-        throw new UnsupportedOperationException();
+    public void addDecisaoFicheiro(String textoExplicativo, boolean decisaoFavoravel) {
+        decisaoCandidatura = new decisao(textoExplicativo, decisaoFavoravel);
     }
+    
 
     /**
      *

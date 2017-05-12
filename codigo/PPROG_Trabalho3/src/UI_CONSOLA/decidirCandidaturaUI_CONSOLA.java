@@ -23,7 +23,7 @@ public class decidirCandidaturaUI_CONSOLA {
     public void run() {
         utilitariosConsola.inicioEscritaConsola("DECIDIR CANDIDATURA");
         //pede a lista de eventos com submissao terminada
-        listaEventosActivos = decidirCandController.getListaEventosSubmissaoActiva();
+        listaEventosActivos = decidirCandController.getListaEventosOrganizadorDataSubmissaoFinalizada();
 
         //imprime a lista de eventos
         utilitariosConsola.escreverConsola("###EVENTOS:");
@@ -66,7 +66,7 @@ public class decidirCandidaturaUI_CONSOLA {
         System.out.println("XXXXXXXXX");
         utilitariosConsola.escreverConsola("Decisão Favoravel?");
         Boolean decisaoFavoravel = utilitariosConsola.lerConsolaBoolean();
-        utilitariosConsola.escreverConsola("responsavel Candidatura?");
+        utilitariosConsola.escreverConsola("Texto Explicativo");
         String textoDecisao = utilitariosConsola.lerConsolaNextLine();
         utilitariosConsola.fimEscritaConsola();
         
