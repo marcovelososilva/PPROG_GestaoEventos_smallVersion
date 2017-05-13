@@ -29,7 +29,7 @@ public class decidirCandidaturaUI_CONSOLA {
         utilitariosConsola.escreverConsola("###EVENTOS:");
         int i = 0;
         for (evento e : listaEventosActivos) {
-            utilitariosConsola.escreverConsola(i + e.toString());
+            utilitariosConsola.escreverConsola(i + " - "+ e.toString());
             i++;
         }
         //pede para selecionar um evento
@@ -43,7 +43,7 @@ public class decidirCandidaturaUI_CONSOLA {
         utilitariosConsola.escreverConsola("###CANDIDATURAS:");
         i = 0;
         for (candidatura cand : listaCandidaturas) {
-            utilitariosConsola.escreverConsola(i + cand.toString());
+            utilitariosConsola.escreverConsola(i + " - " + cand.toString());
             i++;
         }
         if (i == 0) {
@@ -51,7 +51,7 @@ public class decidirCandidaturaUI_CONSOLA {
         }
         //pede para selecionar uma candidatura
         utilitariosConsola.escreverConsola("Escolha uma candidatura!");
-        int numcandidatura = utilitariosConsola.lerConsolaNextIntEntreValores(0, listaEventosActivos.size());
+        int numcandidatura = utilitariosConsola.lerConsolaNextIntEntreValores(0, listaCandidaturas.size());
 
         //seleciona a candidatura e cria a decisao na candidatura     
         decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(listaCandidaturas.get(numcandidatura));
@@ -71,6 +71,8 @@ public class decidirCandidaturaUI_CONSOLA {
         utilitariosConsola.fimEscritaConsola();
         
         //faz set dos dados previamente solicitados 
+        
+    //    listaCandidaturas.get(numcandidatura).addDecisaoFicheiro(textoDecisao, true);
         decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, textoDecisao);
 
         //validação global da candidatura, (existe já alguma candidatura EQUALS candidatura)

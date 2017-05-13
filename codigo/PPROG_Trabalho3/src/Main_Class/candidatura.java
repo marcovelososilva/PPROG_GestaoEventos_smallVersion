@@ -26,15 +26,20 @@ public class candidatura {
 
     @Override
     public String toString() {
-        return "Candidatura da empresa: " + nomeEmpresa + "\n"
-                +"Com a morada: " + morada + "\n"
-                +"Telefone: " + telefone + "\n"
+        if (decisaoCandidatura==null){
+            return "Candidatura da empresa: " + nomeEmpresa +" - Efectuada na data: " + dataCandidatura+"\n"
+                +"Com a morada: " + morada + " - Telefone: " + telefone + "\n"
                 +"Pessoa Responsavel pela Candidatura: " + responsavelCandidatura  + "\n"
                 +"Com o seguinte texto explicativo: " + textoExplicativoCandidatura + "\n"
-                +"Efectuada na data: " + dataCandidatura+"\n"
-                +"Decisao" + decisaoCandidatura;
+                +"::Decisao::" + " - Não tomada";
+        } else {
+        return "Candidatura da empresa: " + nomeEmpresa +" - Efectuada na data: " + dataCandidatura+"\n"
+                +"Com a morada: " + morada + " - Telefone: " + telefone + "\n"
+                +"Pessoa Responsavel pela Candidatura: " + responsavelCandidatura  + "\n"
+                +"Com o seguinte texto explicativo: " + textoExplicativoCandidatura + "\n"
+                +"::Decisao:: " + decisaoCandidatura;
     }
-    
+    }
     public String toStringEmpresaData(){
         return " Empresa: " + nomeEmpresa + ", candidatura data: " + dataCandidatura;
     }
@@ -119,7 +124,8 @@ public class candidatura {
      * @param d
      */
     public decisao selecionaCandidaturaCriaDecisao() {
-        return new decisao();
+        decisaoCandidatura= new decisao();
+        return decisaoCandidatura;
          
     }
 

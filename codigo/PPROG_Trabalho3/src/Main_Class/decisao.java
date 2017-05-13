@@ -40,7 +40,7 @@ public class decisao {
 
     @Override
     public String toString() {
-        return "::Decisao:: " +aprovada+" - texto de decisao: " + textoDecisao;
+        return aprovada+" - texto de decisao: " + textoDecisao;
                 //faeAtribuido.toStringUsername();
         //+ " texto de decisao: " + textoDecisao + ", candidatura aprovada: " + aprovada + ".";
     }

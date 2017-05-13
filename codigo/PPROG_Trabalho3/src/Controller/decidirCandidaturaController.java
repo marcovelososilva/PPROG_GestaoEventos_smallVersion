@@ -39,7 +39,7 @@ public class decidirCandidaturaController {
     }
 
     public decisao selecionarCandidaturaCriaDecisao(candidatura cand) {
-        candidaturaSelecionada = cand;
+        this.candidaturaSelecionada = cand;
         decisaoCandidatura = cand.selecionaCandidaturaCriaDecisao();
         return decisaoCandidatura;
     }

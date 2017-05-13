@@ -70,8 +70,8 @@ public class evento {
                 + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
                 + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
                 + "Tipo de Evento: " + tipo.toString() + "\n"
-                + "FAE: " + converterListaEmString(listaFAE) 
                 + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
+                + "FAE: " + converterListaEmString(listaFAE) + "\n"
                 + "Candidaturas: "+ converterListaEmString(listaCandidaturas)+"\n"
                 + "Atribuições: " + converterListaEmString(listaAtribuicao)+"\n";
     }
