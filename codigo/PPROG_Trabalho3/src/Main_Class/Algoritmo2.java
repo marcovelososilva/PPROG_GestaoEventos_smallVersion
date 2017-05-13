@@ -48,4 +48,15 @@ public class Algoritmo2 implements algoritmoAtribuicao{
             return 0;
         }
     }
+        @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        algoritmoAtribuicao outroAlgoritmo = (algoritmoAtribuicao) outroObjeto;
+        return  this.toString().equalsIgnoreCase(outroAlgoritmo.toString());
+    }
 }

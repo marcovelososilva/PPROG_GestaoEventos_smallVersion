@@ -17,5 +17,17 @@ public class organizador {
         return "::ORGANIZADOR:: Username=" + user.getUsername();
     }
     
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        organizador outroOrganizador = (organizador) outroObjeto;
+        return this.user.equals(outroOrganizador.user);
+    }
+    
     
 }

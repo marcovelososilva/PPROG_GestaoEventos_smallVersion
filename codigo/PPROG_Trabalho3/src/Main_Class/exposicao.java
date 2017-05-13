@@ -15,5 +15,15 @@ public class exposicao implements EventType {
          return "exposicao";
     }
 
-    
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        EventType outraExposicao = (EventType) outroObjeto;
+        return this.toString().equalsIgnoreCase(outraExposicao.toString());
+    }
 }

@@ -39,7 +39,7 @@ public class evento {
         this.dataFim = dataFim;
         this.local = local;
         this.dataLimiteSubmissaoCandidaturas = dataLimiteSubmissaoCandidaturas;
-        if(tipo.equalsIgnoreCase("congresso")){
+        if (tipo.equalsIgnoreCase("congresso")) {
             this.tipo = new congresso();
         } else {
             this.tipo = new exposicao();
@@ -49,7 +49,7 @@ public class evento {
         listaAtribuicao = new ArrayList<>();
         listaCandidaturas = new ArrayList<>();
     }
-    
+
     public evento() {
         listaFAE = new ArrayList<>();
         listaOrganizadores = new ArrayList<>();
@@ -64,7 +64,7 @@ public class evento {
                 + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
                 + "Tipo de Evento: " + tipo.toStringNomeTipo() + "\n";
     }
-    
+
     public String toStringComFaeOrganizador() {
         return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
                 + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
@@ -72,13 +72,13 @@ public class evento {
                 + "Tipo de Evento: " + tipo.toString() + "\n"
                 + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
                 + "FAE: " + converterListaEmString(listaFAE) + "\n"
-                + "Candidaturas: "+ converterListaEmString(listaCandidaturas)+"\n"
-                + "Atribuições: " + converterListaEmString(listaAtribuicao)+"\n";
+                + "Candidaturas: " + converterListaEmString(listaCandidaturas) + "\n"
+                + "Atribuições: " + converterListaEmString(listaAtribuicao) + "\n";
     }
 
-    private String converterListaEmString(List lista){
+    private String converterListaEmString(List lista) {
         String porExtenso = "";
-        for (Object o : lista){
+        for (Object o : lista) {
             porExtenso = porExtenso + "; \n" + o.toString();
         }
         return porExtenso;
@@ -166,58 +166,11 @@ public class evento {
 
     /**
      *
-     * @param fae
-     */
-    public boolean checkFAEComAtribuicao(fae fae) {
-        // TODO - implement evento.checkFAEComAtribuicao
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param u
-     */
-    public void getFAE(utilizador u) {
-        // TODO - implement evento.getFAE
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
      * @param FEA
      */
     public List getListaCandidaturas(fae FEA) {
         return listaCandidaturas;
     }
-
-    public void getListaCongressos() {
-        // TODO - implement evento.getListaCongressos
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param fae
-     */
-    public void getListaEventosFAE(fae fae) {
-        // TODO - implement evento.getListaEventosFAE
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     */
-    public void selecionaEventoCongresso() {
-        // TODO - implement evento.selecionaEventoCongresso
-        throw new UnsupportedOperationException();
-    }
-
-//    public List novasAtribuicoesSegundoNumFAES (int numAtribuicoes) {
-//        for (int i = 0; i < numAtribuicoes; i++){
-//            listaAtribuicao.add(new atribuicao());
-//        }
-//        return listaAtribuicao;
-//    }
 
     /**
      * Cria uma nova candidatura para o evento onde estamos;
@@ -255,50 +208,14 @@ public class evento {
         return candidaturaUnica;
     }
 
-    public void validaUtilizadorFAEvsOrganizador() {
-        // TODO - implement evento.validaUtilizadorFAEvsOrganizador
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param u
-     * @param e
-     * @param listOrg
-     */
-    public void registaUtilizadorFAE(utilizador u, evento e, ArrayList listOrg) {
-        // TODO - implement evento.registaUtilizadorFAE
-        throw new UnsupportedOperationException();
-    }
-
     /**
      *
      * @param e
      * @param u
      */
     public void addUtilizadorFAE(utilizador u) {
-       fae novoFAE = new fae(u);
-       listaFAE.add(novoFAE);
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void getListaOrganizadores(evento e) {
-        // TODO - implement evento.getListaOrganizadores
-        throw new UnsupportedOperationException();
-    }
-
-
-    public void validaDadosEvento() {
-        // TODO - implement evento.validaDadosEvento
-        throw new UnsupportedOperationException();
-    }
-
-    public void validaUtilizadorOrganizador() {
-        // TODO - implement evento.validaUtilizadorOrganizador
-        throw new UnsupportedOperationException();
+        fae novoFAE = new fae(u);
+        listaFAE.add(novoFAE);
     }
 
     /**
@@ -306,23 +223,14 @@ public class evento {
      * @param u
      */
     public void addUtilizadorOrganizador(utilizador u) {
-       organizador novoOrganizador = new organizador(u);
-       listaOrganizadores.add(novoOrganizador);
-    }
-
-    /**
-     *
-     * @param o
-     */
-    public void adicionarOrganizador(organizador o) {
-        // TODO - implement evento.adicionarOrganizador
-        throw new UnsupportedOperationException();
+        organizador novoOrganizador = new organizador(u);
+        listaOrganizadores.add(novoOrganizador);
     }
 
     public void addAtribuicaoFicheiro(fae faeSelecionado, candidatura candidaturaSelecionada) {
-       atribuicao a = new atribuicao();
-       a.setFAEeCandidatura(faeSelecionado, candidaturaSelecionada);
-       listaAtribuicao.add(a);
+        atribuicao a = new atribuicao();
+        a.setFAEeCandidatura(faeSelecionado, candidaturaSelecionada);
+        listaAtribuicao.add(a);
     }
 
     public List getListaAtribuicoes() {
@@ -330,8 +238,22 @@ public class evento {
     }
 
     public List<organizador> getListaOrganizadores() {
-       return listaOrganizadores;
+        return listaOrganizadores;
     }
 
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        evento outroEvento = (evento) outroObjeto;
+        return this.getTitulo().equalsIgnoreCase(outroEvento.getTitulo())
+                && this.getLocal().equalsIgnoreCase(outroEvento.getLocal())
+                && this.getDataInicio().equals(outroEvento.getDataInicio())
+                && this.getDataFim().equals(outroEvento.getDataFim());
+    }
 
 }

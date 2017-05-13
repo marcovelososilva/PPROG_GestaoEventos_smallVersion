@@ -15,9 +15,9 @@ public class fae {
         return user;
     }
 
-    public void setUser(utilizador user) {
-        this.user = user;
-    }
+//    public void setUser(utilizador user) {
+//        this.user = user;
+//    }
 
     @Override
     public String toString() {
