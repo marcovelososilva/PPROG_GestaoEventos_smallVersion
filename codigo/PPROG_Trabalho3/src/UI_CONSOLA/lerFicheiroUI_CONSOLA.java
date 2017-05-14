@@ -27,9 +27,9 @@ public class lerFicheiroUI_CONSOLA {
         this.lfcontroller = new lerFicheiroController(ce);
     }
 
-    public void run() {
-        utilitariosConsola.escreverConsola("Qual o nome do ficheiro? (default: input.txt)");
-        String ficheiro = utilitariosConsola.lerConsolaNextLine();
+    public void run(String ficheiro) {
+   //     utilitariosConsola.escreverConsola("Qual o nome do ficheiro? (default: input.txt)");
+   //     String ficheiro = utilitariosConsola.lerConsolaNextLine();
         try {
             boolean tudoOk = inputFicheiroInicial(ficheiro);
             if (tudoOk) {

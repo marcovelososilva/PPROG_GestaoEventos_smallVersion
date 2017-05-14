@@ -4,6 +4,7 @@ import Main_Class.*;
 import Controller.*;
 import Utils_Consola.*;
 import java.util.List;
+import javax.swing.JList;
 
 public class criarCandidaturaUI_CONSOLA {
     
@@ -21,12 +22,14 @@ public class criarCandidaturaUI_CONSOLA {
     public void run(){
         utilitariosConsola.inicioEscritaConsola("CRIAR CANDIDATURA");
         //pede a lista de eventos com a submissao activa
+        JList<evento> jList1 = new javax.swing.JList<>();
         listaEventosActivos = criarCandController.getListaEventosSubmissaoActiva();
         
         //imprime a lista de eventos
         utilitariosConsola.escreverConsola("###EVENTOS:");
         int i = 0;
         for (evento e: listaEventosActivos){
+            e.getTitulo();
            utilitariosConsola.escreverConsola(i + e.toString());
            i++;
         }
