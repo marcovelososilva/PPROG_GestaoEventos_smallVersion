@@ -26,5 +26,22 @@ public class atribuicao {
         return " FAE: " + fae.toStringUsername() + ", responsável por decidir sobre candidatura: " + candidatura.toStringEmpresaData() + ";";
     }
     
-    
+    /**
+     * metodo equals reescrito para verificar se duas candidaturas são iguais
+     * utiliza os metodos equals das candidaturas e faes.
+     * @param outroObjeto
+     * @return 
+     */
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        atribuicao outraAtribuicao = (atribuicao) outroObjeto;
+        return this.candidatura.equals(outraAtribuicao.candidatura) &&
+                this.fae.getUser().equals(outraAtribuicao.fae.getUser());
+    }
 }

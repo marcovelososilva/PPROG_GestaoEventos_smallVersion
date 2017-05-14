@@ -134,7 +134,7 @@ public class candidatura {
         if (this == outroObjeto) {
             return true;
         }
-        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+        if (this.getClass() != outroObjeto.getClass()) {
             return false;
         }
         candidatura outracandidatura = (candidatura) outroObjeto;

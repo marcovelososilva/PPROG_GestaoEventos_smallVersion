@@ -21,47 +21,6 @@ public class centroDeEventos {
         ListaAlgoritmos.add(new Algoritmo3());
     }
 
-    /**
-     *
-     * @param e
-     */
-    public void validaEvento(evento e) {
-        // TODO - implement centroDeEventos.validaEvento
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param ge
-     */
-    public void registaGestorEventos(gestorDeEventos ge) {
-        // TODO - implement centroDeEventos.registaGestorEventos
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void registaEvento(evento e) {
-        // TODO - implement centroDeEventos.registaEvento
-        throw new UnsupportedOperationException();
-    }
-
-    public void getUtilizadoresNaoConfirmados() {
-        // TODO - implement centroDeEventos.getUtilizadoresNaoConfirmados
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void getListaUtilizadoresEvento(evento e) {
-        // TODO - implement centroDeEventos.getListaUtilizadoresEvento
-        throw new UnsupportedOperationException();
-    }
-
     public List getListaUtilizadores() {
         return ListaUtilizadores;
     }
@@ -97,33 +56,6 @@ public class centroDeEventos {
 
     /**
      *
-     * @param o
-     */
-    public void getListaEventosOrganizador(organizador o) {
-        // TODO - implement centroDeEventos.getListaEventosOrganizador
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param fae
-     */
-    public void getListaEventosFAE(fae fae) {
-        // TODO - implement centroDeEventos.getListaEventosFAE
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param o
-     */
-    public void getListaCongressosOrganizador(organizador o) {
-        // TODO - implement centroDeEventos.getListaCongressosOrganizador
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
      *
      */
     public List getAlgoritmosAtribuicao() {
@@ -140,30 +72,6 @@ public class centroDeEventos {
 
     public List getListaEvento() {
         return ListaEventos;
-    }
-
-    /**
-     *
-     * @param e
-     * @param u
-     */
-    public void addUtilizadorFAE(evento e, utilizador u) {
-        // TODO - implement centroDeEventos.addUtilizadorFAE
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param u
-     */
-    public void addOrganizador(utilizador u) {
-        // TODO - implement centroDeEventos.addOrganizador
-        throw new UnsupportedOperationException();
-    }
-
-    public void addGestorEventos() {
-        // TODO - implement centroDeEventos.addGestorEventos
-        throw new UnsupportedOperationException();
     }
 
     public void addRegistoUtilizadores(utilizador u) {
@@ -236,7 +144,7 @@ public class centroDeEventos {
         if (eventoSelecionado.getTitulo() != null) {
             candidatura candidaturaSelecionada = encontrarCandidaturaEvento(candidatura, dataCandidatura, eventoSelecionado);
             if (candidaturaSelecionada.getNomeEmpresa() != null) {
-                candidaturaSelecionada.addDecisaoFicheiro(textoExplicativo,decisaoFavoravel);
+                candidaturaSelecionada.addDecisaoFicheiro(textoExplicativo, decisaoFavoravel);
             }
         }
     }

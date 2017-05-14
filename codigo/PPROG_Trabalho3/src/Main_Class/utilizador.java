@@ -14,7 +14,7 @@ public class utilizador {
             this.password = password;
         }
 
-        utilizador() {
+        public utilizador() {
         }
         
         public String getNome() {
@@ -70,9 +70,16 @@ public class utilizador {
 		throw new UnsupportedOperationException();
 	}
 
-	public void createUtilizador() {
-		// TODO - implement utilizador.createUtilizador
-		throw new UnsupportedOperationException();
-	}
-
+         @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        utilizador outroUtilizador = (utilizador) outroObjeto;
+        return this.getUsername().equalsIgnoreCase(outroUtilizador.getUsername()) &&
+                this.getEmail().equalsIgnoreCase(outroUtilizador.getEmail());
+    }
 }
