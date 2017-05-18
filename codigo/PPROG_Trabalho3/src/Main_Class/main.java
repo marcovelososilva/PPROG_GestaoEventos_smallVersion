@@ -62,7 +62,7 @@ public class main {
                 case "3":
                     System.out.println("\n==CARREGAR DE FICHEIRO==");
                     lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
-                    lfUI_CONSOLA.run();
+        //            lfUI_CONSOLA.run();
                     break;
                 case "4":
                     System.out.println("\n==CRIAR CANDIDATURA==");
@@ -77,7 +77,7 @@ public class main {
                 case "6":
                     System.out.println("\n==ESCREVER EM FICHEIRO==");
                     escreverFicheiroUI_CONSOLA efUI_CONSOLA = new escreverFicheiroUI_CONSOLA(ce);
-                    efUI_CONSOLA.run();
+          //          efUI_CONSOLA.run();
                     break;
                 case "7":
                     System.out.println("\n==DECIDIR CANDIDATURA==");

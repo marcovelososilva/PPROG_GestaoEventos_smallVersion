@@ -173,10 +173,21 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Nome", "E-mail"
+                "UserName", "E-mail"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTableFAE);
+        if (jTableFAE.getColumnModel().getColumnCount() > 0) {
+            jTableFAE.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout painelFAELayout = new javax.swing.GroupLayout(painelFAE);
         painelFAE.setLayout(painelFAELayout);
