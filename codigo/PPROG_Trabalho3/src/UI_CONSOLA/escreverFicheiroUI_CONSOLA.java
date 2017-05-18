@@ -25,7 +25,7 @@ public class escreverFicheiroUI_CONSOLA {
         this.efController = new escreverFicheiroController(ce);
     }
     
-    public void run(){
+    public void run(String nomeFile){
         efController.runCollectInformacao();
 //lista de utlizadores (utilizadores);
         List<String> listaUtilizadores = efController.getListaUtilizadores();     
@@ -42,8 +42,8 @@ public class escreverFicheiroUI_CONSOLA {
 //lista de atribuições (atribuicao);     
         List<String> listaAtribuicoes = efController.getListaAtribuicoes();
         
-        utilitariosConsola.escreverConsola("qual o nome do ficheiro que quer guardar?");
-        String nomeFile = utilitariosConsola.lerConsolaNextLine();
+   //     utilitariosConsola.escreverConsola("qual o nome do ficheiro que quer guardar?");
+   //     String nomeFile = utilitariosConsola.lerConsolaNextLine();
         
         if (!nomeFile.endsWith(".txt")){
             nomeFile = nomeFile + ".txt";
