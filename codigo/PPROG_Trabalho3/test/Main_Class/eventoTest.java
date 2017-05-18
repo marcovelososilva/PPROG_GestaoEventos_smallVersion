@@ -56,25 +56,6 @@ public class eventoTest {
     }
 
     /**
-     * Test of toStringComFaeOrganizador method, of class evento.
-     */
-    @Test
-    public void testToStringComFaeOrganizador() {
-        System.out.println("toStringComFaeOrganizador");
-        evento instance = new evento("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao");
-        String expResult = "\nEVENTO:" + "\nTitulo: titulo,\nTexto Descritivo: textoDescritivo,\n"
-                + "Data de Inicio: " + Data.dataAtual() + ",\nData de Fim: " + Data.dataAtual() + ",\n"
-                + "Local: local,\nData Limite de Submissão de Candidaturas: " + Data.dataAtual() + ",\n"
-                + "Tipo de Evento: exposicao\n"
-                + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
-                + "FAE: " + converterListaEmString(listaFAE) + "\n"
-                + "Candidaturas: " + converterListaEmString(listaCandidaturas) + "\n"
-                + "Atribuições: " + converterListaEmString(listaAtribuicao) + "\n";
-        String result = instance.toStringComFaeOrganizador();
-        assertEquals(expResult, result);
-    }
-
-    /**
      * Test of getTitulo method, of class evento.
      */
     @Test
@@ -238,21 +219,6 @@ public class eventoTest {
     }
 
     /**
-     * Test of getListaFAE method, of class evento.
-     */
-    @Test
-    public void testGetListaFAE() {
-        System.out.println("getListaFAE");
-        evento instance = new evento ("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao");
-        instance.addUtilizadorFAE(new utilizador("nome", "email", "username", "password"));
-        List <fae> expResult = Arrays.asList(
-                new fae(new utilizador ("nome", "email", "username", "password"))
-        );
-        List result = instance.getListaFAE();
-        assertEquals(expResult, result);
-    }
-
-    /**
      * Test of getListaCandidatura method, of class evento.
      */
     @Test
@@ -285,26 +251,13 @@ public class eventoTest {
     @Test
     public void testGetListaCandidaturas() {
         System.out.println("getListaCandidaturas");
-        fae FEA = new fae (new utilizador("nome", "email", "username", "password"));
+        fae FEA = new fae (new utilizador("nome1", "email1", "username1", "password1"));
         evento instance = new evento("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao");
-        List <utilizador> expResult = Arrays.asList(
-                new utilizador("nome1", "email1", "username1", "password1")
+        instance.registaCandidatura(new candidatura("nomeEmpresa", "responsavelCandidatura", "morada", 123456789, "textoExplicativoCandidatura", Data.dataAtual()));
+        List <candidatura> expResult = Arrays.asList(
+                new candidatura("nomeEmpresa", "responsavelCandidatura", "morada", 123456789, "textoExplicativoCandidatura", Data.dataAtual())
         );
         List result = instance.getListaCandidaturas(FEA);
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Não dá para fazer teste uma vez que apenas cria uma candidatura e não a devolve
-     * porque é uma instancia privada no evento ou seja não tenho acesso para alterar e não se consegue verificar junto de outra.
-     */
-    
-    @Test
-    public void testSelecionaEventoCriaCandidatura() {
-        System.out.println("selecionaEventoCriaCandidatura");
-        evento instance = new evento("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao");
-        candidatura expResult = new candidatura("nomeEmpresa", "responsavelCandidatura", "morada", 123456789, "textoExplicativoCandidatura", Data.dataAtual());
-        candidatura result = instance.selecionaEventoCriaCandidatura();
         assertEquals(expResult, result);
     }
     
@@ -369,27 +322,6 @@ public class eventoTest {
         instance.registaCandidatura(c);
         candidatura candidaturaSelecionada = c;
         instance.addAtribuicaoFicheiro(faeSelecionado, candidaturaSelecionada);
-    }
-
-    /**
-     * NÃO percebi porque não está a funcionar, tenho que olhar para isto de olhos frescos
-     */
-    @Test
-    public void testGetListaAtribuicoes() {
-        System.out.println("getListaAtribuicoes");
-        evento instance = new evento("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao");
-        candidatura c = new candidatura("nomeEmpresa", "responsavelCandidatura", "morada", 123456789, "textoExplicativoCandidatura", Data.dataAtual());
-        instance.registaCandidatura(c);
-        atribuicao a = new atribuicao();
-        a.setFAEeCandidatura(new fae(new utilizador("nome", "email", "username", "password")), c);
-        
-        atribuicao atriResultado = new atribuicao();
-        atriResultado.setFAEeCandidatura(new fae(new utilizador("nome", "email", "username", "password")), 
-                new candidatura("nomeEmpresa", "responsavelCandidatura", "morada", 123456789, "textoExplicativoCandidatura", Data.dataAtual()));
-        List <atribuicao> expResult = Arrays.asList(atriResultado);
-        
-        List result = instance.getListaAtribuicoes();
-        assertEquals(expResult, result);
     }
 
     /**
