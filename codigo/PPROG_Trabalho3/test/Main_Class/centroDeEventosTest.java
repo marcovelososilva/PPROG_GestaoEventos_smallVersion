@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  * @author Marco
  */
 public class centroDeEventosTest {
-    
+
     /**
      * Test of getListaUtilizadores method, of class centroDeEventos.
      */
@@ -25,7 +25,7 @@ public class centroDeEventosTest {
         System.out.println("getListaUtilizadores");
         centroDeEventos instance = new centroDeEventos();
         instance.addRegistoUtilizadores(new utilizador("nome1", "email1", "username1", "password1"));
-        List <utilizador> expResult = Arrays.asList(
+        List<utilizador> expResult = Arrays.asList(
                 new utilizador("nome1", "email1", "username1", "password1")
         );
         List result = instance.getListaUtilizadores();
@@ -40,30 +40,12 @@ public class centroDeEventosTest {
         System.out.println("getListaEventosSubmissaoActiva");
         centroDeEventos instance = new centroDeEventos();
         //create 2 events to return 1
-        instance.createEvento (new evento("titulo1", "textoDescritivo1", new Data ("3000/12/30"), new Data ("3000/12/31"), "local1", new Data ("3000/11/30"), "exposicao"));
-        instance.createEvento (new evento("titulo2", "textoDescritivo2", new Data ("2000/12/30"), new Data ("2000/12/30"), "local2", new Data ("2000/12/30"), "congresso"));
-        List <evento> expResult = Arrays.asList(
-                new evento("titulo1", "textoDescritivo1", new Data ("3000/12/30"), new Data ("3000/12/31"), "local1", new Data ("3000/11/30"), "exposicao")
+        instance.createEvento(new evento("titulo1", "textoDescritivo1", new Data("3000/12/30"), new Data("3000/12/31"), "local1", new Data("3000/11/30"), "exposicao"));
+        instance.createEvento(new evento("titulo2", "textoDescritivo2", new Data("2000/12/30"), new Data("2000/12/30"), "local2", new Data("2000/12/30"), "congresso"));
+        List<evento> expResult = Arrays.asList(
+                new evento("titulo1", "textoDescritivo1", new Data("3000/12/30"), new Data("3000/12/31"), "local1", new Data("3000/11/30"), "exposicao")
         );
         List result = instance.getListaEventosSubmissaoActiva();
-        assertEquals(expResult, result);
-    }
-    
-
-    /**
-     * Test of getListaEventosOrganizadorDataSubmissaoFinalizada method, of class centroDeEventos.
-     */
-    @Test
-    public void testGetListaEventosOrganizadorDataSubmissaoFinalizada() {
-        System.out.println("getListaEventosOrganizadorDataSubmissaoFinalizada");
-        centroDeEventos instance = new centroDeEventos();
-        instance.createEvento (new evento("titulo1", "textoDescritivo1", new Data ("3000/12/30"), new Data ("3000/12/31"), "local1", new Data ("3000/11/30"), "exposicao"));
-        instance.createEvento (new evento("titulo2", "textoDescritivo2", new Data ("2000/12/30"), new Data ("3000/12/30"), "local2", new Data ("2000/12/30"), "congresso"));
-        instance.createEvento (new evento("titulo3", "textoDescritivo3", new Data ("2000/12/30"), new Data ("2000/12/31"), "local3", new Data ("2000/12/30"), "congresso"));
-        List <evento> expResult = Arrays.asList(
-                new evento("titulo2", "textoDescritivo2", new Data ("2000/12/30"), new Data ("3000/12/30"), "local2", new Data ("2000/12/30"), "congresso")
-        );
-        List result = instance.getListaEventosOrganizadorDataSubmissaoFinalizada();
         assertEquals(expResult, result);
     }
 
@@ -74,8 +56,8 @@ public class centroDeEventosTest {
     public void testGetAlgoritmosAtribuicao() {
         System.out.println("getAlgoritmosAtribuicao");
         centroDeEventos instance = new centroDeEventos();
-        List <algoritmoAtribuicao> expResult = Arrays.asList(
-                new Algoritmo1(), new Algoritmo2(), new Algoritmo3()      
+        List<algoritmoAtribuicao> expResult = Arrays.asList(
+                new Algoritmo1(), new Algoritmo2(), new Algoritmo3()
         );
         List result = instance.getAlgoritmosAtribuicao();
         assertEquals(expResult, result);
@@ -111,7 +93,7 @@ public class centroDeEventosTest {
         System.out.println("getListaEvento");
         centroDeEventos instance = new centroDeEventos();
         instance.createEvento(new evento("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao"));
-        List <evento> expResult = Arrays.asList(
+        List<evento> expResult = Arrays.asList(
                 new evento("titulo", "textoDescritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao")
         );
         List result = instance.getListaEvento();
@@ -177,7 +159,8 @@ public class centroDeEventosTest {
     }
 
     /**
-     * Test of novoRegistoCandidaturaEmEventoFicheiro method, of class centroDeEventos.
+     * Test of novoRegistoCandidaturaEmEventoFicheiro method, of class
+     * centroDeEventos.
      */
     @Test
     public void testNovoRegistoCandidaturaEmEventoFicheiro() {
@@ -194,7 +177,8 @@ public class centroDeEventosTest {
     }
 
     /**
-     * Test of novoRegistoOrganizadorEmEventoFicheiro method, of class centroDeEventos.
+     * Test of novoRegistoOrganizadorEmEventoFicheiro method, of class
+     * centroDeEventos.
      */
     @Test
     public void testNovoRegistoOrganizadorEmEventoFicheiro() {
@@ -230,7 +214,7 @@ public class centroDeEventosTest {
         Data dataCandidatura = Data.dataAtual();
         String fae = "username";
         centroDeEventos instance = new centroDeEventos();
-        evento e = new evento("titulo", "textoExplicativo", Data.dataAtual(), Data.dataAtual(), "morada", Data.dataAtual(), "exposicao"); 
+        evento e = new evento("titulo", "textoExplicativo", Data.dataAtual(), Data.dataAtual(), "morada", Data.dataAtual(), "exposicao");
         instance.createEvento(e);
         utilizador u = new utilizador("nome", "email", "username", "password");
         instance.addRegistoUtilizadores(u);
@@ -253,7 +237,7 @@ public class centroDeEventosTest {
         Boolean decisaoFavoravel = true;
         String textoExplicativo = "sim";
         centroDeEventos instance = new centroDeEventos();
-        evento e = new evento("titulo", "textoExplicativo", Data.dataAtual(), Data.dataAtual(), "morada", Data.dataAtual(), "exposicao"); 
+        evento e = new evento("titulo", "textoExplicativo", Data.dataAtual(), Data.dataAtual(), "morada", Data.dataAtual(), "exposicao");
         instance.createEvento(e);
         utilizador u = new utilizador("nome", "email", "username", "password");
         instance.addRegistoUtilizadores(u);
@@ -271,11 +255,11 @@ public class centroDeEventosTest {
         System.out.println("getListaGestoresEventos");
         centroDeEventos instance = new centroDeEventos();
         instance.criarGestorEventos(new gestorDeEventos(new utilizador("nome", "email", "username", "password")));
-        List <gestorDeEventos> expResult = Arrays.asList(
+        List<gestorDeEventos> expResult = Arrays.asList(
                 new gestorDeEventos(new utilizador("nome", "email", "username", "password"))
         );
         List<gestorDeEventos> result = instance.getListaGestoresEventos();
         assertEquals(expResult, result);
     }
-    
+
 }

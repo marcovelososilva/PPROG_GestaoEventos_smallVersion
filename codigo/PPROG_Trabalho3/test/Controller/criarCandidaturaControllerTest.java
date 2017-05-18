@@ -69,47 +69,6 @@ public class criarCandidaturaControllerTest {
         assertEquals(expResult, result);
     }
 
-//    /**
-//     * Não consigo fazer este teste pois etou a criar uma candidatura nova
-//     * e não consigo fazer o equals com outra criada se ponho que é igual a null ele não deixa pois quer compara os dados
-//     * se ponho a comparar com um novo não deixa pois o metodo EQUALS reescrito não consegue comparar pois não NULLS
-//     */
-//    @Test
-//    public void testSelecionarEvento() {
-//        System.out.println("selecionarEvento");
-//        evento e = new evento("titulo1", "textoDescritivo1", new Data ("3000/12/30"), new Data ("3000/12/31"), "local1", new Data ("3000/11/30"), "exposicao");
-//        criarCandidaturaController instance = new criarCandidaturaController(new centroDeEventos());
-//        candidatura expResult = new candidatura();
-//        candidatura result = instance.selecionarEvento(e);
-//        assertNull(result);
-//        assertEquals(expResult, result);
-//    }
-
-    /**
-     * Não dá para fazer o teste a este porque, ao fazer set dos dados da candidatura fá-lo à instância
-     * que existe em private, logo não consigo ter acesso á referencia que existe dentro do controller
-     */
-//    @Test
-//    public void testSetDadosCandidatura() {
-//        System.out.println("setDadosCandidatura");
-//        
-//        criarCandidaturaController instance = new criarCandidaturaController(new centroDeEventos());
-//        evento e = new evento("titulo1", "textoDescritivo1", new Data ("3000/12/30"), new Data ("3000/12/31"), "local1", new Data ("3000/11/30"), "exposicao");
-//        instance.selecionarEvento(e);
-//        
-//        String nomeEmpresa = "empresa1";
-//        String responsavelCandidatura = "responsavel2";
-//        String morada = "morada3";
-//        int telefone = 1234556789;
-//        String textoExplicativoCandidatura = "explicativo4";
-//        
-//        instance.setDadosCandidatura(nomeEmpresa, responsavelCandidatura, morada, telefone, textoExplicativoCandidatura);
-//        candidatura expResult = new candidatura("empresa1", "responsavel2", "morada3", 123456789, "explicativo4", Data.dataAtual());
-//        
-//        assertEquals(e.getListaCandidatura().get(0), expResult);
-//    }
-
-
     /**
      * Test of validaCandidatura method, of class criarCandidaturaController.
      */

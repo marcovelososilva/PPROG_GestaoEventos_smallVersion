@@ -25,6 +25,10 @@ public class centroDeEventos {
         return ListaUtilizadores;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public List getListaEventosSubmissaoActiva() {
         List<evento> eventosActivos = new ArrayList<>();
         for (evento e : ListaEventos) {
@@ -37,57 +41,132 @@ public class centroDeEventos {
     }
 
     /**
-     * Mostra eventos que tem a data submissao ocorrida e este ainda nao
-     * finalizou
-     *
-     * @param o
+     * Mostra eventos que tem a data submissao caducada e este ainda nao finalizou
+     * 
+     * @param o - ORGANIZADOR do qual se pretende obter a lista de eventos com a submissão finalizada.
+     * @return List - eventosFinalizados - Lista de eventos de um ORGANIZADOR que tem a data de submissão finalizada.
      */
-    public List getListaEventosOrganizadorDataSubmissaoFinalizada() {
+    public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador OrganizadorEvento) {
         List<evento> eventosFinalizados = new ArrayList<>();
         for (evento e : ListaEventos) {
             Data hoje = Data.dataAtual();
             if ((e.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0
                     && e.getDataFim().compareTo(hoje) > 0) {
-                eventosFinalizados.add(e);
+                List<organizador> listaDeOrganizadores = e.getListaOrganizadores();
+                for (organizador o : listaDeOrganizadores){
+                    if ( o.equals(OrganizadorEvento)){
+                        eventosFinalizados.add(e);
+                        break;
+                    }
+                }
             }
         }
         return eventosFinalizados;
     }
 
     /**
-     *
-     *
+     * Mostra eventos que tem a data submissao caducada e este ainda nao finalizou
+     * 
+     * @param fae - FAE do qual se pretende obter a lista de eventos com a submissão finalizada.
+     * @return List - eventosFinalizados - Lista de eventos de um FAE que tem a data de submissão finalizada.
+     */
+    public List getListaEventosFAEDataSubmissaoFinalizada(fae FAEEvento) {
+        List<evento> eventosFinalizados = new ArrayList<>();
+        for (evento e : ListaEventos) {
+            Data hoje = Data.dataAtual();
+            if ((e.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0
+                    && e.getDataFim().compareTo(hoje) > 0) {
+                List<fae> listaDeFae = e.getListaFAE();
+                for (fae lfae : listaDeFae){
+                    if ( lfae.equals(FAEEvento)){
+                        eventosFinalizados.add(e);
+                        break;
+                    }
+                }
+            }
+        }
+        return eventosFinalizados;
+    }
+    
+    /**
+     * Devolve a lista de algoritmos que temos no programa;
+     * @return List - Lista de Algoritmos 
      */
     public List getAlgoritmosAtribuicao() {
         return ListaAlgoritmos;
     }
 
+    /**
+     * adiciona um gestor de eventos à lista de gestores de eventos,
+     * utilizador previamente validado e testado.
+     * 
+     * @param ge - GESTOR DE EVENTOs - um utilizador com papel de gestor de eventos 
+     */
     public void criarGestorEventos(gestorDeEventos ge) {
         ListaGestorEventos.add(ge);
     }
 
+    /**
+     * adiciona à lista de eventos um evento previamente criado validado e testado
+     * 
+     * @param e - EVENTO - recebe um evento para adicionar à lista de eventos 
+     */
     public void createEvento(evento e) {
         ListaEventos.add(e);
     }
 
+    /**
+     * devolve a lista de eventos do centro de eventos
+     * 
+     * @return List - lista dos eventos
+     */
     public List getListaEvento() {
         return ListaEventos;
     }
 
+    /**
+     * adiciona à lista de utilizadores um utilizador previamente criado validade e testado
+     * 
+     * @param u - UTILIZADOR - recebe um utilizador para adicionar à lista de utilizadores
+     */
     public void addRegistoUtilizadores(utilizador u) {
         ListaUtilizadores.add(u);
     }
 
+    /**
+     * método responsavel pela instânciação de utilizadores aquando da leitura apartir de ficheiro
+     * 
+     * @param nome - NOME -String que contem o nome do utilizador
+     * @param email - EMAIL - String que contem o email do utilizador
+     * @param username - USERNAME - String que contem o username do utilizador
+     * @param password - PASSWORD - String que contem a password do utilizador
+     */
     public void novoRegistoUtilizadorFicheiro(String nome, String email, String username, String password) {
         utilizador user = new utilizador(nome, email, username, password);
         ListaUtilizadores.add(user);
     }
 
+    /**
+     * método responsavel pela instânciação de eventos aquando da leitura apartir de ficheiro
+     * 
+     * @param titulo - TITULO - String que contem o titulo do evento
+     * @param textoDescritivo - TEXTO DESCRITIVO - String que contem o texto descritivo  do evento
+     * @param dataInicio - DATA DE INICIO - Data  que contem a data de inicio do evento
+     * @param dataFim - DATA DE FIM - Data que contem a data de fim do evento
+     * @param local - LOCAL - String que contem o local do evento
+     * @param dataLimiteSubmissaoCandidaturas - DATA LIMITE - Data que contem a data limite de submissao de candidaturas do evento
+     * @param tipo - TIPO DE EVENTO - EventoType que contem o tipo de evento que se trata
+     */
     public void novoRegistoEventoFicheiro(String titulo, String textoDescritivo, String dataInicio, String dataFim, String local, String dataLimiteSubmissaoCandidaturas, String tipo) {
         evento event = new evento(titulo, textoDescritivo, new Data(dataInicio), new Data(dataFim), local, new Data(dataLimiteSubmissaoCandidaturas), tipo);
         ListaEventos.add(event);
     }
 
+    /**
+     * 
+     * @param event - EVENTO - evento que contem o evento
+     * @param user  - UTILIZADOR - utilizador que contem o utilizador que terá papel de FAE num evento
+     */
     public void novoRegistoFaeEmEventoFicheiro(String event, String user) {
         evento eventoEncontrado = encontrarEventoLista(event);
         if (eventoEncontrado.getTitulo() != null) {

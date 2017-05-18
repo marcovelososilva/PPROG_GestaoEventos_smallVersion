@@ -15,10 +15,6 @@ public class fae {
         return user;
     }
 
-//    public void setUser(utilizador user) {
-//        this.user = user;
-//    }
-
     @Override
     public String toString() {
         return "::FAE::" + "user=" + user + '}';
@@ -28,4 +24,15 @@ public class fae {
         return "::FAE::" + " Username=" + user.getUsername();
     }  
 
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (this == outroObjeto) {
+            return true;
+        }
+        if (outroObjeto == null || getClass() != outroObjeto.getClass()) {
+            return false;
+        }
+        fae outroFAE = (fae) outroObjeto;
+        return this.user.equals(outroFAE.user);
+    }
 }
