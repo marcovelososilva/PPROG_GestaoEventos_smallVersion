@@ -3,6 +3,7 @@ package Controller;
 import Main_Class.centroDeEventos;
 import java.util.ArrayList;
 import Main_Class.evento;
+import Main_Class.organizador;
 import java.util.List;
 
 public class atribuirCandidaturaController {
@@ -57,8 +58,8 @@ public class atribuirCandidaturaController {
 		throw new UnsupportedOperationException();
 	}
 
-    public List getListaEventosDataSubmissaoCaducada() {
-        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada();
+    public List getListaEventosDataSubmissaoCaducada(organizador org) {
+        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
     }
     
 //    public List criarAtribuicao(int numAtribuicoes, evento e) {

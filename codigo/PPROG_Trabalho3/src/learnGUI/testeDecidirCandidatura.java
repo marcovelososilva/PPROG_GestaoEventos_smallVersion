@@ -12,6 +12,7 @@ import Main_Class.centroDeEventos;
 import Main_Class.decisao;
 import Main_Class.evento;
 import Main_Class.fae;
+import Main_Class.organizador;
 import Utils_Consola.utilitariosConsola;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -30,6 +31,8 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private decisao decisaoFeita;
     private boolean decisaoFavoravel;
     private decisao decisaoCandidatura;
+    private organizador org;
+    private fae f;
 
     /**
      * Creates new form testeDecidirCandidatura
@@ -93,20 +96,16 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha Evento"));
 
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
-        ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada= decidirCandController.getListaEventosOrganizadorDataSubmissaoFinalizada();
-
-        String[] strings = new String[ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.size()];
-        int i=0;
-        for (evento e: ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada){
-            strings[i]=e.getTitulo();
-            i++;
-        }
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(new javax.swing.AbstractListModel<String>() {
-
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        //jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
+        //ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada= decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
+        //System.out.println("xxxx");
+        //System.out.println(ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.size());
+        //String[] strings = new String[ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.size()];
+        //int i=0;
+        //for (evento e: ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada){
+            //    strings[i]=e.getTitulo();
+            //    i++;
+            //}
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(evt);
@@ -361,10 +360,10 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha FAE"));
 
-        ListFAE = decidirCandController.getListaEventosFAE();
+        ListFAE = decidirCandController.getListaFAEUnicosDosEventos();
         System.out.println(ListFAE.size());
         String[] stringsfae = new String[ListFAE.size()];
-        i=0;
+        int i=0;
         for (fae f: ListFAE){
             stringsfae[i]=f.getUser().getNome();
             i++;
@@ -456,10 +455,10 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         descritivoDataInicio.setText(e.getDataInicio().toString());
         descritivoDataFim.setText(e.getDataFim().toString());
         listaCandidaturas = decidirCandController.getListaCandidatura(e);
-        DefaultListModel dlm = new DefaultListModel();
-        jListCandidaturas.setModel(dlm);
+        DefaultListModel dlmjlcand = new DefaultListModel();
+        jListCandidaturas.setModel(dlmjlcand);
         for (candidatura cand : listaCandidaturas) {
-            dlm.addElement(cand.getNomeEmpresa());
+            dlmjlcand.addElement(cand.getNomeEmpresa());
         }
     }//GEN-LAST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
 
@@ -486,10 +485,20 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }//GEN-LAST:event_bRadioRecusadoMouseClicked
 
     private void botaoConfirmaFAEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmaFAEActionPerformed
-        jListFAE.setVisible(false);
+        System.out.println(jListFAE.getSelectedIndex());
+        fae f = ListFAE.get(jListFAE.getSelectedIndex());
+   //   jListFAE.setVisible(false);
+        ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada=decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
+        DefaultListModel dlmjleventos = new DefaultListModel();  
+        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(dlmjleventos);
+        for (evento e : ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada) {
+            dlmjleventos.addElement(e.getTitulo());
+        
+
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
     }//GEN-LAST:event_botaoConfirmaFAEActionPerformed
-
+    }
+    
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
         jListCandidaturas.setVisible(true);

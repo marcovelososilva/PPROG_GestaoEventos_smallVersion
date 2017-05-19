@@ -137,7 +137,7 @@
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList&lt;&gt;()"/>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada();&#xa;System.out.println(ListaEventosDataSubmissaoCaducada.size());&#xa;String[] strings = new String[ListaEventosDataSubmissaoCaducada.size()];&#xa;int i=0;&#xa;for (evento e: ListaEventosDataSubmissaoCaducada){&#xa;    strings[i]=e.getTitulo();&#xa;    i++;&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada(org);&#xa;System.out.println(ListaEventosDataSubmissaoCaducada.size());&#xa;String[] strings = new String[ListaEventosDataSubmissaoCaducada.size()];&#xa;int i=0;&#xa;for (evento e: ListaEventosDataSubmissaoCaducada){&#xa;    strings[i]=e.getTitulo();&#xa;    i++;&#xa;}"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>

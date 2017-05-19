@@ -10,6 +10,7 @@ import Main_Class.candidatura;
 import Main_Class.centroDeEventos;
 import Main_Class.evento;
 import Main_Class.fae;
+import Main_Class.organizador;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +25,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     private List<evento> ListaEventosDataSubmissaoCaducada;
     private List<fae> listaFAEdoEvento;
     private List<candidatura> listaCandidaturasEEvento;
+    private organizador org;
     
     /**
      * Creates new form testeAtribuirCandidatura
@@ -67,7 +69,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Eventos"));
 
-        ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada();
+        ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada(org);
         System.out.println(ListaEventosDataSubmissaoCaducada.size());
         String[] strings = new String[ListaEventosDataSubmissaoCaducada.size()];
         int i=0;

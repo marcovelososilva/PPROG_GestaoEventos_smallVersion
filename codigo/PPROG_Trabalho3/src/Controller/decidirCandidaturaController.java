@@ -11,6 +11,7 @@ public class decidirCandidaturaController {
     private candidatura candidaturaSelecionada;
     private decisao decisaoCandidatura;
     private List<fae> listaFAEEvento;
+    private fae f;
             
     public decidirCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
@@ -22,7 +23,7 @@ public class decidirCandidaturaController {
      * @param u
      * @return 
      */
-    public List<fae> getListaEventosFAE() {
+    public List<fae> getListaFAEUnicosDosEventos() {
         List<fae> listaFAE = new ArrayList<>();
         List<evento> listaEventos = ce.getListaEvento();
         for (evento ev: listaEventos){
@@ -31,14 +32,17 @@ public class decidirCandidaturaController {
                     if (!listaFAE.contains(f)) listaFAE.add(f);
                 }
         } 
-        System.out.println("espaco"+listaFAE.size());
         return listaFAE;
     }
 
-    public List getListaEventosOrganizadorDataSubmissaoFinalizada() {
-        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada();
+    public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador org) {
+        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
     }
-
+    
+    public List getListaEventosFAEDataSubmissaoFinalizada(fae f){
+        return ce.getListaEventosFAEDataSubmissaoFinalizada(f);
+    }
+    
     /**
      *
      * @param e
