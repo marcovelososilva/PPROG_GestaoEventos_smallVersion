@@ -6,12 +6,14 @@
 package learnGUI;
 
 import Controller.atribuirCandidaturaController;
+import Main_Class.algoritmoAtribuicao;
 import Main_Class.candidatura;
 import Main_Class.centroDeEventos;
 import Main_Class.evento;
 import Main_Class.fae;
 import Main_Class.organizador;
 import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,19 +21,22 @@ import javax.swing.table.DefaultTableModel;
  * @author JASM
  */
 public class testeAtribuirCandidatura extends javax.swing.JFrame {
-    
+
     private final centroDeEventos ce;
     private final atribuirCandidaturaController atribuirController;
     private List<evento> ListaEventosDataSubmissaoCaducada;
     private List<fae> listaFAEdoEvento;
-    private List<candidatura> listaCandidaturasEEvento;
+    private List<organizador> listaOrganizador;
+    private List<candidatura> listaCandidaturasEvento;
     private organizador org;
+    private List<evento> ListaEventosOrganizadorDataSubmissaoFinalizada;
+    private List<algoritmoAtribuicao> ListaAlgoritmos;
     
     /**
      * Creates new form testeAtribuirCandidatura
      */
     public testeAtribuirCandidatura(centroDeEventos ce) {
-        this.ce=ce;
+        this.ce = ce;
         atribuirController = new atribuirCandidaturaController(ce);
         initComponents();
     }
@@ -45,6 +50,10 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListaEventosDataSubmissaoCaducada = new javax.swing.JList<>();
@@ -58,30 +67,54 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         descritivoLocal = new javax.swing.JLabel();
         descritivoDataInicio = new javax.swing.JLabel();
         descritivoDataFim = new javax.swing.JLabel();
+        botaoConfirmaEvento = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         painelFAE = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTableFAE = new javax.swing.JTable();
-        painelCandidaturas = new javax.swing.JPanel();
+        jListFAEDoEvento = new javax.swing.JList<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jListCandidaturasDoEvento = new javax.swing.JList<>();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jListAlgoritmos = new javax.swing.JList<>();
+        botaoEmparelhar = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTableEmparelhamentoFAECandidatura = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        descritivoNome = new javax.swing.JLabel();
+        descritivoEmail = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jListOrganizador = new javax.swing.JList<>();
+        botaoConfirmaOrganizador = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Eventos"));
-
-        ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada(org);
-        System.out.println(ListaEventosDataSubmissaoCaducada.size());
-        String[] strings = new String[ListaEventosDataSubmissaoCaducada.size()];
-        int i=0;
-        for (evento e: ListaEventosDataSubmissaoCaducada){
-            strings[i]=e.getTitulo();
-            i++;
-        }
-        jListaEventosDataSubmissaoCaducada.setModel(new javax.swing.AbstractListModel<String>() {
-
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jScrollPane3.setViewportView(jList1);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable1);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jListaEventosDataSubmissaoCaducada.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Escolha o Evento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
+        jListaEventosDataSubmissaoCaducada.setMaximumSize(new java.awt.Dimension(0, 130));
         jListaEventosDataSubmissaoCaducada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListaEventosDataSubmissaoCaducadaMouseClicked(evt);
@@ -116,14 +149,21 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
 
         descritivoDataFim.setText("descritivoDataFim");
 
+        botaoConfirmaEvento.setText("Confirma Evento");
+        botaoConfirmaEvento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoConfirmaEventoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel3)
@@ -133,63 +173,53 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(descritivoDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                    .addComponent(descritivoDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(descritivoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(descritivoLocal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(descritivoDataInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(descritivoDataFim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoConfirmaEvento)
+                .addGap(328, 328, 328))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(descritivoTitulo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(descritivoDescricao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(descritivoLocal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(descritivoDataInicio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(descritivoDataFim)))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(descritivoTitulo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(descritivoDescricao))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(descritivoLocal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(descritivoDataInicio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(descritivoDataFim)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoConfirmaEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE))
         );
 
-        painelFAE.setBorder(javax.swing.BorderFactory.createTitledBorder("FAE"));
+        jListFAEDoEvento.setBorder(javax.swing.BorderFactory.createTitledBorder("FAE do Evento"));
+        jScrollPane2.setViewportView(jListFAEDoEvento);
 
-        jTableFAE.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "UserName", "E-mail"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(jTableFAE);
-        if (jTableFAE.getColumnModel().getColumnCount() > 0) {
-            jTableFAE.getColumnModel().getColumn(1).setResizable(false);
-        }
+        jListCandidaturasDoEvento.setBorder(javax.swing.BorderFactory.createTitledBorder("Candidaturas do Evento"));
+        jScrollPane5.setViewportView(jListCandidaturasDoEvento);
 
         javax.swing.GroupLayout painelFAELayout = new javax.swing.GroupLayout(painelFAE);
         painelFAE.setLayout(painelFAELayout);
@@ -197,28 +227,19 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
             painelFAELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFAELayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelFAELayout.setVerticalGroup(
             painelFAELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFAELayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelFAELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        painelCandidaturas.setBorder(javax.swing.BorderFactory.createTitledBorder("Candidaturas"));
-
-        javax.swing.GroupLayout painelCandidaturasLayout = new javax.swing.GroupLayout(painelCandidaturas);
-        painelCandidaturas.setLayout(painelCandidaturasLayout);
-        painelCandidaturasLayout.setHorizontalGroup(
-            painelCandidaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        painelCandidaturasLayout.setVerticalGroup(
-            painelCandidaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -226,25 +247,160 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(painelFAE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelCandidaturas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(painelFAE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFAE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(painelCandidaturas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(painelFAE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        jListAlgoritmos.setEnabled(false);
+        jListAlgoritmos.setBorder(javax.swing.BorderFactory.createTitledBorder("Algoritmos"));
+        jListAlgoritmos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jListAlgoritmos.setMaximumSize(new java.awt.Dimension(47, 120));
+        jListAlgoritmos.setMinimumSize(new java.awt.Dimension(47, 120));
+        jScrollPane6.setViewportView(jListAlgoritmos);
+
+        botaoEmparelhar.setText("jButton1");
+
+        jTableEmparelhamentoFAECandidatura.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jTableEmparelhamentoFAECandidatura.getTableHeader().setReorderingAllowed(false);
+        jScrollPane8.setViewportView(jTableEmparelhamentoFAECandidatura);
+
+        jButton1.setText("jButton1");
+
+        jLabel8.setText("Emparelhamento");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botaoEmparelhar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 139, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(botaoEmparelhar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1)))
+                        .addGap(11, 11, 11)))
+                .addContainerGap())
+        );
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel6.setText("Nome");
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel7.setText("E-mail");
+
+        descritivoNome.setText("jLabel8");
+
+        descritivoEmail.setText("jLabel9");
+
+        listaOrganizador = atribuirController.getListaOrganizadorUnicosDosEventos();
+        String[] stringsOrganizador = new String[listaOrganizador.size()];
+        int i=0;
+        for (organizador o: listaOrganizador){
+            stringsOrganizador[i]=o.getUser().getNome();
+            i++;
+        }
+        jListOrganizador.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Escolha o Organizador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
+        jListOrganizador.setModel(new javax.swing.AbstractListModel<String>() {
+
+            public int getSize() { return stringsOrganizador.length; }
+            public String getElementAt(int i) { return stringsOrganizador[i]; }
+        });
+        jListOrganizador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListOrganizadorMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jListOrganizador);
+
+        botaoConfirmaOrganizador.setText("Confirma Organizador");
+        botaoConfirmaOrganizador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoConfirmaOrganizadorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(descritivoEmail)
+                    .addComponent(descritivoNome))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoConfirmaOrganizador)
+                .addGap(313, 313, 313))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(descritivoNome))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(descritivoEmail))
+                        .addGap(0, 30, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoConfirmaOrganizador, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,6 +410,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -262,34 +419,76 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jListaEventosDataSubmissaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosDataSubmissaoCaducadaMouseClicked
-          evento e = ListaEventosDataSubmissaoCaducada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
-          descritivoTitulo.setText(e.getTitulo());
-          descritivoDescricao.setText(e.getTextoDescritivo());
-          descritivoLocal.setText(e.getLocal());
-          descritivoDataInicio.setText(e.getDataInicio().toString());
-          descritivoDataFim.setText(e.getDataFim().toString());
-          listaFAEdoEvento=atribuirController.getListaFAE(e);
-          
-          DefaultTableModel dtm = new DefaultTableModel();
-          jTableFAE.setModel(dtm);
-     //     row[0]="oi";
-//        for (candidatura cand : listaCandidaturas) {
-//            dlm.addElement(cand.getNomeEmpresa());
-//        }
+        System.out.println(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
+        evento e = ListaEventosOrganizadorDataSubmissaoFinalizada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
+        descritivoTitulo.setText(e.getTitulo());
+        descritivoDescricao.setText(e.getTextoDescritivo());
+        descritivoLocal.setText(e.getLocal());
+        descritivoDataInicio.setText(e.getDataInicio().toString());
+        descritivoDataFim.setText(e.getDataFim().toString());
+        listaFAEdoEvento = atribuirController.getListaFAE(e);
     }//GEN-LAST:event_jListaEventosDataSubmissaoCaducadaMouseClicked
+
+    private void jListOrganizadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListOrganizadorMouseClicked
+        organizador o = listaOrganizador.get(jListOrganizador.getSelectedIndex());
+        descritivoNome.setText(o.getUser().getNome());
+        descritivoEmail.setText(o.getUser().getEmail());
+    }//GEN-LAST:event_jListOrganizadorMouseClicked
+
+    private void botaoConfirmaOrganizadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaOrganizadorMouseClicked
+        jListOrganizador.setEnabled(false);
+        organizador o = listaOrganizador.get(jListOrganizador.getSelectedIndex());
+        ListaEventosOrganizadorDataSubmissaoFinalizada = atribuirController.getListaEventosOrganizadorDataSubmissaoFinalizada(o);
+        DefaultListModel dlmjleventos = new DefaultListModel();
+        jListaEventosDataSubmissaoCaducada.setModel(dlmjleventos);
+        for (evento e : ListaEventosOrganizadorDataSubmissaoFinalizada) {
+            dlmjleventos.addElement(e.getTitulo());
+        }
+        jListaEventosDataSubmissaoCaducada.setVisible(true);
+    }//GEN-LAST:event_botaoConfirmaOrganizadorMouseClicked
+
+    private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
+        jListaEventosDataSubmissaoCaducada.setEnabled(false);
+        evento e = ListaEventosOrganizadorDataSubmissaoFinalizada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
+        listaFAEdoEvento = atribuirController.getListaFAE(e);
+        DefaultListModel dlmJLFAE = new DefaultListModel();
+        jListFAEDoEvento.setModel(dlmJLFAE);
+        for (fae f : listaFAEdoEvento){
+            dlmJLFAE.addElement(f.getUser().getNome());
+        }
+        listaCandidaturasEvento = atribuirController.getListaCandidatura(e);
+        DefaultListModel dlmJLCandidaturasEvento = new DefaultListModel();
+        jListCandidaturasDoEvento.setModel(dlmJLCandidaturasEvento);
+        for (candidatura c: listaCandidaturasEvento){
+            dlmJLCandidaturasEvento.addElement(c.getNomeEmpresa());
+        }
+        jListFAEDoEvento.setVisible(true);
+        jListCandidaturasDoEvento.setVisible(true);
+        ce.getAlgoritmosAtribuicao();
+        ListaAlgoritmos = atribuirController.getAlgoritmosAtribuicao();
+        DefaultListModel dlmJLalgoritmos = new DefaultListModel();
+        jListAlgoritmos.setModel(dlmJLalgoritmos);
+        for (algoritmoAtribuicao alg: ListaAlgoritmos){
+            dlmJLalgoritmos.addElement(alg.getNome());
+        }
+        jListAlgoritmos.setEnabled(true);
+        
+    }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -332,24 +531,45 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoConfirmaEvento;
+    private javax.swing.JButton botaoConfirmaOrganizador;
+    private javax.swing.JButton botaoEmparelhar;
     private javax.swing.JLabel descritivoDataFim;
     private javax.swing.JLabel descritivoDataInicio;
     private javax.swing.JLabel descritivoDescricao;
+    private javax.swing.JLabel descritivoEmail;
     private javax.swing.JLabel descritivoLocal;
+    private javax.swing.JLabel descritivoNome;
     private javax.swing.JLabel descritivoTitulo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jListAlgoritmos;
+    private javax.swing.JList<String> jListCandidaturasDoEvento;
+    private javax.swing.JList<String> jListFAEDoEvento;
+    private javax.swing.JList<String> jListOrganizador;
     private javax.swing.JList<String> jListaEventosDataSubmissaoCaducada;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTableFAE;
-    private javax.swing.JPanel painelCandidaturas;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableEmparelhamentoFAECandidatura;
     private javax.swing.JPanel painelFAE;
     // End of variables declaration//GEN-END:variables
 }

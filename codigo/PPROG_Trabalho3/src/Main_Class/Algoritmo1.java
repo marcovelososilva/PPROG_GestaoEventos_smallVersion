@@ -16,6 +16,15 @@ public class Algoritmo1 implements algoritmoAtribuicao {
         descritivo = "Algoritmo distribui as candidaturas apenas por um FAE.";
     }
     
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescritivo() {
+        return descritivo;
+    }
+    
     @Override
     public String toString() {
         return nome + ",\nDescritivo:\n" + descritivo;

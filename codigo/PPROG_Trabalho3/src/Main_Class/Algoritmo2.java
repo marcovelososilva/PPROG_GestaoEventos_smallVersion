@@ -20,6 +20,15 @@ public class Algoritmo2 implements algoritmoAtribuicao{
         descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem aleatória sem qualquer parametro 1 a cada até acabar.";
     }
     
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescritivo() {
+        return descritivo;
+    }
+    
     @Override
     public String toString() {
         return nome + ",\nDescritivo:\n" + descritivo;

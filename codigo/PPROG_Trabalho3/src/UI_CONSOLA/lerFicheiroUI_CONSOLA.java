@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,12 +35,13 @@ public class lerFicheiroUI_CONSOLA {
         try {
             boolean tudoOk = inputFicheiroInicial(ficheiro);
             if (tudoOk) {
-                utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
+                JOptionPane.showMessageDialog (null, "OPERAÇÃO REALIZADA COM SUCESSO!", "Informacao", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                utilitariosConsola.escreverConsola("OPERAÇÃO GEROU ERROS E NÃO FOI COMPLETADA");
+                JOptionPane.showMessageDialog (null, "OPERAÇÃO GEROU ERROS E NÃO FOI COMPLETADA", "Informacao", JOptionPane.ERROR_MESSAGE);
             }
         } catch (IOException e) {
             utilitariosConsola.escreverConsola("O FICHEIRO " + ficheiro + " não existe ou não tem permissões para ser lido!");
+            
         }
     }
 
@@ -114,7 +117,8 @@ public class lerFicheiroUI_CONSOLA {
             }
             input.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("[ i ] O ficheiro " + fileName + " não existe no directorio atual");
+            JOptionPane.showMessageDialog (null, "O FICHEIRO " + fileName + " não existe ou não tem permissões para ser lido!", "Informacao", JOptionPane.ERROR_MESSAGE);
+            tudoOk=false;
         }
         return tudoOk;
     }

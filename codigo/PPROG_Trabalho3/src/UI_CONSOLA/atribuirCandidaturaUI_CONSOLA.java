@@ -19,7 +19,7 @@ public class atribuirCandidaturaUI_CONSOLA {
     public void run() {
         utilitariosConsola.inicioEscritaConsola("ATRIBUIR CANDIDATURA");
 //          1. obter a lista de eventos com a submissao caducada
-        List<evento> listaEventosDataCaducados = acController.getListaEventosDataSubmissaoCaducada(org);
+        List<evento> listaEventosDataCaducados = acController.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
 //          2. selecionar o evento (e)
         //imprime a lista de eventos
         utilitariosConsola.escreverConsola("###EVENTOS:");
@@ -40,7 +40,7 @@ public class atribuirCandidaturaUI_CONSOLA {
         System.out.println("Para o evento selecionado: " + listaEventosDataCaducados.get(numEvento).getTitulo() + ", existem:\n "
                            + listaFAEdoEvento.size() + " FAE´s\n " + listaCandidaturasEEvento.size() + " Candidaturas.");
 //          5. apresentar a lista de algoritmos
-        List<algoritmoAtribuicao> listaAlgoritmos = acController.getAlgoritmosAtribuicao(listaEventosDataCaducados.get(numEvento));
+        List<algoritmoAtribuicao> listaAlgoritmos = acController.getAlgoritmosAtribuicao();
 //          6. seleciona um algoritmo
         //imprime a lista de algoritmos
         utilitariosConsola.escreverConsola("###ALGORITMOS:");

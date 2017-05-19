@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class Algoritmo3 implements algoritmoAtribuicao{
     private final String nome;
+
     private final String descritivo;
 
     public Algoritmo3() {
@@ -20,6 +21,13 @@ public class Algoritmo3 implements algoritmoAtribuicao{
         descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem Aleatória invertida 1 cada ate acabar";
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescritivo() {
+        return descritivo;
+    }
     @Override
     public String toString() {
         return nome + ",\nDescritivo:\n" + descritivo;

@@ -57,7 +57,8 @@ Cong Treinadores;congresso de treinadores e sobre treinadores;2017/07/08;2017/07
 Cong Ensino;congresso de ensino e sobre ensino;2017/07/15;2017/07/16;Espinho;2017/07/09;congresso
 Cong Internet;congresso de internet e sobre internet;2017/07/22;2017/07/23;Porto;2017/07/16;congresso;
 Expo data submissao caducada;exposicao para poder atribuir candidatura;2017/04/09;2017/04/10;Paços de Ferreira;2017/05/01;exposicao;
-Cong data submissao caducada;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
+Cong data submissao caducada1;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
+Cong data submissao caducada2;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
 Cong data submissao caducada;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
 end
 
@@ -84,8 +85,8 @@ Expo data submissao caducada;tfonseca;
 Expo data submissao caducada;zandrade
 Expo data submissao caducada;rhenriques;
 Expo data submissao caducada;piguana;
-Cong data submissao caducada;piguana;
-Cong data submissao caducada;ojesus;
+Cong data submissao caducada1;piguana;
+Cong data submissao caducada2;ojesus;
 end
 
 
@@ -94,8 +95,9 @@ Expo Carros;nlima;
 Expo Carros;nlopes;
 Cong Medicina;dveiga;
 Cong Medicina;euva;
-Cong data submissao caducada;nlima;
-Cong data submissao caducada;nlopes;
+Cong data submissao caducada1;nlima;
+Cong data submissao caducada1;nlopes;
+Cong data submissao caducada2;nlima;
 Expo data submissao caducada;dveiga;
 Expo data submissao caducada;euva;
 end
@@ -108,10 +110,10 @@ Cong Medicina;MesasePernas;Manual Marco;Porto;441133660;textoExplicativoCandidat
 Expo Carros;BelasBonitas;Maria;Lisboa;778899445;textoExplicativoCandidatura5;2017/02/05;
 Cong Medicina;CaneleirasBiqueiras;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25;
 Cong Medicina;VrumVrum;KeyMaster;Portalegre;987654321;textoExplicativoCandidatura7;2014/01/13;
-Cong data submissao caducada;Coisas Lindas Lda;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25;
-Cong data submissao caducada;Lindona S.A.;Marcio;Calle 1;811223145;textoExplicativoCandidatura22;2017/05/08;
-Cong data submissao caducada;Pedrito Lda.;Xana;Calle 2;711223145;textoExplicativoCandidatura33;2017/05/08;
-Cong data submissao caducada;Kukuklanes Lda.;Glorinha;Calle 3;611223145;textoExplicativoCandidatura44;2017/05/08;
+Cong data submissao caducada1;Coisas Lindas Lda;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25;
+Cong data submissao caducada1;Lindona S.A.;Marcio;Calle 1;811223145;textoExplicativoCandidatura22;2017/05/08;
+Cong data submissao caducada2;Pedrito Lda.;Xana;Calle 2;711223145;textoExplicativoCandidatura33;2017/05/08;
+Cong data submissao caducada2;Kukuklanes Lda.;Glorinha;Calle 3;611223145;textoExplicativoCandidatura44;2017/05/08;
 Expo data submissao caducada;Kucada S.A.;Salvadorzinho;Calle 4;511223145;textoExplicativoCandidatura55;2017/05/08;
 Expo data submissao caducada;Lambido Lda;Luisinho;Calle 5;411223145;textoExplicativoCandidatura66;2017/05/08;
 Expo data submissao caducada;Melhor do mundo;Pedrão;Calle 6;311223145;textoExplicativoCandidatura77;2017/05/08;

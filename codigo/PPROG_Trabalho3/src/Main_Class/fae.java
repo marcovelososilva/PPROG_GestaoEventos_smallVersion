@@ -24,6 +24,9 @@ public class fae {
         return "::FAE::" + " Username=" + user.getUsername();
     }  
 
+    public String toStringNome(){
+        return user.getNome();
+    }
     @Override
     public boolean equals(Object outroObjeto) {
         if (this == outroObjeto) {

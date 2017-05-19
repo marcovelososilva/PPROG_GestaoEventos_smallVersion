@@ -7,12 +7,14 @@ package learnGUI;
 
 import Controller.criarCandidaturaController;
 import Controller.decidirCandidaturaController;
+import Main_Class.algoritmoAtribuicao;
 import Main_Class.candidatura;
 import Main_Class.centroDeEventos;
 import Main_Class.decisao;
 import Main_Class.evento;
 import Main_Class.fae;
 import Main_Class.organizador;
+import Main_Class.utilizador;
 import Utils_Consola.utilitariosConsola;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -33,6 +35,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private decisao decisaoCandidatura;
     private organizador org;
     private fae f;
+    private candidatura cand;
 
     /**
      * Creates new form testeDecidirCandidatura
@@ -90,22 +93,18 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListFAE = new javax.swing.JList<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        descritivoNome = new javax.swing.JLabel();
+        descritivoEmail = new javax.swing.JLabel();
         botaoConfirmaFAE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha Evento"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha o Evento"));
 
-        //jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
-        //ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada= decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
-        //System.out.println("xxxx");
-        //System.out.println(ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.size());
-        //String[] strings = new String[ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.size()];
-        //int i=0;
-        //for (evento e: ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada){
-            //    strings[i]=e.getTitulo();
-            //    i++;
-            //}
+        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
+        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setFocusable(false);
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(evt);
@@ -167,26 +166,31 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(descritivoTitulo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(descritivoDescricao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(descritivoLocal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(descritivoDataInicio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(descritivoDataFim)))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(descritivoTitulo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(descritivoDescricao)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(descritivoLocal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(descritivoDataInicio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(descritivoDataFim)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha Candidatura"));
@@ -242,12 +246,12 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(descritivoTextoExplicativoCandidatura, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
-                    .addComponent(descritivoNomeDaEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(descritivoTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(descritivoMorada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(descritivoResponsavel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(descritivoTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descritivoMorada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descritivoResponsavel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descritivoTextoExplicativoCandidatura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                    .addComponent(descritivoNomeDaEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -271,11 +275,13 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                     .addComponent(descritivoResponsavel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(descritivoTextoExplicativoCandidatura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15)
+                    .addComponent(descritivoTextoExplicativoCandidatura))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Descreva Decisão sobre a Candidatura"));
@@ -357,11 +363,15 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         });
 
         botaoConfirmaCandidatura.setText("Confirma Candidatura");
+        botaoConfirmaCandidatura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoConfirmaCandidaturaMouseClicked(evt);
+            }
+        });
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha FAE"));
 
         ListFAE = decidirCandController.getListaFAEUnicosDosEventos();
-        System.out.println(ListFAE.size());
         String[] stringsfae = new String[ListFAE.size()];
         int i=0;
         for (fae f: ListFAE){
@@ -372,7 +382,20 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             public int getSize() { return stringsfae.length; }
             public String getElementAt(int i) { return stringsfae[i]; }
         });
+        jListFAE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListFAEMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jListFAE);
+
+        jLabel6.setText("Nome");
+
+        jLabel7.setText("Email");
+
+        descritivoNome.setText("jLabel8");
+
+        descritivoEmail.setText("jLabel9");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -381,6 +404,14 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(descritivoEmail)
+                    .addComponent(descritivoNome))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -388,6 +419,16 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(descritivoNome))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(descritivoEmail))
+                .addGap(12, 12, 12))
         );
 
         botaoConfirmaFAE.setText("Confirma FAE");
@@ -402,7 +443,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(263, 263, 263)
+                .addGap(257, 257, 257)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(botaoConfirmaFAE)
                     .addComponent(botaoConfirmaEvento)
@@ -442,7 +483,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
-        candidatura cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
         decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
         decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText());
     }//GEN-LAST:event_botaoSubmeterActionPerformed
@@ -485,24 +525,32 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }//GEN-LAST:event_bRadioRecusadoMouseClicked
 
     private void botaoConfirmaFAEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmaFAEActionPerformed
-        System.out.println(jListFAE.getSelectedIndex());
+        jListFAE.setEnabled(false);
         fae f = ListFAE.get(jListFAE.getSelectedIndex());
-   //   jListFAE.setVisible(false);
         ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada=decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
         DefaultListModel dlmjleventos = new DefaultListModel();  
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(dlmjleventos);
         for (evento e : ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada) {
             dlmjleventos.addElement(e.getTitulo());
-        
-
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
     }//GEN-LAST:event_botaoConfirmaFAEActionPerformed
+         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
     }
     
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
+        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(false);
         jListCandidaturas.setVisible(true);
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
+
+    private void jListFAEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFAEMouseClicked
+        fae f = ListFAE.get(jListFAE.getSelectedIndex());
+        descritivoNome.setText(f.getUser().getNome());
+        descritivoEmail.setText(f.getUser().getEmail());
+    }//GEN-LAST:event_jListFAEMouseClicked
+
+    private void botaoConfirmaCandidaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaCandidaturaMouseClicked
+        candidatura cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
+        jListCandidaturas.setEnabled(false);
+    }//GEN-LAST:event_botaoConfirmaCandidaturaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -555,8 +603,10 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private javax.swing.JLabel descritivoDataFim;
     private javax.swing.JLabel descritivoDataInicio;
     private javax.swing.JLabel descritivoDescricao;
+    private javax.swing.JLabel descritivoEmail;
     private javax.swing.JLabel descritivoLocal;
     private javax.swing.JLabel descritivoMorada;
+    private javax.swing.JLabel descritivoNome;
     private javax.swing.JLabel descritivoNomeDaEmpresa;
     private javax.swing.JLabel descritivoResponsavel;
     private javax.swing.JLabel descritivoTelefone;
@@ -574,6 +624,8 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jListCandidaturas;
     private javax.swing.JList<String> jListFAE;
     private javax.swing.JList<String> jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada;
