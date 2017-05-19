@@ -70,6 +70,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         botaoConfirmaEvento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("UC 5 - Criar Candidatura");
 
         listaEventosActivos = criarCandController.getListaEventosSubmissaoActiva();
         String[] strings = new String[listaEventosActivos.size()];

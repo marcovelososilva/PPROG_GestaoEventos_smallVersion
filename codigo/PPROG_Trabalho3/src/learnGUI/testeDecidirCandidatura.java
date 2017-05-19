@@ -100,6 +100,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         botaoConfirmaFAE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("UC 4 - Decidir Candidatura");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha o Evento"));
 
