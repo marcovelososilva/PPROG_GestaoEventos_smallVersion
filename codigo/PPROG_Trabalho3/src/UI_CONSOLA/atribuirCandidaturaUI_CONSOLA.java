@@ -74,7 +74,7 @@ public class atribuirCandidaturaUI_CONSOLA {
                 numAlgoritmo = fornecerProximoIntAlgoritmo(numAlgoritmo, listaAlgoritmos.size());
                 utilitariosConsola.escreverConsola("RESULTADO COM UM NOVO ALGORITMO");
             } else {
-//                listaAtribuicoesEvento.addAll(atribuicaoTEMP);
+                listaAtribuicoesEvento.addAll(atribuicaoTEMP);
 //          10.informa do sucesso da operação               
                 utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO");
             }          

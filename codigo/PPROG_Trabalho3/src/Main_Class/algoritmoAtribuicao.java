@@ -7,5 +7,7 @@ public interface algoritmoAtribuicao {
     public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes);
 
     public Object getNome();
+
+    public String getDescritivo();
     
 }
