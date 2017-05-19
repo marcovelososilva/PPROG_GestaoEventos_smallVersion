@@ -1,6 +1,8 @@
 package Main_Class;
 
-public class organizador {
+import java.io.Serializable;
+
+public class organizador implements Serializable{
     
     utilizador user;
 

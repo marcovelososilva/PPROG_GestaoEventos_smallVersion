@@ -1,6 +1,8 @@
 package Main_Class;
 
-public class atribuicao {
+import java.io.Serializable;
+
+public class atribuicao implements Serializable{
 	private fae fae;
 	private candidatura candidatura;
 

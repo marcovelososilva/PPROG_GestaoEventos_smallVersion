@@ -16,14 +16,14 @@ import java.io.Serializable;
  */
 public class lerBinarioUI_CONSOLA implements Serializable{
     
-    public static void main(String[] args) throws FileNotFoundException{
-        String fileNameIn = "evento.out";
-        
-        escreverFicheiroBinarioController efbController = new escreverFicheiroBinarioController();
-        lerFicheiroBinarioController lfbController = new lerFicheiroBinarioController();
-        
-//        lfbController.escreverSerial();
-        efbController.serializationFicheiro(fileNameIn);
-        lfbController.lerBinario(fileNameIn);
-    }
+//    public static void main(String[] args) throws FileNotFoundException{
+//        String fileNameIn = "evento.out";
+//        
+//        escreverFicheiroBinarioController efbController = new escreverFicheiroBinarioController();
+//        lerFicheiroBinarioController lfbController = new lerFicheiroBinarioController();
+//        
+////        lfbController.escreverSerial();
+//        efbController.serializationFicheiro(fileNameIn);
+//        lfbController.lerBinario(fileNameIn);
+//    }
 }

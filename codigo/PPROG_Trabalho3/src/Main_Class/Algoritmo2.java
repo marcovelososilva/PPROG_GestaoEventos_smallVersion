@@ -5,13 +5,14 @@
  */
 package Main_Class;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author Marco
  */
-public class Algoritmo2 implements algoritmoAtribuicao{
+public class Algoritmo2 implements algoritmoAtribuicao, Serializable{
     private final String nome;
     private final String descritivo;
 

@@ -1,10 +1,11 @@
 package Main_Class;
 
 import Utils.Data;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class centroDeEventos {
+public class centroDeEventos implements Serializable{
 
     private final List<gestorDeEventos> ListaGestorEventos;
     private final List<utilizador> ListaUtilizadores;

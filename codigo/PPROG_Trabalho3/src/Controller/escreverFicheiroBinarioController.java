@@ -5,8 +5,7 @@
  */
 package Controller;
 
-import Main_Class.evento;
-import Utils.Data;
+import Main_Class.centroDeEventos;
 import java.io.*;
 
 /**
@@ -15,18 +14,22 @@ import java.io.*;
  */
 public class escreverFicheiroBinarioController implements Serializable{
     
-    public void serializationFicheiro (String fileName) {
-        evento e = new evento("titulo Oi", "texto Descritivo", Data.dataAtual(), Data.dataAtual(), "local", Data.dataAtual(), "exposicao");
-      
+    private final centroDeEventos ce;
+
+    public escreverFicheiroBinarioController(centroDeEventos ce) {
+        this.ce = ce;
+    }
+    
+    
+    public void serializationFicheiro () {
       try {
-         FileOutputStream fileOut = new FileOutputStream("binario.bin");
+         FileOutputStream fileOut = new FileOutputStream("ficheiroBinarioCentroEventos.bin");
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
-         out.writeObject(e);
+         out.writeObject(ce);
          out.close();
          fileOut.close();
-         System.out.printf("Serialized data is saved in /tmp/employee.ser");
       }catch(IOException i) {
           System.out.println("IO EXCEPTION - erro!");
       }
-    }
+}
 }

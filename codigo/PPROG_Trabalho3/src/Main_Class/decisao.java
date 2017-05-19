@@ -1,6 +1,8 @@
 package Main_Class;
 
-public class decisao {
+import java.io.Serializable;
+
+public class decisao implements Serializable{
 
     private String textoDecisao;
     private boolean aprovada;

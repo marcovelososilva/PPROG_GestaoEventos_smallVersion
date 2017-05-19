@@ -1,9 +1,10 @@
 package Main_Class;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class congresso implements EventType {
+public class congresso implements EventType, Serializable{
 
         private List <workshop> listaWorshops;
     

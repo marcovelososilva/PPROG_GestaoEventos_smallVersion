@@ -5,11 +5,8 @@
  */
 package Main_Class;
 
-import UI_CONSOLA.atribuirCandidaturaUI_CONSOLA;
-import UI_CONSOLA.criarCandidaturaUI_CONSOLA;
-import UI_CONSOLA.decidirCandidaturaUI_CONSOLA;
-import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
-import UI_CONSOLA.lerFicheiroUI_CONSOLA;
+import Controller.*;
+import UI_CONSOLA.*;
 import Utils.Data;
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +20,7 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        centroDeEventos ce = new centroDeEventos();
+        centroDeEventos ce = new lerFicheiroBinarioController().lerBinario();
         //criar um gestor de eventos;
         menu(ce);     
     
@@ -45,7 +42,7 @@ public class main {
             System.out.println("5. ATRIBUIR CANDIDATURA");
             System.out.println("6. ESCREVER EM FICHEIRO");
             System.out.println("7. DECIDIR CANDIDATURA");
-            System.out.println("8. --XXX--");
+            System.out.println("8. ESCREVER BINARIO");
             System.out.println("9. --XXX--");
             System.out.println("0. Sair");
             System.out.println ("\nPor favor escolha uma das opções apresentadas.\n");
@@ -62,7 +59,7 @@ public class main {
                 case "3":
                     System.out.println("\n==CARREGAR DE FICHEIRO==");
                     lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
-        //            lfUI_CONSOLA.run();
+                    lfUI_CONSOLA.run("input.txt");
                     break;
                 case "4":
                     System.out.println("\n==CRIAR CANDIDATURA==");
@@ -85,7 +82,9 @@ public class main {
                     dcUI_CONSOLA.run();
                     break;
                 case "8":
-                    System.out.println("\n==--XXX--==");
+                    System.out.println("\n==ESCREVER BINARIO==");
+                    escreverFicheiroBinarioController ebController = new escreverFicheiroBinarioController(ce); 
+                    ebController.serializationFicheiro();
                     break;
                 case "9":
                     System.out.println("\n==--XXX--==");

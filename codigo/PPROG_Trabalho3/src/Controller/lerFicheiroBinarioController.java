@@ -7,10 +7,6 @@ package Controller;
 
 import java.io.*;
 import Main_Class.*;
-import java.util.Arrays;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -18,22 +14,19 @@ import java.util.logging.Logger;
  */
 public class lerFicheiroBinarioController implements Serializable {
     
-
-    public void lerBinario(String fileName) {
-
-        evento e = null;
+    public centroDeEventos lerBinario( ) {
+        centroDeEventos ce = new centroDeEventos();
         try {
-            FileInputStream fileIn = new FileInputStream("binario.bin");
+            FileInputStream fileIn = new FileInputStream("ficheiroBinarioCentroEventos.bin");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            e = (evento) in.readObject();
+            ce = (centroDeEventos) in.readObject();
             in.close();
             fileIn.close();
-            System.out.println("o evento lido foi:" + e.toString());
-        } catch (IOException i) {
-            System.out.println("NUM DEU!");
-        } catch (ClassNotFoundException c) {
-            System.out.println("Employee class not found");
+        } catch (IOException | ClassNotFoundException i) {
+            ce = new centroDeEventos();
+        } finally{
+            return ce;
         }
-    }
+}
 
 }

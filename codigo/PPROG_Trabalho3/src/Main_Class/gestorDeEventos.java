@@ -1,9 +1,11 @@
 package Main_Class;
 
-import com.sun.org.apache.xpath.internal.operations.Equals;
+import java.io.Serializable;
 
-public class gestorDeEventos {
-    utilizador user;
+
+public class gestorDeEventos implements Serializable{
+    
+    private utilizador user;
     
     public gestorDeEventos(utilizador user) {
         this.user = user;
