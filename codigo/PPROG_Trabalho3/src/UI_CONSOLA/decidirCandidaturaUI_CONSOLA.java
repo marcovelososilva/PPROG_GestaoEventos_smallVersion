@@ -14,6 +14,7 @@ public class decidirCandidaturaUI_CONSOLA {
     private evento eventoSelecionado;
     private candidatura candidaturaFeita;
     private decisao decisaoFeita;
+    private organizador org;
 
     public decidirCandidaturaUI_CONSOLA(centroDeEventos ce) {
         this.ce = ce;
@@ -23,7 +24,7 @@ public class decidirCandidaturaUI_CONSOLA {
     public void run() {
         utilitariosConsola.inicioEscritaConsola("DECIDIR CANDIDATURA");
         //pede a lista de eventos com submissao terminada
-        listaEventosActivos = decidirCandController.getListaEventosOrganizadorDataSubmissaoFinalizada();
+        listaEventosActivos = decidirCandController.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
 
         //imprime a lista de eventos
         utilitariosConsola.escreverConsola("###EVENTOS:");

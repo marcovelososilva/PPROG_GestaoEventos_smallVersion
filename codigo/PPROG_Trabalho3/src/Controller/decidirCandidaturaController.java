@@ -1,6 +1,7 @@
 package Controller;
 
 import Main_Class.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class decidirCandidaturaController {
@@ -9,7 +10,9 @@ public class decidirCandidaturaController {
     private evento eventoSelecionado;
     private candidatura candidaturaSelecionada;
     private decisao decisaoCandidatura;
-    
+    private List<fae> listaFAEEvento;
+    private fae f;
+            
     public decidirCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
     }
@@ -18,16 +21,28 @@ public class decidirCandidaturaController {
     /**
      *
      * @param u
+     * @return 
      */
-    public void getListaEventosFAE(utilizador u) {
-        // TODO - implement decidirCandidaturaController.getListaEventosFAE
-        throw new UnsupportedOperationException();
+    public List<fae> getListaFAEUnicosDosEventos() {
+        List<fae> listaFAE = new ArrayList<>();
+        List<evento> listaEventos = ce.getListaEvento();
+        for (evento ev: listaEventos){
+            List<fae> listaFAEEvento = ev.getListaFAE();
+                for (fae f: listaFAEEvento){
+                    if (!listaFAE.contains(f)) listaFAE.add(f);
+                }
+        } 
+        return listaFAE;
     }
 
-    public List getListaEventosOrganizadorDataSubmissaoFinalizada() {
-        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada();
+    public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador org) {
+        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
     }
-
+    
+    public List getListaEventosFAEDataSubmissaoFinalizada(fae f){
+        return ce.getListaEventosFAEDataSubmissaoFinalizada(f);
+    }
+    
     /**
      *
      * @param e

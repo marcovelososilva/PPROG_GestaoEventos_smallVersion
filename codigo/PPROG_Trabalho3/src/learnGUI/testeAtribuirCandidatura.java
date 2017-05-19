@@ -10,6 +10,7 @@ import Main_Class.candidatura;
 import Main_Class.centroDeEventos;
 import Main_Class.evento;
 import Main_Class.fae;
+import Main_Class.organizador;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +25,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     private List<evento> ListaEventosDataSubmissaoCaducada;
     private List<fae> listaFAEdoEvento;
     private List<candidatura> listaCandidaturasEEvento;
+    private organizador org;
     
     /**
      * Creates new form testeAtribuirCandidatura
@@ -67,7 +69,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Eventos"));
 
-        ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada();
+        ListaEventosDataSubmissaoCaducada= atribuirController.getListaEventosDataSubmissaoCaducada(org);
         System.out.println(ListaEventosDataSubmissaoCaducada.size());
         String[] strings = new String[ListaEventosDataSubmissaoCaducada.size()];
         int i=0;
@@ -173,10 +175,21 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Nome", "E-mail"
+                "UserName", "E-mail"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTableFAE);
+        if (jTableFAE.getColumnModel().getColumnCount() > 0) {
+            jTableFAE.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout painelFAELayout = new javax.swing.GroupLayout(painelFAE);
         painelFAE.setLayout(painelFAELayout);

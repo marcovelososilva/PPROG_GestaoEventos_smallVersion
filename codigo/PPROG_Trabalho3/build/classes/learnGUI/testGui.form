@@ -51,7 +51,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="57" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
@@ -119,7 +119,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="botaoCarregarDadosFicheiro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CDF"/>
+            <Property name="text" type="java.lang.String" value="Read"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCarregarDadosFicheiroActionPerformed"/>
@@ -127,7 +127,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="botaoEscreverDadosFicheiro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="EDF"/>
+            <Property name="text" type="java.lang.String" value="Write"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
           <Events>
@@ -136,7 +136,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="botaoImprimirDados">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ID"/>
+            <Property name="text" type="java.lang.String" value="Print"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoImprimirDadosActionPerformed"/>
@@ -207,15 +207,16 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="botaoCriarCandidatura">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CC"/>
+            <Property name="text" type="java.lang.String" value="UC5"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botaoCriarCandidaturaMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCriarCandidaturaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botaoAtribuirCandidatura">
           <Properties>
-            <Property name="text" type="java.lang.String" value="AC"/>
+            <Property name="text" type="java.lang.String" value="UC3"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAtribuirCandidaturaActionPerformed"/>
@@ -223,7 +224,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="botaoDecidirCandidatura">
           <Properties>
-            <Property name="text" type="java.lang.String" value="DC"/>
+            <Property name="text" type="java.lang.String" value="UC4"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoDecidirCandidaturaActionPerformed"/>

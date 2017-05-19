@@ -63,14 +63,14 @@ public class testGui extends javax.swing.JFrame {
 
         jLabel1.setText("Trabalho PPROG IT3");
 
-        botaoCarregarDadosFicheiro.setText("CDF");
+        botaoCarregarDadosFicheiro.setText("Read");
         botaoCarregarDadosFicheiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCarregarDadosFicheiroActionPerformed(evt);
             }
         });
 
-        botaoEscreverDadosFicheiro.setText("EDF");
+        botaoEscreverDadosFicheiro.setText("Write");
         botaoEscreverDadosFicheiro.setAutoscrolls(true);
         botaoEscreverDadosFicheiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +78,7 @@ public class testGui extends javax.swing.JFrame {
             }
         });
 
-        botaoImprimirDados.setText("ID");
+        botaoImprimirDados.setText("Print");
         botaoImprimirDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoImprimirDadosActionPerformed(evt);
@@ -130,21 +130,26 @@ public class testGui extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        botaoCriarCandidatura.setText("CC");
+        botaoCriarCandidatura.setText("UC5");
+        botaoCriarCandidatura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoCriarCandidaturaMouseClicked(evt);
+            }
+        });
         botaoCriarCandidatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCriarCandidaturaActionPerformed(evt);
             }
         });
 
-        botaoAtribuirCandidatura.setText("AC");
+        botaoAtribuirCandidatura.setText("UC3");
         botaoAtribuirCandidatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAtribuirCandidaturaActionPerformed(evt);
             }
         });
 
-        botaoDecidirCandidatura.setText("DC");
+        botaoDecidirCandidatura.setText("UC4");
         botaoDecidirCandidatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoDecidirCandidaturaActionPerformed(evt);
@@ -256,7 +261,7 @@ public class testGui extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -271,8 +276,9 @@ public class testGui extends javax.swing.JFrame {
     private void botaoCarregarDadosFicheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCarregarDadosFicheiroActionPerformed
         lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
         String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
-        lfUI_CONSOLA.run(ficheiro);
-
+        if (ficheiro!=null){
+            lfUI_CONSOLA.run(ficheiro);
+        }
     }//GEN-LAST:event_botaoCarregarDadosFicheiroActionPerformed
     private void botaoAtribuirCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAtribuirCandidaturaActionPerformed
         testeAtribuirCandidatura ac = new testeAtribuirCandidatura(ce);
@@ -282,7 +288,9 @@ public class testGui extends javax.swing.JFrame {
     private void botaoEscreverDadosFicheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEscreverDadosFicheiroActionPerformed
         escreverFicheiroUI_CONSOLA efUI_CONSOLA = new escreverFicheiroUI_CONSOLA(ce);
         String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
-        efUI_CONSOLA.run(ficheiro);
+        if (ficheiro!=null){
+            efUI_CONSOLA.run(ficheiro);
+        }
     }//GEN-LAST:event_botaoEscreverDadosFicheiroActionPerformed
 
     private void botaoImprimirDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImprimirDadosActionPerformed
@@ -299,6 +307,10 @@ public class testGui extends javax.swing.JFrame {
         testeDecidirCandidatura dc = new testeDecidirCandidatura(ce);
         dc.setVisible(true);
     }//GEN-LAST:event_botaoDecidirCandidaturaActionPerformed
+
+    private void botaoCriarCandidaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCriarCandidaturaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCriarCandidaturaMouseClicked
 
     /**
      * @param args the command line arguments

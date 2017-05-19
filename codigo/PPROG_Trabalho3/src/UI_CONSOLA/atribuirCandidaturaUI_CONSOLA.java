@@ -9,7 +9,8 @@ public class atribuirCandidaturaUI_CONSOLA {
 
     private final centroDeEventos ce;
     private final atribuirCandidaturaController acController;
-
+    private organizador org;
+    
     public atribuirCandidaturaUI_CONSOLA(centroDeEventos ce) {
         this.ce = ce;
         acController = new atribuirCandidaturaController(ce);
@@ -18,7 +19,7 @@ public class atribuirCandidaturaUI_CONSOLA {
     public void run() {
         utilitariosConsola.inicioEscritaConsola("ATRIBUIR CANDIDATURA");
 //          1. obter a lista de eventos com a submissao caducada
-        List<evento> listaEventosDataCaducados = acController.getListaEventosDataSubmissaoCaducada();
+        List<evento> listaEventosDataCaducados = acController.getListaEventosDataSubmissaoCaducada(org);
 //          2. selecionar o evento (e)
         //imprime a lista de eventos
         utilitariosConsola.escreverConsola("###EVENTOS:");
