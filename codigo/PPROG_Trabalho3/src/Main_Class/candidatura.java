@@ -1,8 +1,9 @@
 package Main_Class;
 
 import Utils.Data;
+import java.io.Serializable;
 
-public class candidatura {
+public class candidatura implements Serializable{
 
     private String nomeEmpresa;
     private String responsavelCandidatura;

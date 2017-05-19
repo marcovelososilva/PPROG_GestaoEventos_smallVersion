@@ -5,9 +5,10 @@
  */
 package Main_Class;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Algoritmo1 implements algoritmoAtribuicao {
+public class Algoritmo1 implements algoritmoAtribuicao, Serializable {
     private final String nome;
     private final String descritivo;
 

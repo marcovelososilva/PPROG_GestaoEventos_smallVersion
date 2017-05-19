@@ -1,6 +1,8 @@
 package Main_Class;
 
-public class exposicao implements EventType {
+import java.io.Serializable;
+
+public class exposicao implements EventType, Serializable{
 
     public exposicao() {
     }

@@ -1,6 +1,8 @@
 package Main_Class;
 
-public class fae {
+import java.io.Serializable;
+
+public class fae implements Serializable{
 
     private utilizador user;
 
