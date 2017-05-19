@@ -3,8 +3,9 @@ package Main_Class;
 import java.util.ArrayList;
 import java.util.List;
 import Utils.*;
+import java.io.Serializable;
 
-public class evento {
+public class evento implements Serializable{
 
     private String titulo;
     private String textoDescritivo;
