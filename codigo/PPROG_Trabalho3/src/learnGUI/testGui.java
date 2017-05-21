@@ -21,12 +21,14 @@ import javax.swing.JOptionPane;
  */
 public class testGui extends javax.swing.JFrame {
 
-    centroDeEventos ce = new centroDeEventos();
+    public centroDeEventos ce;
+//   centroDeEventos ce = new centroDeEventos();
 
     /**
      * Creates new form testGui
      */
-    public testGui() {
+    public testGui(centroDeEventos ce) {
+        this.ce=ce;
         initComponents();
     }
 
@@ -341,8 +343,13 @@ public class testGui extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(centroDeEventos ce) {
+                new testGui(ce).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new testGui().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }

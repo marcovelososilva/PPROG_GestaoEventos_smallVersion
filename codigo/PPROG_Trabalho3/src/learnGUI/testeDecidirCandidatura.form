@@ -217,29 +217,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoTitulo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoTitulo"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoDescricao">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoDescricao"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoLocal">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoLocal"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoDataInicio">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoDataInicio"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoDataFim">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoDataFim"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -360,29 +345,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoNomeDaEmpresa">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoNomeDaEmpresa"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoTelefone">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoTelefone"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoMorada">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoMorada"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoResponsavel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoResponsavel"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoTextoExplicativoCandidatura">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="descritivoTextoExplicativoCandidatura"/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
@@ -489,7 +461,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="descritivoTextoJustificativoDaDecisao">
           <Properties>
-            <Property name="text" type="java.lang.String" value="descritivoTextoJustificativoDaDecisao"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder title="Texto Justificativo da Decis&#xe3;o"/>
@@ -617,14 +588,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoNome">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel8"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descritivoEmail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel9"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -30,6 +30,14 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         this.ce = ce;
         criarCandController = new criarCandidaturaController(ce);
         initComponents();
+        nomeEmpresa.setEditable(false);
+        responsavelCandidatura.setEditable(false);
+        morada.setEditable(false);
+        telefone.setEditable(false);
+        textoExplicativoCandidatura.setEditable(false);
+        botaoConfirmaEvento.setEnabled(false);
+        botaoLimparDados.setEnabled(false);
+        botaoSubmeter.setEnabled(false);
     }
 
     /**
@@ -65,7 +73,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         descritivoDataLimiteSubmissaoCandidaturas = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
-        butaoSubmeter = new javax.swing.JButton();
+        botaoSubmeter = new javax.swing.JButton();
         botaoLimparDados = new javax.swing.JButton();
         botaoConfirmaEvento = new javax.swing.JButton();
 
@@ -91,25 +99,15 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jListaEventosActivos);
 
-        nomeEmpresa.setText("nomeEmpresa");
         nomeEmpresa.setPreferredSize(new java.awt.Dimension(80, 24));
 
-        telefone.setText("telefone");
         telefone.setPreferredSize(new java.awt.Dimension(80, 24));
 
-        morada.setText("morada");
         morada.setPreferredSize(new java.awt.Dimension(80, 24));
 
-        responsavelCandidatura.setText("responsavelCandidatura");
         responsavelCandidatura.setPreferredSize(new java.awt.Dimension(80, 24));
 
-        textoExplicativoCandidatura.setText("textoExplicativoCandidatura");
         textoExplicativoCandidatura.setBorder(javax.swing.BorderFactory.createTitledBorder("Justificativo da Submissao"));
-        textoExplicativoCandidatura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoExplicativoCandidaturaActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("Nome da Empresa");
 
@@ -139,10 +137,10 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
 
         separador.setToolTipText("Criacao da Candidatura");
 
-        butaoSubmeter.setText("Submeter");
-        butaoSubmeter.addActionListener(new java.awt.event.ActionListener() {
+        botaoSubmeter.setText("Submeter");
+        botaoSubmeter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butaoSubmeterActionPerformed(evt);
+                botaoSubmeterActionPerformed(evt);
             }
         });
 
@@ -153,7 +151,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
             }
         });
 
-        botaoConfirmaEvento.setText("Confirma Evento");
+        botaoConfirmaEvento.setText("Confirma Evento e Cria Candidatura");
         botaoConfirmaEvento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botaoConfirmaEventoMouseClicked(evt);
@@ -185,7 +183,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
                         .addContainerGap(613, Short.MAX_VALUE)
                         .addComponent(botaoLimparDados)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(butaoSubmeter)))
+                        .addComponent(botaoSubmeter)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -227,7 +225,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
                             .addComponent(separador)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(botaoConfirmaEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoConfirmaEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -287,7 +285,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
                     .addComponent(textoExplicativoCandidatura, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butaoSubmeter)
+                    .addComponent(botaoSubmeter)
                     .addComponent(botaoLimparDados)))
         );
 
@@ -302,6 +300,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         descritivoDataInicio.setText(e.getDataInicio().toString());
         descritivoDataFim.setText(e.getDataFim().toString());
         descritivoDataLimiteSubmissaoCandidaturas.setText(e.getDataLimiteSubmissaoCandidaturas().toString());
+        botaoConfirmaEvento.setEnabled(true);
 
     }//GEN-LAST:event_jListaEventosActivosMouseClicked
 
@@ -313,25 +312,43 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         responsavelCandidatura.setText("");
     }//GEN-LAST:event_botaoLimparDadosActionPerformed
 
-    private void butaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoSubmeterActionPerformed
-        criarCandController.setDadosCandidatura(nomeEmpresa.getText(), responsavelCandidatura.getText(), morada.getText(),
-                Integer.parseInt(telefone.getText()), textoExplicativoCandidatura.getText());
+    private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
+        try {
+            criarCandController.setDadosCandidatura(nomeEmpresa.getText(), responsavelCandidatura.getText(), morada.getText(),
+                    Integer.parseInt(telefone.getText()), textoExplicativoCandidatura.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "O Telefone tem que ser um numero");
+        }
         if (criarCandController.registaCandidatura(candidaturaFeita)) {
-            JOptionPane.showMessageDialog(null, "OPERAÇÃO REALIZADA COM SUCESSO!", "Informacao", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "OPERAÇÃO REALIZADA  COM SUCESSO!", "Informacao", JOptionPane.INFORMATION_MESSAGE);
             //        utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
         } else {
             JOptionPane.showMessageDialog(null, "OPERAÇÃO FRACASSADA: erro a adicionar ao array!", "Informacao", JOptionPane.ERROR_MESSAGE);
             //        utilitariosConsola.escreverConsola("OPERAÇÃO FRACASSADA: erro a adicionar ao array!");
         }
-    }//GEN-LAST:event_butaoSubmeterActionPerformed
-
-    private void textoExplicativoCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoExplicativoCandidaturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoExplicativoCandidaturaActionPerformed
+        nomeEmpresa.setEditable(false);
+        responsavelCandidatura.setEditable(false);
+        morada.setEditable(false);
+        telefone.setEditable(false);
+        textoExplicativoCandidatura.setEditable(false);
+        jListaEventosActivos.setEnabled(true);
+        botaoConfirmaEvento.setEnabled(false);
+        botaoLimparDados.setEnabled(false);
+        botaoSubmeter.setEnabled(false);
+        
+    }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
         jListaEventosActivos.setEnabled(false);
         candidaturaFeita = criarCandController.selecionarEvento(listaEventosActivos.get(jListaEventosActivos.getSelectedIndex()));
+        nomeEmpresa.setEditable(true);
+        responsavelCandidatura.setEditable(true);
+        morada.setEditable(true);
+        telefone.setEditable(true);
+        textoExplicativoCandidatura.setEditable(true);
+        botaoConfirmaEvento.setEnabled(false);
+        botaoLimparDados.setEnabled(true);
+        botaoSubmeter.setEnabled(true);
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
 
     /**
@@ -378,7 +395,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConfirmaEvento;
     private javax.swing.JButton botaoLimparDados;
-    private javax.swing.JButton butaoSubmeter;
+    private javax.swing.JButton botaoSubmeter;
     private javax.swing.JLabel dataFim;
     private javax.swing.JLabel dataInicio;
     private javax.swing.JLabel descritivoDataFim;

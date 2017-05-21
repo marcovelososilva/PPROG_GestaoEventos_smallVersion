@@ -44,6 +44,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         this.ce = ce;
         decidirCandController = new decidirCandidaturaController(ce);
         initComponents();
+        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
     }
 
     /**
@@ -130,16 +131,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setText("Data Final");
 
-        descritivoTitulo.setText("descritivoTitulo");
-
-        descritivoDescricao.setText("descritivoDescricao");
-
-        descritivoLocal.setText("descritivoLocal");
-
-        descritivoDataInicio.setText("descritivoDataInicio");
-
-        descritivoDataFim.setText("descritivoDataFim");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -211,16 +202,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel15.setText("Texto Explicativo");
 
-        descritivoNomeDaEmpresa.setText("descritivoNomeDaEmpresa");
-
-        descritivoTelefone.setText("descritivoTelefone");
-
-        descritivoMorada.setText("descritivoMorada");
-
-        descritivoResponsavel.setText("descritivoResponsavel");
-
         descritivoTextoExplicativoCandidatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        descritivoTextoExplicativoCandidatura.setText("descritivoTextoExplicativoCandidatura");
         descritivoTextoExplicativoCandidatura.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jListCandidaturas.setVisible(false);
@@ -303,7 +285,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             }
         });
 
-        descritivoTextoJustificativoDaDecisao.setText("descritivoTextoJustificativoDaDecisao");
         descritivoTextoJustificativoDaDecisao.setBorder(javax.swing.BorderFactory.createTitledBorder("Texto Justificativo da Decisão"));
 
         botaoLimparDados.setText("Limpar Dados");
@@ -393,10 +374,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jLabel6.setText("Nome");
 
         jLabel7.setText("Email");
-
-        descritivoNome.setText("jLabel8");
-
-        descritivoEmail.setText("jLabel9");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -527,14 +504,14 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
     private void botaoConfirmaFAEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmaFAEActionPerformed
         jListFAE.setEnabled(false);
-        fae f = ListFAE.get(jListFAE.getSelectedIndex());
+        f = ListFAE.get(jListFAE.getSelectedIndex());
         ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada=decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
         DefaultListModel dlmjleventos = new DefaultListModel();  
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(dlmjleventos);
         for (evento e : ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada) {
             dlmjleventos.addElement(e.getTitulo());
     }//GEN-LAST:event_botaoConfirmaFAEActionPerformed
-         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
+     //    jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
     }
     
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
@@ -543,7 +520,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
 
     private void jListFAEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFAEMouseClicked
-        fae f = ListFAE.get(jListFAE.getSelectedIndex());
+        f = ListFAE.get(jListFAE.getSelectedIndex());
         descritivoNome.setText(f.getUser().getNome());
         descritivoEmail.setText(f.getUser().getEmail());
     }//GEN-LAST:event_jListFAEMouseClicked
