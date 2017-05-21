@@ -20,21 +20,19 @@ public class main {
      */
     public static void main(String[] args) {
         //CRIAR O CENTRO DE EVENTO:
-        
-            //COMEÇAR UM NOVO VAZIO SEMPRE:
-    //        centroDeEventos ce = new centroDeEventos();
-            //COMEÇAR UM EXISTEM-TE SE O HOUVER:
-            centroDeEventos ce = new lerFicheiroBinarioController().lerBinario();
+
+        //COMEÇAR UM NOVO VAZIO SEMPRE:
+        //        centroDeEventos ce = new centroDeEventos();
+        //COMEÇAR UM EXISTEM-TE SE O HOUVER:
+        centroDeEventos ce = new lerFicheiroBinarioController().lerBinario();
 
         //COMEÇAR PELA INTERFACE GRÁFICA:
         testGui tg = new testGui(ce);
         tg.setVisible(true);
-        
+
         //COMEÇAR PELA INTERFACE CONSOLA:
 //        menuUI_CONSOLA menu = new menuUI_CONSOLA(ce);
 //        menu.run();
     }
-
-    
 
 }

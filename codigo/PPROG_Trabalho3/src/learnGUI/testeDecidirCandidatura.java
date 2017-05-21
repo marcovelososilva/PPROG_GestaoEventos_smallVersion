@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package learnGUI;
+package GUI;
 
 import Controller.criarCandidaturaController;
 import Controller.decidirCandidaturaController;
@@ -45,6 +45,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     public testeDecidirCandidatura(centroDeEventos ce) {
         this.ce = ce;
         decidirCandController = new decidirCandidaturaController(ce);
+        setResizable(false);
         initComponents();
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
         botaoConfirmaCandidatura.setEnabled(false);

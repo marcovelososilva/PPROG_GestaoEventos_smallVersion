@@ -18,7 +18,7 @@ public class Algoritmo2 implements algoritmoAtribuicao, Serializable{
 
     public Algoritmo2() {
         nome = "Algoritmo 2 - Ordem Aleatória";
-        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem aleatória sem qualquer parametro 1 a cada até acabar.";
+        descritivo = "Algoritmo distribui as candidaturas pelos FAE's \b por ordem aleatória sem qualquer parametro 1 a cada até acabar.";
     }
     
     

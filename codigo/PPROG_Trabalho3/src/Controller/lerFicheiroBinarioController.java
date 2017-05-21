@@ -7,6 +7,7 @@ package Controller;
 
 import java.io.*;
 import Main_Class.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +24,7 @@ public class lerFicheiroBinarioController implements Serializable {
             in.close();
             fileIn.close();
         } catch (IOException | ClassNotFoundException i) {
+            JOptionPane.showMessageDialog(null, "Nao foi encontrado nenhum ficheiro de dados de uma sessao anterior \n Vai ser criado uma base de dados nova", "Informação", JOptionPane.INFORMATION_MESSAGE);
             ce = new centroDeEventos();
         } finally{
             return ce;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package learnGUI;
+package GUI;
 
 import Main_Class.centroDeEventos;
 import Main_Class.evento;

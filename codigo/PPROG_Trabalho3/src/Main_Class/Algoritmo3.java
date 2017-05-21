@@ -19,7 +19,7 @@ public class Algoritmo3 implements algoritmoAtribuicao, Serializable{
 
     public Algoritmo3() {
         nome = "Algoritmo 3 - Ordem Aleatória invertida";
-        descritivo = "Algoritmo distribui as candidaturas pelos FAE's por ordem Aleatória invertida 1 cada ate acabar";
+        descritivo = "Algoritmo distribui as candidaturas pelos FAE's \n por ordem Aleatória invertida 1 cada ate acabar";
     }
 
     public String getNome() {

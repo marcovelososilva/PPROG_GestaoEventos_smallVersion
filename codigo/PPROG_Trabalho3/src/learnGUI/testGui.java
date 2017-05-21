@@ -5,9 +5,15 @@
  */
 package learnGUI;
 
+import Controller.escreverFicheiroBinarioController;
+import GUI.testCriarCandidaturaGUI;
+import GUI.testeAtribuirCandidatura;
 import Main_Class.centroDeEventos;
 import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
 import UI_CONSOLA.lerFicheiroUI_CONSOLA;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,7 +29,8 @@ public class testGui extends javax.swing.JFrame {
      * Creates new form testGui
      */
     public testGui(centroDeEventos ce) {
-        this.ce=ce;
+        addWindowListener(exitListener);
+        this.ce = ce;
         initComponents();
     }
 
@@ -262,7 +269,7 @@ public class testGui extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
@@ -273,42 +280,85 @@ public class testGui extends javax.swing.JFrame {
     private void botaoCarregarDadosFicheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCarregarDadosFicheiroActionPerformed
         lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
         String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
-        if (ficheiro!=null){
+        if (ficheiro != null) {
             lfUI_CONSOLA.run(ficheiro);
         }
     }//GEN-LAST:event_botaoCarregarDadosFicheiroActionPerformed
     private void botaoAtribuirCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAtribuirCandidaturaActionPerformed
-        testeAtribuirCandidatura ac = new testeAtribuirCandidatura(ce);
-        ac.setVisible(true);
+        if (ce.getListaEvento().size() == 0) {
+            JOptionPane.showMessageDialog(null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            testeAtribuirCandidatura ac = new testeAtribuirCandidatura(ce);
+            ac.setVisible(true);
+        }
     }//GEN-LAST:event_botaoAtribuirCandidaturaActionPerformed
 
     private void botaoEscreverDadosFicheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEscreverDadosFicheiroActionPerformed
+        if (ce.getListaEvento().size()==0) {
+            JOptionPane.showMessageDialog (null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        }else{
         escreverFicheiroUI_CONSOLA efUI_CONSOLA = new escreverFicheiroUI_CONSOLA(ce);
         String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
-        if (ficheiro!=null){
+        if (ficheiro != null) {
             efUI_CONSOLA.run(ficheiro);
+        }
         }
     }//GEN-LAST:event_botaoEscreverDadosFicheiroActionPerformed
 
     private void botaoImprimirDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImprimirDadosActionPerformed
+        if (ce.getListaEvento().size()==0) {
+            JOptionPane.showMessageDialog (null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        }else{
         testeImpressao ti = new testeImpressao(ce);
         ti.setVisible(true);
+        }
     }//GEN-LAST:event_botaoImprimirDadosActionPerformed
 
     private void botaoCriarCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCriarCandidaturaActionPerformed
-        testCriarCandidaturaGUI cc = new testCriarCandidaturaGUI(ce);
-        cc.setVisible(true);
+        if (ce.getListaEvento().size() == 0) {
+            JOptionPane.showMessageDialog(null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+
+            testCriarCandidaturaGUI cc = new testCriarCandidaturaGUI(ce);
+            cc.setVisible(true);
+        }
     }//GEN-LAST:event_botaoCriarCandidaturaActionPerformed
 
     private void botaoDecidirCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDecidirCandidaturaActionPerformed
-        testeDecidirCandidatura dc = new testeDecidirCandidatura(ce);
-        dc.setVisible(true);
+        if (ce.getListaEvento().size() == 0) {
+            JOptionPane.showMessageDialog(null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            testeDecidirCandidatura dc = new testeDecidirCandidatura(ce);
+            dc.setVisible(true);
+        }
     }//GEN-LAST:event_botaoDecidirCandidaturaActionPerformed
 
     private void botaoCriarCandidaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCriarCandidaturaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoCriarCandidaturaMouseClicked
 
+    private void closeAndSave(){
+        escreverFicheiroBinarioController efbc = new escreverFicheiroBinarioController(ce);
+        efbc.serializationFicheiro();
+    }
+    
+    WindowListener exitListener = new WindowAdapter() {
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        int confirm = JOptionPane.showOptionDialog(
+             null, "Quer fechar a Aplicação?", 
+             "Confirmação de Saida", JOptionPane.YES_NO_OPTION, 
+             JOptionPane.QUESTION_MESSAGE, null, null, null);
+        if (confirm == 0) {
+            closeAndSave();
+            System.exit(0);
+        }
+    }
+};
+
+    
+    
     /**
      * @param args the command line arguments
      */

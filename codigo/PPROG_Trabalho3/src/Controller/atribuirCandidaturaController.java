@@ -4,6 +4,7 @@ import Main_Class.centroDeEventos;
 import java.util.ArrayList;
 import Main_Class.evento;
 import Main_Class.organizador;
+import Utils.Data;
 import java.util.List;
 
 public class atribuirCandidaturaController {
@@ -60,18 +61,23 @@ public class atribuirCandidaturaController {
         throw new UnsupportedOperationException();
     }
 
-        public List<organizador> getListaOrganizadorUnicosDosEventos() {
+    public List<organizador> getListaOrganizadorUnicosComEventosComDataSubmissaoCaducada() {
         List<organizador> listaorganizador = new ArrayList<>();
         List<evento> listaEventos = ce.getListaEvento();
-        for (evento ev: listaEventos){
-            List<organizador> listaFAEEvento = ev.getListaOrganizadores();
-                for (organizador org: listaFAEEvento){
-                    if (!listaorganizador.contains(org)) listaorganizador.add(org);
+        for (evento ev : listaEventos) {
+            Data hoje = Data.dataAtual();
+            if ((ev.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0 && ev.getDataFim().compareTo(hoje) > 0) {
+                List<organizador> listaOrgEvento = ev.getListaOrganizadores();
+                for (organizador org : listaOrgEvento) {
+                    if (!listaorganizador.contains(org)) {
+                        listaorganizador.add(org);
+                    }
                 }
-        } 
+            }
+        }
         return listaorganizador;
     }
-    
+        
     
     public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador org) {
         return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
