@@ -41,25 +41,29 @@ Vasco Dias;vascodias@email.pt;vdias;dias123;
 Vânia Delgado;vaniadelgado@email.pt;vdelgado;delgado123;
 Xavier Cardoso;xaviercardoso@email.pt;xcardoso;cardoso123;
 Xica Cândido;xicacandico@email.pt;xcandido;candido123;
-Yuri Basto;yuribasto@email.pt; ybasto;basto123;
-Yara Bolas; yarabolas@email.pt; ybolas;bolas123;
+Yuri Basto;yuribasto@email.pt;ybasto;basto123;
+Yara Bolas; yarabolas@email.pt;ybolas;bolas123;
 Zacarias Andrade;zacariasandrade@email.pt;zandrade;andrade123;
 Zézinha Almeida;zezinhaalmeida@email.pt;zalmeida;almeida123;
 end
 
 eventos
-Expo Carros;exposição de carros e material para carros;2017/06/03;2017/06/04;Porto;2017/05/28;exposicao;
-Expo Casamento;exposição de casamentos e material para casamentos;2017/06/10;2017/06/11;Matosinhos;2017/06/04;exposicao;
-Expo Informática;exposição de informática e material para informática;2017/06/17;2017/06/18;Valongo;2017/06/11;exposicao;
-Expo Desporto;exposição de desporto e material para desporto;2017/06/24;2017/06/25;Santo Tirso;2017/06/18;exposicao;
-Cong Medicina;congresso de medicina e sobre medicina;2017/07/01;2017/07/02;Ermisinde;2017/06/25;congresso;
-Cong Treinadores;congresso de treinadores e sobre treinadores;2017/07/08;2017/07/09;Vila Nova Gaia;2017/07/02;congresso;
-Cong Ensino;congresso de ensino e sobre ensino;2017/07/15;2017/07/16;Espinho;2017/07/09;congresso
-Cong Internet;congresso de internet e sobre internet;2017/07/22;2017/07/23;Porto;2017/07/16;congresso;
-Expo data submissao caducada;exposicao para poder atribuir candidatura;2017/04/09;2017/04/10;Paços de Ferreira;2017/05/01;exposicao;
-Cong data submissao caducada1;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
-Cong data submissao caducada2;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
-Cong data submissao caducada;congresso para poder atribuir candidatura;2017/07/01;2017/08/10;Paredes;2017/05/05;congresso;
+Exposição Automoveis;exposição de carros e material para carros;2019/01/01;2019/02/01;UC3 PORTO;2018/05/12;exposicao;				
+Exposição Motociclos;exposição de motociclos e material para motociclos;2019/06/10;2019/06/11;UC3 VALONGO;2019/01/01;exposicao;				
+Congresso Camiões;Congresso sobre camiões e material de camiões;2019/05/17;2019/06/17;UC3 MATOSINHOS;2019/01/01;congresso;				
+Congresso Motores;Congresso sobre motores e material de motores;2019/02/01;2019/05/31;UC3 SANTO TIRSO;2018/10/28;congresso;				
+Exposição Cabelos;exposição de cabelos e material para cabelos;2018/03/01;2018/04/01;UC4 VILA NOVA DE GAIA;2017/04/12;exposicao;				
+Exposição Barbas;exposição de barbas e material para barbas;2018/02/10;2018/03/11;UC4 LOUSADA;2017/05/01;exposicao;				
+Congresso Cabeleireiras;Congresso sobre cabeleireiras e material de cabeleireiras;2018/05/01;2018/05/03;UC4 VILA DO CONDE;2017/04/01;congresso;				
+Congresso Barbeiros;Congresso sobre barbeiros e material de barbeiros;2018/04/01;2018/05/31;UC4 VILA NOVA DE FAMALICÃO;2017/03/15;congresso;				
+Exposição Aguas;exposição de agua e material para agua;2019/03/01;2019/04/01;UC5 PÓVOA DO VARZIM;2018/12/12;exposicao;				
+Exposição Vinhos;exposição de vinho e material para vinho;2019/09/10;2019/10/01;UC5 ERMESINDE;2019/02/01;exposicao;				
+Congresso Sumos;Congresso sobre sumo e material de sumo;2019/06/01;2019/07/15;UC5 ESPOSENDE;2018/06/01;congresso;				
+Congresso Fruta;Congresso sobre fruta e material de fruta;2020/01/01;2020/02/01;UC5 GONDOMAR;2019/01/01;congresso;
+Exposição Garfos;exposição de garfos e material para garfos;2017/01/01;2017/02/01;FINALIZADO PÓVOA DO VARZIM;2016/12/01;exposicao;				
+Congresso Facas;Congresso sobre facas e material de facas;2017/02/01;2017/03/01;FINALIZADO GONDOMAR;2017/01/01;congresso;							
+Exposição Badminton;exposição de badminton e material para Badminton;2017/07/01;2017/08/01;Pronto a começar PÓVOA DO VARZIM;2017/05/01;exposicao;				
+Congresso Ténis;Congresso sobre ténis e material de ténis;2017/08/01;2017/08/15;Pronto a começar GONDOMAR;2017/05/20;congresso;								
 end
 
 gestoreseventos
@@ -69,73 +73,207 @@ dveiga;
 end;
 
 fae
-Expo Carros;uestrela;
-Expo Carros;tfonseca;
-Cong Medicina;zandrade
-Cong Medicina;uestrela;
-Cong Medicina;ftaborda;
-Cong Medicina;sgomes;
-Cong Medicina;rhorta;
-Cong Medicina;rhenriques;
-Cong Medicina;ojesus;
-Cong Medicina;piguana;
-Cong Medicina;pinfante;
-Expo data submissao caducada;uestrela;
-Expo data submissao caducada;tfonseca;
-Expo data submissao caducada;zandrade
-Expo data submissao caducada;rhenriques;
-Expo data submissao caducada;piguana;
-Cong data submissao caducada1;piguana;
-Cong data submissao caducada2;ojesus;
+Exposição Automoveis;azambujal;
+Exposição Automoveis;byazalde;
+Exposição Automoveis;byaldi;
+Exposição Automoveis;cxaile;
+Exposição Automoveis;cxavier;
+Exposição Motociclos;azambujal;
+Exposição Motociclos;byazalde;
+Exposição Motociclos;byaldi;
+Exposição Motociclos;euva;
+Exposição Motociclos;eurias;
+Congresso Camiões;byazalde;
+Congresso Camiões;dveloso;
+Congresso Camiões;euva;
+Congresso Camiões;eurias;
+Congresso Camiões;ftorres;
+Congresso Motores;ftaborda;
+Congresso Motores;euva;
+Congresso Motores;ftorres;
+Congresso Motores;ipereira;
+Congresso Motores;joliveira;
+Exposição Cabelos;azambujal;
+Exposição Cabelos;byazalde;
+Exposição Cabelos;byaldi;
+Exposição Cabelos;cxaile;
+Exposição Cabelos;cxavier;
+Exposição Barbas;azambujal;
+Exposição Barbas;byazalde;
+Exposição Barbas;byaldi;
+Exposição Barbas;euva;
+Exposição Barbas;eurias;
+Congresso Cabeleireiras;azambujal;
+Congresso Cabeleireiras;cxavier;
+Congresso Cabeleireiras;ftorres;
+Congresso Cabeleireiras;ipereira;
+Congresso Cabeleireiras;nlopes;
+Congresso Barbeiros;byaldi;
+Congresso Barbeiros;euva;
+Congresso Barbeiros;byaldi;
+Congresso Barbeiros;cxaile;
+Congresso Barbeiros;ftorres;
+Exposição Aguas;azambujal;
+Exposição Aguas;cxavier;
+Exposição Aguas;ftorres;
+Exposição Aguas;ipereira;
+Exposição Aguas;nlopes;
+Exposição Vinhos;byaldi;
+Exposição Vinhos;euva;
+Exposição Vinhos;byaldi;
+Exposição Vinhos;cxaile;
+Exposição Vinhos;ftorres;
+Congresso Sumos;byazalde;
+Congresso Sumos;dveloso;
+Congresso Sumos;euva;
+Congresso Sumos;eurias;
+Congresso Sumos;ftorres;
+Congresso Fruta;ftaborda;
+Congresso Fruta;euva;
+Congresso Fruta;ftorres;
+Congresso Fruta;ipereira;
+Congresso Fruta;joliveira;
+Exposição Garfos;byazalde;
+Exposição Garfos;dveloso;
+Congresso Facas;ftaborda;
+Congresso Facas;euva;
+Exposição Badminton;byaldi;
+Exposição Badminton;euva;
+Congresso Ténis;byaldi;
+Congresso Ténis;euva;
 end
 
 
 organizadores
-Expo Carros;nlima;
-Expo Carros;nlopes;
-Cong Medicina;dveiga;
-Cong Medicina;euva;
-Cong data submissao caducada1;nlima;
-Cong data submissao caducada1;nlopes;
-Cong data submissao caducada2;nlima;
-Expo data submissao caducada;dveiga;
-Expo data submissao caducada;euva;
+Exposição Automoveis;piguana;
+Exposição Automoveis;pinfante;
+Exposição Motociclos;rhorta;
+Exposição Motociclos;sgomes;
+Congresso Camiões;ipereira;
+Congresso Camiões;jouteiro;
+Congresso Motores;piguana;
+Congresso Motores;pinfante;
+Exposição Cabelos;ueanes;
+Exposição Cabelos;mmedeiros;
+Exposição Barbas;lnunes;
+Exposição Barbas;uestrela;
+Congresso Cabeleireiras;ipereira;
+Congresso Cabeleireiras;jouteiro;
+Congresso Barbeiros;lnunes;
+Congresso Barbeiros;uestrela;	
+Exposição Aguas;hraposo;
+Exposição Aguas;ipedroso;
+Exposição Vinhos;rhorta;
+Exposição Vinhos;sgomes;
+Congresso Sumos;hraposo;
+Congresso Sumos;ipedroso;
+Congresso Fruta;ueanes;
+Congresso Fruta;mmedeiros;
+Exposição Garfos;hraposo;
+Exposição Garfos;ipedroso;
+Congresso Facas;ueanes;
+Congresso Facas;mmedeiros;
+Exposição Badminton;rhorta;
+Exposição Badminton;sgomes;
+Congresso Ténis;lnunes;
+Congresso Ténis;uestrela;
 end
 
 candidaturas
-Expo Carros;JulinhoSA;julio;Porto;225511447;textoExplicativoCandidatura1;2017/06/24;
-Expo Carros;AmbroisioLDA;Ambrosio;Leiria;251469873;textoExplicativoCandidatura2;2017/04/30;
-Expo Carros;Porcas12;Ramos;Marrocos;447788992;textoExplicativoCandidatura3;2017/01/22;
-Cong Medicina;MesasePernas;Manual Marco;Porto;441133660;textoExplicativoCandidatura4;2016/11/22;
-Expo Carros;BelasBonitas;Maria;Lisboa;778899445;textoExplicativoCandidatura5;2017/02/05;
-Cong Medicina;CaneleirasBiqueiras;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25;
-Cong Medicina;VrumVrum;KeyMaster;Portalegre;987654321;textoExplicativoCandidatura7;2014/01/13;
-Cong data submissao caducada1;Coisas Lindas Lda;Joao Luis;Braga;123456789;textoExplicativoCandidatura6;2017/03/25;
-Cong data submissao caducada1;Lindona S.A.;Marcio;Calle 1;811223145;textoExplicativoCandidatura22;2017/05/08;
-Cong data submissao caducada2;Pedrito Lda.;Xana;Calle 2;711223145;textoExplicativoCandidatura33;2017/05/08;
-Cong data submissao caducada2;Kukuklanes Lda.;Glorinha;Calle 3;611223145;textoExplicativoCandidatura44;2017/05/08;
-Expo data submissao caducada;Kucada S.A.;Salvadorzinho;Calle 4;511223145;textoExplicativoCandidatura55;2017/05/08;
-Expo data submissao caducada;Lambido Lda;Luisinho;Calle 5;411223145;textoExplicativoCandidatura66;2017/05/08;
-Expo data submissao caducada;Melhor do mundo;Pedrão;Calle 6;311223145;textoExplicativoCandidatura77;2017/05/08;
-Expo data submissao caducada;Maior que tu;Almeida;Calle 7;211223146;textoExplicativoCandidatura88;2017/05/08;
-Expo data submissao caducada;Mais que o mundo;Souza;Calle 8;111223145;textoExplicativoCandidatura99;2017/05/08;
+Exposição Automoveis;AUTO-MECANICA S.A.;Maria Silva;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Exposição Automoveis;PEÇAS CARROS LDA.;Filomena Sousa;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Exposição Automoveis;MECANICA ESQUINA;Mafalda Santos;Pontevedra;225366555;Porque olha claro que tinha que vir;2017/05/05;
+Exposição Automoveis;AUTO CARROS;Pedro Santos;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Exposição Automoveis;CARROS 100%;Vitor Reis;Santiago Do Cancém;225366555;Porque sou bonito;2017/05/04;
+Exposição Motociclos;MOTAS E AFINS, LDA;Roberto Silva;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Exposição Motociclos;MOTORETAS S.A.;Arnaldo Teixeira;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Exposição Motociclos;LAMBRETA D'OURO LDA.;Micael Teixeira;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Congresso Camiões;CAMIÕES E COMPANHIA;Ricardinho Futsal;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Congresso Camiões;REGRESSO DE CAMIÃO;Linda Sousa;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Congresso Camiões;CARRO GRANDE;Marlene Almeida;Santiago Do Cancém;225366555;Porque sou bonito;2017/05/04;
+Congresso Camiões;SEMPRE A 20;Gonçalo Paciência;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Congresso Camiões;CARGA 3;Augusto Lopes;Pontevedra;225366555;Porque olha claro que tinha que vir;2017/05/05;
+Congresso Camiões;SEMI-REBOQUE S.A.;Paulo Taborda;Penafiel;225366555;Porque isto é a minha vida;2017/05/06;
+Congresso Motores;METE A QUINTA;Agostinho Pedroso;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Congresso Motores;SEXTA NÃO-TEM LDA.; Helena Veiga;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Congresso Motores;50 NO MAXIMO;Ana Alves;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Congresso Motores;1500CC. LDA.;Santos Silva;Santiago Do Cancém;225366555;Porque sou bonito;2017/05/04;
+Exposição Cabelos;CABELOS SECOS;Mariazinha D'lem;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Exposição Cabelos;SHAMPOO 2;Diana Lopes;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Exposição Cabelos;CABELEIREIRA MARIA;Maria Santiago;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Exposição Cabelos;ESQUINA TB TEM CABELO; Olga Veloso;Santiago Do Cancém;225366555;Porque sou bonito;2017/05/04;
+Exposição Cabelos;CARECAS LDA.;Inês Garcez;Pontevedra;225366555;Porque olha claro que tinha que vir;2017/05/05;
+Exposição Barbas;BARBA AZUL;Faustino Fausto;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Exposição Barbas;BARBA LINDA;André André;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Exposição Barbas;BARBA RIXA;Veloso e Silva;Pontevedra;225366555;Porque olha claro que tinha que vir;2017/05/05;
+Congresso Cabeleireiras;MARIA A CABELEIREIRA DO POVO;Diana Dias;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Congresso Cabeleireiras;LURDES E MATILDE LDA.;Matilde Sousa;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Congresso Cabeleireiras;QUE LINDAS AS DUAS;Glória Fagundes;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Congresso Cabeleireiras;ONDULAÇÕES PERMANETES;Luís Santorini;Santiago Do Cancém;225366555;Porque sou bonito;2017/05/04;
+Congresso Cabeleireiras;TINTAS DYRUP;Lopes Graça;Pontevedra;225366555;Porque olha claro que tinha que vir;2017/05/05;
+Congresso Cabeleireiras;LAVA JATO;Michel Temer;Penafiel;225366555;Porque isto é a minha vida;2017/05/06;
+Congresso Cabeleireiras;LUVAS PÁS MÃOS;Ignacio Lourenço;Louredo;225366555;Porque sei lá eu o que vou fazer nesse dia;2017/05/07;
+Congresso Barbeiros;CHEIRA A TEXUGO;Hugo Texugo;Santarém;225366555;Porque nós queremos muito;2017/05/02;
+Congresso Barbeiros;PINHEIRO VERDE MANSO;Mauricio Queirós;Porto;225366555;Porque nós mereçemos;2017/05/01;
+Congresso Barbeiros;BARBUDOS COM ESTILO;Telmo Pinto;Oliveira do Hospital;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Exposição Garfos;GARFOS AFIADOS;Fernado Fernandes;Porto;225366555;Porque somos grandes egostamos disso;2016/11/03;
+Exposição Garfos;GARFOS BICUDOS;Vitor Vitorino;Almada;225366555;Porque eu quero;2016/11/10;
+Congresso Facas;FACAS DE CORTE S.A;Samuel Santos;Porto;225366555;Porque somos grandes egostamos disso;2016/12/03;
+Congresso Facas;FACAS DE MANTEIGA LDA;Marisa Matias;Almada;225366555;Porque eu quero;2016/11/02;
+Exposição Badminton;VOLANTES LDA;Berg Borges;Porto;225366555;Porque somos grandes egostamos disso;2017/04/01;
+Exposição Badminton;RAQUETES S.A.;Sandro Almeida;Almada;225366555;Porque eu quero;2017/04/03;
+Congresso Ténis;BOLAS E COMPANHIA;Novak Lima;Porto;225366555;Porque somos grandes egostamos disso;2017/05/03;
+Congresso Ténis;REDES E GRADEAMENTO;Luís Mauricio;Almada;225366555;Porque eu quero;2017/05/04;
+Exposição Garfos;GARFOS REJEITADOS;Não Maceita;Nenhum;222223569;Porque sim!;2016/11/11;
+Congresso Facas;FACAS REJEITADAS;Não Maceita;Nenhum;222223569;Porque sim!;2016/11/11;
+Exposição Badminton;BADMINTON REJEITADOS;Não Maceita;Nenhum;222223569;Porque sim!;2017/04/11;
+Congresso Ténis;TENIS REJEITADOS;Não Maceita;Nenhum;222223569;Porque sim!;2017/05/11;
 end
 
 atribuicao
-Expo Carros;JulinhoSA;2017/06/24;uestrela;
-Expo Carros;AmbroisioLDA;2017/04/30;uestrela;
-Expo Carros;Porcas12;2017/01/22;tfonseca;
-Expo Carros;BelasBonitas;2017/02/05;tfonseca;
-Cong Medicina;VrumVrum;2014/01/13;sgomes;
-Cong Medicina;CaneleirasBiqueiras;2017/03/25;rhorta;
-Cong Medicina;MesasePernas;2016/11/22;rhenriques;
+Exposição Cabelos;CABELOS SECOS;2017/05/01;azambujal;
+Exposição Cabelos;SHAMPOO 2;2017/05/02;byazalde;
+Exposição Cabelos;CABELEIREIRA MARIA;2017/05/03;byaldi;
+Exposição Cabelos;ESQUINA TB TEM CABELO;2017/05/04;cxaile;
+Exposição Cabelos;CARECAS LDA.;2017/05/05;cxavier;
+Exposição Barbas;BARBA AZUL;2017/05/01;azambujal;
+Exposição Barbas;BARBA LINDA;2017/05/02;byazalde;
+Exposição Barbas;BARBA RIXA;2017/05/05;byaldi;
+Congresso Cabeleireiras;MARIA A CABELEIREIRA DO POVO;2017/05/01;azambujal;
+Congresso Cabeleireiras;LURDES E MATILDE LDA.;2017/05/02;cxavier;
+Congresso Cabeleireiras;QUE LINDAS AS DUAS;2017/05/03;ftorres;
+Congresso Cabeleireiras;ONDULAÇÕES PERMANETES;2017/05/04;ipereira;
+Congresso Cabeleireiras;TINTAS DYRUP;2017/05/05;nlopes;
+Congresso Cabeleireiras;LAVA JATO;2017/05/06;azambujal;
+Congresso Cabeleireiras;LUVAS PÁS MÃOS;2017/05/07;cxavier;
+Congresso Barbeiros;CHEIRA A TEXUGO;2017/05/02;byaldi;
+Congresso Barbeiros;PINHEIRO VERDE MANSO;2017/05/01;euva;
+Congresso Barbeiros;BARBUDOS COM ESTILO;2017/05/03;byaldi;
+Exposição Garfos;GARFOS AFIADOS;2016/11/03;byazalde;
+Exposição Garfos;GARFOS BICUDOS;2016/11/10;dveloso;
+Congresso Facas;FACAS DE CORTE S.A;2016/12/03;ftaborda;
+Congresso Facas;FACAS DE MANTEIGA LDA;2016/11/02;euva;
+Exposição Badminton;VOLANTES LDA;2017/04/01;byaldi;
+Exposição Badminton;RAQUETES S.A.;2017/04/03;euva;
+Congresso Ténis;BOLAS E COMPANHIA;2017/05/03;byaldi;
+Congresso Ténis;REDES E GRADEAMENTO;2017/05/04;euva;
+Exposição Garfos;GARFOS REJEITADOS;2016/11/11;dveloso;
+Congresso Facas;FACAS REJEITADAS;2016/11/11;ftaborda;
+Exposição Badminton;BADMINTON REJEITADOS;2017/04/11;byaldi;
+Congresso Ténis;TENIS REJEITADOS;2017/05/11;euva;
 end
 
 decisao
-Expo Carros;JulinhoSA;2017/06/24;uestrela;True;Porque sim
-Expo Carros;AmbroisioLDA;2017/04/30;uestrela;False; Porque nao
-Expo Carros;Porcas12;2017/01/22;tfonseca;True;Porque sim é alface
-Expo Carros;BelasBonitas;2017/02/05;tfonseca;True;Porque e interessante
-Cong Medicina;VrumVrum;2014/01/13;sgomes;False;Porque é velho
-Cong Medicina;CaneleirasBiqueiras;2017/03/25;rhorta;False;Porque magoa
-Cong Medicina;MesasePernas;2016/11/22;rhenriques;True;Porque sao boas
+Exposição Garfos;GARFOS AFIADOS;2016/11/03;byazalde;True;Porque parecem fixes;
+Exposição Garfos;GARFOS BICUDOS;2016/11/10;dveloso;True;Gostam de garfos;
+Congresso Facas;FACAS DE CORTE S.A;2016/12/03;ftaborda;True;parabéns à prima;
+Congresso Facas;FACAS DE MANTEIGA LDA;2016/11/02;euva;True;Lindos Lindos;
+Exposição Badminton;VOLANTES LDA;2017/04/01;byaldi;True;conheço lá uma pessoa;
+Exposição Badminton;RAQUETES S.A.;2017/04/03;euva;True;duas palavras IMPECAVEIS!;
+Congresso Ténis;BOLAS E COMPANHIA;2017/05/03;byaldi;True;Uma Delicia;
+Congresso Ténis;REDES E GRADEAMENTO;2017/05/04;euva;True;Amigos do primo do coiso;			
+Exposição Garfos;GARFOS REJEITADOS;2016/11/11;dveloso;False;São feios;
+Congresso Facas;FACAS REJEITADAS;2016/11/11;ftaborda;False;Não tem nivel;
+Exposição Badminton;BADMINTON REJEITADOS;2017/04/11;byaldi;False;Não tem bom feedback;
+Congresso Ténis;TENIS REJEITADOS;2017/05/11;euva;False;Não jogam ténis;
+end
