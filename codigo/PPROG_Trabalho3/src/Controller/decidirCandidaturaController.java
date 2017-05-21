@@ -69,6 +69,10 @@ public class decidirCandidaturaController {
         return e.getListaCandidatura();
     }
     
+    public boolean temDecisao(candidatura cand){
+        boolean ok = decisaoCandidatura.isAprovada();
+        return ok;
+    } 
     /**
      *
      * @param d

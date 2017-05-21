@@ -161,7 +161,6 @@
           <SubComponents>
             <Component class="javax.swing.JList" name="jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada">
               <Properties>
-                <Property name="border" postCode="jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -405,10 +404,14 @@
                   <Component id="descritivoTextoJustificativoDaDecisao" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="botaoLimparDados" min="-2" max="-2" attributes="0"/>
-                      <Component id="botaoSubmeter" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoLimparDados" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="botaoSubmeter" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="botaoSair" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -427,7 +430,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="botaoLimparDados" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoSubmeter" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="botaoSubmeter" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botaoSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <Component id="descritivoTextoJustificativoDaDecisao" min="-2" pref="83" max="-2" attributes="0"/>
                   </Group>
@@ -482,6 +488,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSubmeterActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="botaoSair">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sair"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botaoSairMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

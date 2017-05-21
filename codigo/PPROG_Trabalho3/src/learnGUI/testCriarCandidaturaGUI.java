@@ -76,6 +76,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         botaoSubmeter = new javax.swing.JButton();
         botaoLimparDados = new javax.swing.JButton();
         botaoConfirmaEvento = new javax.swing.JButton();
+        Sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("UC 5 - Criar Candidatura");
@@ -158,6 +159,13 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
             }
         });
 
+        Sair.setText("Sair");
+        Sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SairMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,10 +188,12 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(textoExplicativoCandidatura, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(613, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoLimparDados)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botaoSubmeter)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoSubmeter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Sair)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -221,7 +231,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(descritivoDataLimiteSubmissaoCandidaturas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addGap(0, 55, Short.MAX_VALUE))))
                             .addComponent(separador)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -286,7 +296,8 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoSubmeter)
-                    .addComponent(botaoLimparDados)))
+                    .addComponent(botaoLimparDados)
+                    .addComponent(Sair)))
         );
 
         pack();
@@ -351,6 +362,10 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         botaoSubmeter.setEnabled(true);
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
 
+    private void SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseClicked
+        this.setVisible(false);
+    }//GEN-LAST:event_SairMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -393,6 +408,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Sair;
     private javax.swing.JButton botaoConfirmaEvento;
     private javax.swing.JButton botaoLimparDados;
     private javax.swing.JButton botaoSubmeter;

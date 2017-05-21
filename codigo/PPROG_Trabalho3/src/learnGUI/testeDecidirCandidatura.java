@@ -18,6 +18,7 @@ import Main_Class.utilizador;
 import Utils_Consola.utilitariosConsola;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,6 +37,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private organizador org;
     private fae f;
     private candidatura cand;
+    private evento e;
 
     /**
      * Creates new form testeDecidirCandidatura
@@ -89,6 +91,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         descritivoTextoJustificativoDaDecisao = new javax.swing.JTextField();
         botaoLimparDados = new javax.swing.JButton();
         botaoSubmeter = new javax.swing.JButton();
+        botaoSair = new javax.swing.JButton();
         botaoConfirmaEvento = new javax.swing.JButton();
         botaoConfirmaCandidatura = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -105,7 +108,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha o Evento"));
 
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setFocusable(false);
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -301,6 +303,13 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             }
         });
 
+        botaoSair.setText("Sair");
+        botaoSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoSairMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -315,8 +324,11 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botaoLimparDados)
-                    .addComponent(botaoSubmeter))
-                .addGap(111, 111, 111))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(botaoSubmeter)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoSair)))
+                .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,7 +344,9 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(botaoLimparDados)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoSubmeter))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botaoSubmeter)
+                            .addComponent(botaoSair)))
                     .addComponent(descritivoTextoJustificativoDaDecisao, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -461,32 +475,32 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
+        System.out.println(cand.getNomeEmpresa());
         decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
         decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText());
     }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     private void jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
-        evento e = ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.get(jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.getSelectedIndex());
+        e = ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.get(jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.getSelectedIndex());
         descritivoTitulo.setText(e.getTitulo());
         descritivoDescricao.setText(e.getTextoDescritivo());
         descritivoLocal.setText(e.getLocal());
         descritivoDataInicio.setText(e.getDataInicio().toString());
         descritivoDataFim.setText(e.getDataFim().toString());
-        listaCandidaturas = decidirCandController.getListaCandidatura(e);
-        DefaultListModel dlmjlcand = new DefaultListModel();
-        jListCandidaturas.setModel(dlmjlcand);
-        for (candidatura cand : listaCandidaturas) {
-            dlmjlcand.addElement(cand.getNomeEmpresa());
-        }
     }//GEN-LAST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
 
     private void jListCandidaturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCandidaturasMouseClicked
-        candidatura cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
+        cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
         descritivoNomeDaEmpresa.setText(cand.getNomeEmpresa());
         descritivoTelefone.setText(String.valueOf(cand.getTelefone()));
         descritivoMorada.setText(cand.getMorada());
         descritivoResponsavel.setText(cand.getResponsavelCandidatura());
         descritivoTextoExplicativoCandidatura.setText(cand.getTextoExplicativoCandidatura());
+        try{
+        System.out.println(decidirCandController.selecionarCandidaturaCriaDecisao(cand));
+        }catch (NullPointerException ev){
+            System.out.println("estaaaaa null");
+        }
     }//GEN-LAST:event_jListCandidaturasMouseClicked
 
     private void botaoLimparDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparDadosActionPerformed
@@ -503,20 +517,32 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }//GEN-LAST:event_bRadioRecusadoMouseClicked
 
     private void botaoConfirmaFAEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmaFAEActionPerformed
-        jListFAE.setEnabled(false);
         f = ListFAE.get(jListFAE.getSelectedIndex());
-        ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada=decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
-        DefaultListModel dlmjleventos = new DefaultListModel();  
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(dlmjleventos);
-        for (evento e : ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada) {
-            dlmjleventos.addElement(e.getTitulo());
+        ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada = decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
+        if (ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.size() == 0) {
+            JOptionPane.showMessageDialog (null, "O "+f.getUser().getNome()+" nao tem eventos associados", "Informacao", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            jListFAE.setEnabled(false);
+            DefaultListModel dlmjleventos = new DefaultListModel();
+            jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(dlmjleventos);
+            for (evento e : ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada) {
+                dlmjleventos.addElement(e.getTitulo());
+                System.out.println(e.getTitulo());
     }//GEN-LAST:event_botaoConfirmaFAEActionPerformed
-     //    jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
+            jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
+        }
     }
     
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(false);
         jListCandidaturas.setVisible(true);
+        botaoConfirmaEvento.setEnabled(false);
+        listaCandidaturas = decidirCandController.getListaCandidatura(e);
+        DefaultListModel dlmjlcand = new DefaultListModel();
+        jListCandidaturas.setModel(dlmjlcand);
+        for (candidatura cand : listaCandidaturas) {
+            dlmjlcand.addElement(cand.getNomeEmpresa());
+        }
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
 
     private void jListFAEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFAEMouseClicked
@@ -526,9 +552,13 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }//GEN-LAST:event_jListFAEMouseClicked
 
     private void botaoConfirmaCandidaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaCandidaturaMouseClicked
-        candidatura cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
+        cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
         jListCandidaturas.setEnabled(false);
     }//GEN-LAST:event_botaoConfirmaCandidaturaMouseClicked
+
+    private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked
+        this.setVisible(false);
+    }//GEN-LAST:event_botaoSairMouseClicked
 
     /**
      * @param args the command line arguments
@@ -577,6 +607,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private javax.swing.JButton botaoConfirmaEvento;
     private javax.swing.JButton botaoConfirmaFAE;
     private javax.swing.JButton botaoLimparDados;
+    private javax.swing.JButton botaoSair;
     private javax.swing.JButton botaoSubmeter;
     private javax.swing.JLabel descritivoDataFim;
     private javax.swing.JLabel descritivoDataInicio;

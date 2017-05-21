@@ -45,10 +45,12 @@
                       <Component id="textoExplicativoCandidatura" min="-2" pref="323" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="613" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="botaoLimparDados" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="botaoSubmeter" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Sair" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -97,7 +99,7 @@
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="descritivoDataLimiteSubmissaoCandidaturas" min="-2" pref="193" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -186,7 +188,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botaoSubmeter" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="botaoLimparDados" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoLimparDados" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="Sair" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -368,6 +371,14 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botaoConfirmaEventoMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Sair">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sair"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SairMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>
