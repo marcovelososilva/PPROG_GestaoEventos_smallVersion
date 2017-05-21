@@ -47,6 +47,14 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         decidirCandController = new decidirCandidaturaController(ce);
         initComponents();
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(false);
+        botaoConfirmaCandidatura.setEnabled(false);
+        botaoConfirmaEvento.setEnabled(false);
+        botaoConfirmaFAE.setEnabled(false);
+        botaoLimparDados.setEnabled(false);
+        botaoSubmeter.setEnabled(false);
+        bRadioAceite.setEnabled(false);
+        bRadioRecusado.setEnabled(false);
+        descritivoTextoJustificativoDaDecisao.setEditable(false);
     }
 
     /**
@@ -478,6 +486,11 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         System.out.println(cand.getNomeEmpresa());
         decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
         decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText());
+        bRadioAceite.setEnabled(false);
+        bRadioRecusado.setEnabled(false);
+        botaoLimparDados.setEnabled(false);
+        botaoSubmeter.setEnabled(false);
+        descritivoTextoJustificativoDaDecisao.setEnabled(false);
     }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     private void jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
@@ -487,6 +500,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         descritivoLocal.setText(e.getLocal());
         descritivoDataInicio.setText(e.getDataInicio().toString());
         descritivoDataFim.setText(e.getDataFim().toString());
+        botaoConfirmaEvento.setEnabled(true);
     }//GEN-LAST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
 
     private void jListCandidaturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCandidaturasMouseClicked
@@ -496,11 +510,25 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         descritivoMorada.setText(cand.getMorada());
         descritivoResponsavel.setText(cand.getResponsavelCandidatura());
         descritivoTextoExplicativoCandidatura.setText(cand.getTextoExplicativoCandidatura());
+        descritivoTextoJustificativoDaDecisao.setText(null);
+        bRadioAceite.setSelected(false);
+        bRadioRecusado.setSelected(false);
+        botaoConfirmaCandidatura.setEnabled(true);
         try{
-        System.out.println(decidirCandController.selecionarCandidaturaCriaDecisao(cand));
+            decisaoCandidatura=cand.getDecisao();
+            descritivoTextoJustificativoDaDecisao.setText(decisaoCandidatura.getTextoDecisao());
+            if (decisaoCandidatura.isAprovada()){
+                bRadioAceite.setSelected(true);
+            }else{
+                bRadioRecusado.setSelected(true);
+            }
+            botaoConfirmaCandidatura.setText("Alterar Candidatura");
         }catch (NullPointerException ev){
-            System.out.println("estaaaaa null");
+            bRadioAceite.setSelected(false);
+            bRadioRecusado.setSelected(false);
+            botaoConfirmaCandidatura.setText("Criar Candidatura");
         }
+        
     }//GEN-LAST:event_jListCandidaturasMouseClicked
 
     private void botaoLimparDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparDadosActionPerformed
@@ -530,6 +558,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 System.out.println(e.getTitulo());
     }//GEN-LAST:event_botaoConfirmaFAEActionPerformed
             jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
+            botaoConfirmaFAE.setEnabled(false);
         }
     }
     
@@ -549,11 +578,19 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         f = ListFAE.get(jListFAE.getSelectedIndex());
         descritivoNome.setText(f.getUser().getNome());
         descritivoEmail.setText(f.getUser().getEmail());
+        botaoConfirmaFAE.setEnabled(true);
     }//GEN-LAST:event_jListFAEMouseClicked
 
     private void botaoConfirmaCandidaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaCandidaturaMouseClicked
         cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
         jListCandidaturas.setEnabled(false);
+        botaoConfirmaCandidatura.setEnabled(false);
+        bRadioAceite.setEnabled(true);
+        bRadioAceite.setEnabled(true);
+        bRadioRecusado.setEnabled(true);
+        botaoLimparDados.setEnabled(true);
+        botaoSubmeter.setEnabled(true);
+        descritivoTextoJustificativoDaDecisao.setEditable(true);
     }//GEN-LAST:event_botaoConfirmaCandidaturaMouseClicked
 
     private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked

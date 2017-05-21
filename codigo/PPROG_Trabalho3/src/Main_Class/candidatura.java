@@ -92,7 +92,10 @@ public class candidatura implements Serializable{
     public void setDataCandidatura(Data dataCandidatura) {
         this.dataCandidatura = dataCandidatura;
     }
-
+    
+    public decisao getDecisao(){
+        return decisaoCandidatura;
+    }
     /**
      *
      * @param d
