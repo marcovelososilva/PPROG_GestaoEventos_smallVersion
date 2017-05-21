@@ -6,13 +6,8 @@
 package learnGUI;
 
 import Main_Class.centroDeEventos;
-import Main_Class.evento;
-import Main_Class.utilizador;
-import UI.criarCandidaturaUI;
-import UI_CONSOLA.decidirCandidaturaUI_CONSOLA;
 import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
 import UI_CONSOLA.lerFicheiroUI_CONSOLA;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**

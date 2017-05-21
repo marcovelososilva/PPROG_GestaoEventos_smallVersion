@@ -14,7 +14,7 @@ import Main_Class.*;
  */
 public class lerFicheiroBinarioController implements Serializable {
     
-    public centroDeEventos lerBinario( ) {
+    public centroDeEventos lerBinario() {
         centroDeEventos ce = new centroDeEventos();
         try {
             FileInputStream fileIn = new FileInputStream("ficheiroBinarioCentroEventos.bin");
