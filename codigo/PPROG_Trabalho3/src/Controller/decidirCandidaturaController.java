@@ -1,6 +1,7 @@
 package Controller;
 
 import Main_Class.*;
+import Utils.Data;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,15 +24,21 @@ public class decidirCandidaturaController {
      * @param u
      * @return 
      */
-    public List<fae> getListaFAEUnicosDosEventos() {
+    public List<fae> getListaFAEUnicosDosEventosComDataSubmissaoCaducadaEAtribuicaoEfectuada() {
         List<fae> listaFAE = new ArrayList<>();
         List<evento> listaEventos = ce.getListaEvento();
-        for (evento ev: listaEventos){
-            List<fae> listaFAEEvento = ev.getListaFAE();
-                for (fae f: listaFAEEvento){
-                    if (!listaFAE.contains(f)) listaFAE.add(f);
+        for (evento ev : listaEventos) {
+            Data hoje = Data.dataAtual();
+            if ((ev.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0 && ev.getDataFim().compareTo(hoje) > 0
+                    && ev.getListaAtribuicoes().size()>0){
+                List<fae> listaFAEEvento = ev.getListaFAE();
+                for (fae f : listaFAEEvento) {
+                    if (!listaFAE.contains(f)) {
+                        listaFAE.add(f);
+                    }
                 }
-        } 
+            }
+        }
         return listaFAE;
     }
 

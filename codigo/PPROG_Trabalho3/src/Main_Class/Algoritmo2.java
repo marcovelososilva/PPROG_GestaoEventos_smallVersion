@@ -52,7 +52,7 @@ public class Algoritmo2 implements algoritmoAtribuicao, Serializable{
     
     private static int contaFAEs (int contagemActual, int contMaximo){
         contagemActual --;
-        if (contagemActual < contMaximo){
+        if (contagemActual > contMaximo){
             return contagemActual;
         } else {
             return 0;

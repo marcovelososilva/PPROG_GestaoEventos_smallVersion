@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package learnGUI;
 
-import Controller.criarCandidaturaController;
+
 import Controller.decidirCandidaturaController;
-import Main_Class.algoritmoAtribuicao;
 import Main_Class.candidatura;
 import Main_Class.centroDeEventos;
 import Main_Class.decisao;
 import Main_Class.evento;
 import Main_Class.fae;
 import Main_Class.organizador;
-import Main_Class.utilizador;
-import Utils_Consola.utilitariosConsola;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -38,6 +35,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private fae f;
     private candidatura cand;
     private evento e;
+    private String textoDecisao;
 
     /**
      * Creates new form testeDecidirCandidatura
@@ -71,22 +69,22 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        labelTitulo = new javax.swing.JLabel();
+        labelDescricao = new javax.swing.JLabel();
+        labelLocal = new javax.swing.JLabel();
+        labelDataInicio = new javax.swing.JLabel();
+        labelDataFinal = new javax.swing.JLabel();
         descritivoTitulo = new javax.swing.JLabel();
         descritivoDescricao = new javax.swing.JLabel();
         descritivoLocal = new javax.swing.JLabel();
         descritivoDataInicio = new javax.swing.JLabel();
         descritivoDataFim = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        labelNomeDaEmpresa = new javax.swing.JLabel();
+        labelTelefone = new javax.swing.JLabel();
+        labelMorada = new javax.swing.JLabel();
+        labelResponsavel = new javax.swing.JLabel();
+        labelTextoExplicativo = new javax.swing.JLabel();
         descritivoNomeDaEmpresa = new javax.swing.JLabel();
         descritivoTelefone = new javax.swing.JLabel();
         descritivoMorada = new javax.swing.JLabel();
@@ -106,8 +104,8 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListFAE = new javax.swing.JList<>();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        labelNome = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
         descritivoNome = new javax.swing.JLabel();
         descritivoEmail = new javax.swing.JLabel();
         botaoConfirmaFAE = new javax.swing.JButton();
@@ -125,22 +123,22 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Titulo");
+        labelTitulo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelTitulo.setText("Titulo");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Descrição");
+        labelDescricao.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelDescricao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelDescricao.setText("Descrição");
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setText("Local");
+        labelLocal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelLocal.setText("Local");
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel4.setText("Data Inicio");
+        labelDataInicio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelDataInicio.setText("Data Inicio");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setText("Data Final");
+        labelDataFinal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelDataFinal.setText("Data Final");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,12 +149,12 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
+                    .addComponent(labelDataFinal)
+                    .addComponent(labelLocal)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel4))
+                        .addComponent(labelDescricao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                        .addComponent(labelTitulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(labelDataInicio))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(descritivoDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,23 +170,23 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
+                            .addComponent(labelTitulo)
                             .addComponent(descritivoTitulo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(descritivoDescricao)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
+                            .addComponent(labelLocal)
                             .addComponent(descritivoLocal))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(labelDataInicio)
                             .addComponent(descritivoDataInicio))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
+                            .addComponent(labelDataFinal)
                             .addComponent(descritivoDataFim)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -198,20 +196,20 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha Candidatura"));
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel11.setText("Nome da Empresa");
+        labelNomeDaEmpresa.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelNomeDaEmpresa.setText("Nome da Empresa");
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel12.setText("Telefone");
+        labelTelefone.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTelefone.setText("Telefone");
 
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel13.setText("Morada");
+        labelMorada.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelMorada.setText("Morada");
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel14.setText("Responsavel");
+        labelResponsavel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelResponsavel.setText("Responsavel");
 
-        jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel15.setText("Texto Explicativo");
+        labelTextoExplicativo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTextoExplicativo.setText("Texto Explicativo");
 
         descritivoTextoExplicativoCandidatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         descritivoTextoExplicativoCandidatura.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -234,11 +232,11 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(labelNomeDaEmpresa)
+                        .addComponent(labelTelefone, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(labelResponsavel, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(labelMorada, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelTextoExplicativo, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(descritivoTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -253,23 +251,23 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                    .addComponent(labelNomeDaEmpresa)
                     .addComponent(descritivoNomeDaEmpresa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
+                    .addComponent(labelTelefone)
                     .addComponent(descritivoTelefone))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
+                    .addComponent(labelMorada)
                     .addComponent(descritivoMorada))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
+                    .addComponent(labelResponsavel)
                     .addComponent(descritivoResponsavel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15)
+                    .addComponent(labelTextoExplicativo)
                     .addComponent(descritivoTextoExplicativoCandidatura))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -367,7 +365,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             }
         });
 
-        botaoConfirmaCandidatura.setText("Confirma Candidatura");
+        botaoConfirmaCandidatura.setText("Decisão");
         botaoConfirmaCandidatura.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botaoConfirmaCandidaturaMouseClicked(evt);
@@ -376,7 +374,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Escolha FAE"));
 
-        ListFAE = decidirCandController.getListaFAEUnicosDosEventos();
+        ListFAE = decidirCandController.getListaFAEUnicosDosEventosComDataSubmissaoCaducadaEAtribuicaoEfectuada();
         String[] stringsfae = new String[ListFAE.size()];
         int i=0;
         for (fae f: ListFAE){
@@ -394,9 +392,9 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jListFAE);
 
-        jLabel6.setText("Nome");
+        labelNome.setText("Nome");
 
-        jLabel7.setText("Email");
+        labelEmail.setText("Email");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -407,8 +405,8 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(labelNome)
+                    .addComponent(labelEmail))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(descritivoEmail)
@@ -423,11 +421,11 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(labelNome)
                     .addComponent(descritivoNome))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(labelEmail)
                     .addComponent(descritivoEmail))
                 .addGap(12, 12, 12))
         );
@@ -492,6 +490,15 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         botaoLimparDados.setEnabled(false);
         botaoSubmeter.setEnabled(false);
         descritivoTextoJustificativoDaDecisao.setEnabled(false);
+        if (decisaoFavoravel){
+            textoDecisao = "Aceite";
+        }else{
+            textoDecisao = "Não Aceite";
+        }
+        JOptionPane.showMessageDialog(null, "A candidatura feita por "+cand.getNomeEmpresa()+" teve o seguinte resultado\n"
+                +textoDecisao+"\nCom o seguinte texto explicativo:\n"+decisaoFeita.getTextoDecisao()
+                , "Informação", JOptionPane.INFORMATION_MESSAGE);
+        this.setVisible(false);
     }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     private void jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
@@ -512,8 +519,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         descritivoResponsavel.setText(cand.getResponsavelCandidatura());
         descritivoTextoExplicativoCandidatura.setText(cand.getTextoExplicativoCandidatura());
         descritivoTextoJustificativoDaDecisao.setText(null);
-        bRadioAceite.setSelected(false);
-        bRadioRecusado.setSelected(false);
+        grupoDeBotao.clearSelection();
         botaoConfirmaCandidatura.setEnabled(true);
         try{
             decisaoCandidatura=cand.getDecisao();
@@ -523,11 +529,10 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             }else{
                 bRadioRecusado.setSelected(true);
             }
-            botaoConfirmaCandidatura.setText("Alterar Candidatura");
+            botaoConfirmaCandidatura.setText("Alterar Decisao");
         }catch (NullPointerException ev){
-            bRadioAceite.setSelected(false);
-            bRadioRecusado.setSelected(false);
-            botaoConfirmaCandidatura.setText("Criar Candidatura");
+            grupoDeBotao.clearSelection();
+            botaoConfirmaCandidatura.setText("Criar Decisao");
         }
         
     }//GEN-LAST:event_jListCandidaturasMouseClicked
@@ -661,18 +666,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private javax.swing.JTextField descritivoTextoJustificativoDaDecisao;
     private javax.swing.JLabel descritivoTitulo;
     private javax.swing.ButtonGroup grupoDeBotao;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jListCandidaturas;
     private javax.swing.JList<String> jListFAE;
     private javax.swing.JList<String> jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada;
@@ -683,5 +676,17 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel labelDataFinal;
+    private javax.swing.JLabel labelDataInicio;
+    private javax.swing.JLabel labelDescricao;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelLocal;
+    private javax.swing.JLabel labelMorada;
+    private javax.swing.JLabel labelNome;
+    private javax.swing.JLabel labelNomeDaEmpresa;
+    private javax.swing.JLabel labelResponsavel;
+    private javax.swing.JLabel labelTelefone;
+    private javax.swing.JLabel labelTextoExplicativo;
+    private javax.swing.JLabel labelTitulo;
     // End of variables declaration//GEN-END:variables
 }

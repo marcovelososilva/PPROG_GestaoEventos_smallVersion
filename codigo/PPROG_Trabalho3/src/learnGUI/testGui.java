@@ -5,9 +5,8 @@
  */
 package learnGUI;
 
+import learnGUI.testCriarCandidaturaGUI;
 import Controller.escreverFicheiroBinarioController;
-import GUI.testCriarCandidaturaGUI;
-import GUI.testeAtribuirCandidatura;
 import Main_Class.centroDeEventos;
 import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
 import UI_CONSOLA.lerFicheiroUI_CONSOLA;
@@ -15,6 +14,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.JOptionPane;
+import learnGUI.testeDecidirCandidatura;
 
 /**
  *
@@ -384,6 +384,7 @@ public class testGui extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(testGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

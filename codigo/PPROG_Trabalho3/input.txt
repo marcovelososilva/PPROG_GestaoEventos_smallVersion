@@ -48,10 +48,10 @@ Zézinha Almeida;zezinhaalmeida@email.pt;zalmeida;almeida123;
 end
 
 eventos
-Exposição Automoveis;exposição de carros e material para carros;2019/01/01;2019/02/01;UC3 PORTO;2018/05/12;exposicao;				
-Exposição Motociclos;exposição de motociclos e material para motociclos;2019/06/10;2019/06/11;UC3 VALONGO;2019/01/01;exposicao;				
-Congresso Camiões;Congresso sobre camiões e material de camiões;2019/05/17;2019/06/17;UC3 MATOSINHOS;2019/01/01;congresso;				
-Congresso Motores;Congresso sobre motores e material de motores;2019/02/01;2019/05/31;UC3 SANTO TIRSO;2018/10/28;congresso;				
+Exposição Automoveis;exposição de carros e material para carros;2019/01/01;2019/02/01;UC3 PORTO;2017/05/12;exposicao;				
+Exposição Motociclos;exposição de motociclos e material para motociclos;2019/06/10;2019/06/11;UC3 VALONGO;2017/01/01;exposicao;				
+Congresso Camiões;Congresso sobre camiões e material de camiões;2019/05/17;2019/06/17;UC3 MATOSINHOS;2017/01/01;congresso;				
+Congresso Motores;Congresso sobre motores e material de motores;2019/02/01;2019/05/31;UC3 SANTO TIRSO;2017/04/28;congresso;				
 Exposição Cabelos;exposição de cabelos e material para cabelos;2018/03/01;2018/04/01;UC4 VILA NOVA DE GAIA;2017/04/12;exposicao;				
 Exposição Barbas;exposição de barbas e material para barbas;2018/02/10;2018/03/11;UC4 LOUSADA;2017/05/01;exposicao;				
 Congresso Cabeleireiras;Congresso sobre cabeleireiras e material de cabeleireiras;2018/05/01;2018/05/03;UC4 VILA DO CONDE;2017/04/01;congresso;				
