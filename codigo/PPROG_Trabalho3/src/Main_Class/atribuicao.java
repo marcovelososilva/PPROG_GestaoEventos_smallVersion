@@ -25,7 +25,7 @@ public class atribuicao implements Serializable{
 
     @Override
     public String toString() {
-        return " FAE: " + fae.toStringUsername() + ", responsável por decidir sobre candidatura: " + candidatura.toStringEmpresaData() + ";";
+        return " FAE: " + fae.toStringUsername() + ", responsável por decidir sobre candidatura: " + candidatura.toStringEmpresaData() + "\n";
     }
     
     /**

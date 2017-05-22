@@ -1,6 +1,7 @@
 package Controller;
 
 import Main_Class.*;
+import Utils.Data;
 import java.util.List;
 
 public class criarCandidaturaController {
@@ -49,6 +50,7 @@ public class criarCandidaturaController {
         candidaturaEvento.setMorada(morada);
         candidaturaEvento.setTelefone(telefone);
         candidaturaEvento.setTextoExplicativoCandidatura(textoExplicativoCandidatura);
+        candidaturaEvento.setDataCandidatura(Data.dataAtual());
     }
 
     public void validaDados() {

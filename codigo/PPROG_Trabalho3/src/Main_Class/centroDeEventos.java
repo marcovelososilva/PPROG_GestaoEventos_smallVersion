@@ -76,7 +76,7 @@ public class centroDeEventos implements Serializable{
         for (evento e : ListaEventos) {
             Data hoje = Data.dataAtual();
             if ((e.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0
-                    && e.getDataFim().compareTo(hoje) > 0) {
+                    && e.getDataFim().compareTo(hoje) > 0 && e.getListaAtribuicoes().size()>0) {
                 List<fae> listaDeFae = e.getListaFAE();
                 for (fae lfae : listaDeFae){
                     if ( lfae.equals(FAEEvento)){

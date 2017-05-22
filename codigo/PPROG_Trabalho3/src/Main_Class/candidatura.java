@@ -28,11 +28,12 @@ public class candidatura implements Serializable{
     @Override
     public String toString() {
         if (decisaoCandidatura==null){
-            return "Candidatura da empresa: " + nomeEmpresa +" - Efectuada na data: " + dataCandidatura+"\n"
-                +"Com a morada: " + morada + " - Telefone: " + telefone + "\n"
+            return "Candidatura da empresa: " + nomeEmpresa +" \nEfectuada na data: " + dataCandidatura+"\n"
+                +"Com a morada: " + morada + "\nTelefone: " + telefone + "\n"
                 +"Pessoa Responsavel pela Candidatura: " + responsavelCandidatura  + "\n"
                 +"Com o seguinte texto explicativo: " + textoExplicativoCandidatura + "\n"
-                +"::Decisao::" + " - Não tomada";
+               // +"::Decisao::" + " - Não tomada"
+                    ;
         } else {
         return "Candidatura da empresa: " + nomeEmpresa +" - Efectuada na data: " + dataCandidatura+"\n"
                 +"Com a morada: " + morada + " - Telefone: " + telefone + "\n"
