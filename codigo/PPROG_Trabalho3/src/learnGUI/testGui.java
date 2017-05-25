@@ -32,6 +32,11 @@ public class testGui extends javax.swing.JFrame {
         addWindowListener(exitListener);
         this.ce = ce;
         initComponents();
+        botaoAtribuirCandidatura.setMnemonic('a');
+        botaoDecidirCandidatura.setMnemonic('d');
+        botaoCriarCandidatura.setMnemonic('c');
+        botaoEscreverDadosFicheiro.setMnemonic('e');
+        botaoCarregarDadosFicheiro.setMnemonic('l'); 
     }
 
     /**
