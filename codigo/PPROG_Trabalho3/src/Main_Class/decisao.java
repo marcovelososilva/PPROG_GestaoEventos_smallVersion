@@ -19,7 +19,7 @@ public class decisao implements Serializable{
     public String getTextoDecisao() {
         return textoDecisao;
     }
-
+    
     public void setTextoDecisao(String textoDecisao) {
         this.textoDecisao = textoDecisao;
     }

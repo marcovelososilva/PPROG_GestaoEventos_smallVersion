@@ -23,6 +23,7 @@ public class escreverFicheiroController {
     private final List<String> listaOrganizadores;
     private final List<String> listaCandidaturas;
     private final List<String> listaAtribuicoes;
+    private final List<String> listaDecisoes;
 
     public escreverFicheiroController(centroDeEventos ce) {
         this.ce = ce;
@@ -33,6 +34,7 @@ public class escreverFicheiroController {
         this.listaOrganizadores= new ArrayList<>();
         this.listaCandidaturas= new ArrayList<>();
         this.listaAtribuicoes= new ArrayList<>();
+        this.listaDecisoes = new ArrayList<>();
     }
 
     public List<String> getListaUtilizadores() {
@@ -62,6 +64,9 @@ public class escreverFicheiroController {
     public List<String> getListaAtribuicoes() {
         return listaAtribuicoes;
     }
+    public List<String> getListaDecisoes() {
+        return listaDecisoes;
+    }
      
     public void runCollectInformacao(){
         listaUtilizadores.add("utilizadores");
@@ -71,6 +76,7 @@ public class escreverFicheiroController {
         listaOrganizadores.add("organizadores");
         listaCandidaturas.add("candidaturas");
         listaAtribuicoes.add("atribuicao");
+        listaDecisoes.add("decisao");
 //lista de utlizadores (utilizadores) dados;
 //ex: André Zulu;andrezulu@email.pt;azulu;zulu123;
         List <utilizador> listaParaGravarUtilizador = ce.getListaUtilizadores();
@@ -119,6 +125,18 @@ public class escreverFicheiroController {
                             c.getTelefone() + ";" + c.getTextoExplicativoCandidatura() + ";" + 
                             c.getDataCandidatura().toStringEmNumeros() + ";";
                     listaCandidaturas.add(adicionaCandidatura);
+                    if(c.getDecisao() != null){
+                        decisao now = c.getDecisao();
+                        if (now.getTextoDecisao()!= null && now.isAprovada() || !now.isAprovada() && now.getFaeAtribuido() != null){
+                            String adicionaDecisao = e.getTitulo() + ";" 
+                                    + c.getNomeEmpresa() + ";" 
+                                    + c.getDataCandidatura().toStringEmNumeros() + ";" 
+                                    + now.getFaeAtribuido().getUser().getUsername() + ";" 
+                                    + now.isAprovada()+ ";" 
+                                    + now.getTextoDecisao() + ";";
+                            listaDecisoes.add(adicionaDecisao);
+                        }
+                    }
                 }    
     //lista de atribuições (atribuicao) evento.getTitulo();candidatura.getNomeEmpresa();candidatura.getdataCandidatura();fae.getUtilizador.getUsername(); 
                 //ex: Expo Carros;JulinhoSA;2017/06/24;azulu;     
@@ -128,6 +146,13 @@ public class escreverFicheiroController {
                             a.getCandidatura().getDataCandidatura().toStringEmNumeros() + ";" + a.getFae().getUser().getUsername() + ";";
                     listaAtribuicoes.add(adicionaAtribuicao);
                 }
+//                
+//    //lista de decisões (decisao)
+//                //ex:Exposição Garfos;GARFOS AFIADOS;2016/11/03;byazalde;True;Porque parecem fixes;
+//                //Expo Carros;JulinhoSA;2017/06/24;uestrela;True;Porque sim
+//                //   nome do evento;  nome candi; data cand; FAE;        Decisao;   justificação;
+//                List <decisao> listaParaGravarDecisao = e.
+//                
                    
         }
         
@@ -138,6 +163,7 @@ public class escreverFicheiroController {
         listaOrganizadores.add("end");
         listaCandidaturas.add("end");
         listaAtribuicoes.add("end");
+        listaDecisoes.add("end");
     }
 
     

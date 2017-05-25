@@ -43,7 +43,7 @@ public class Algoritmo2 implements algoritmoAtribuicao, Serializable{
             atribuicao a = new atribuicao();
             a.setFAEeCandidatura(listaFAE.get(contaFAE), c);
             listaAtribuicoes.add(a);
-            contaFAE = contaFAEs(listaFAE.size(), 0);
+            contaFAE = contaFAEs(contaFAE, (listaFAE.size()-1));
         }
         
         
@@ -52,10 +52,10 @@ public class Algoritmo2 implements algoritmoAtribuicao, Serializable{
     
     private static int contaFAEs (int contagemActual, int contMaximo){
         contagemActual --;
-        if (contagemActual > contMaximo){
+        if (contagemActual > -1){
             return contagemActual;
         } else {
-            return 0;
+            return contMaximo;
         }
     }
         @Override
