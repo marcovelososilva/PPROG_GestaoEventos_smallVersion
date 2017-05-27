@@ -7,9 +7,7 @@ package learnGUI;
 
 import Main_Class.*;
 import java.util.List;
-import Main_Class.*;
 import Controller.*;
-import Utils_Consola.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +24,9 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form testAtribuirCandidaturaGUI
+     * São colocados todos os campos como nao editaveis ou nao visiveis de forma a nao propagar erros
+     * Apenas a Lista de Eventos e que inicializa como visivel/editavel
+     * @param ce
      */
     public testCriarCandidaturaGUI(centroDeEventos ce) {
         this.ce = ce;
@@ -305,6 +306,13 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Ao selecionar um campo na JlistEventosActivos vai criar um evento com comparação na ListaEventos activos.
+     * Utiliza o metodo de Jlist (getSelectedIndex) para saber qual é o indice a ser usado na ListEventos activos.
+     * Ao selecionar o evento vai preencher as caixas de texto com a sua informação com o metodo .setText.
+     * @param evt 
+     */
     private void jListaEventosActivosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosActivosMouseClicked
         e = listaEventosActivos.get(jListaEventosActivos.getSelectedIndex());
         descritivoTitulo.setText(e.getTitulo());
@@ -316,7 +324,10 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         botaoConfirmaEvento.setEnabled(true);
 
     }//GEN-LAST:event_jListaEventosActivosMouseClicked
-
+    /**
+     * Metodo associado ao botao LimparDados para limpar as caixas de texto da candidatura.
+     * @param evt 
+     */
     private void botaoLimparDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparDadosActionPerformed
         morada.setText(null);
         nomeEmpresa.setText(null);
@@ -324,7 +335,15 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         telefone.setText(null);
         responsavelCandidatura.setText(null);
     }//GEN-LAST:event_botaoLimparDadosActionPerformed
-
+    
+    /**
+     * Metodo associado ao botao Submeter para a candidatura ao evento.
+     * Mostra um painel (JOptionPane) com opção yes/no para que o utilizador confirma se quer ou nao usar os dados.
+     * O metodo usa os dados das caixas de texto associados a candidatura com o metodo .get.
+     * Faz verificação com um try-catch para ver se o telefone é numerico.
+     * Para submeter, utiliza o metodo .setDadosCandidatura da classe criarCandidaturaController.
+     * @param evt 
+     */
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Criação de uma Candidatura no Evento" + e.getTitulo() + "\n\n"
                 + "Com os seguintes dados:\n" + "\nEmpresa:" + nomeEmpresa.getText()
@@ -354,7 +373,13 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
             jListaEventosActivos.setEnabled(true);
         }
     }//GEN-LAST:event_botaoSubmeterActionPerformed
-
+    
+    /**
+     * Metodo associado ao botao ConfirmaEvento para criar a instancia Candidatura.
+     * Ao selecionar o botão coloca a JListaEventosActivos nao selecionavel de forma a nao ser possivel selecionar outro evento.
+     * Coloca os campos e os botõeseditaveis da candidatura.
+     * @param evt 
+     */
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
 
         jListaEventosActivos.setEnabled(false);
@@ -368,12 +393,17 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
         botaoLimparDados.setEnabled(true);
         botaoSubmeter.setEnabled(true);
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
-
+    
+    /**
+     * Metodo associado ao botao Sair para fechar a janela
+     * @param evt 
+     */
     private void SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseClicked
         this.setVisible(false);
     }//GEN-LAST:event_SairMouseClicked
 
     /**
+     * 
      * @param args the command line arguments
      */
     public static void main(String args[]) {

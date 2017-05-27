@@ -22,11 +22,15 @@ import learnGUI.testeDecidirCandidatura;
  */
 public class testGui extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public centroDeEventos ce;
 //   centroDeEventos ce = new centroDeEventos();
 
     /**
      * Creates new form testGui
+     * @param ce
      */
     public testGui(centroDeEventos ce) {
         addWindowListener(exitListener);
