@@ -26,13 +26,13 @@ public class evento implements Serializable {
     /**
      * construtor com parametros:
      * titulo, texto descritivo, data de inicio data de fim local data limite de submissao de candidaturas e o tipo  do evento
-     * @param titulo
-     * @param textoDescritivo
-     * @param dataInicio
-     * @param dataFim
-     * @param local
-     * @param dataLimiteSubmissaoCandidaturas
-     * @param tipo
+     * @param titulo titulo
+     * @param textoDescritivo texto descritivo
+     * @param dataInicio data de inicio
+     * @param dataFim data de fim
+     * @param local local
+     * @param dataLimiteSubmissaoCandidaturas data limite submissao candidatura
+     * @param tipo tipo
      */
     public evento(String titulo, String textoDescritivo, Data dataInicio, Data dataFim, String local, Data dataLimiteSubmissaoCandidaturas, EventType tipo) {
         this.titulo = titulo;
@@ -289,8 +289,8 @@ public class evento implements Serializable {
      * presentes na lista e confirma se existe já uma igual metodo EQUALS
      * candidatura;
      *
-     * @param c
-     * @return 
+     * @param c candidatura
+     * @return boolean se candidatura é unica
      */
     public boolean validaCandidatura(candidatura c) {
         boolean candidaturaUnica = true;

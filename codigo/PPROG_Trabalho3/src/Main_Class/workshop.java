@@ -16,7 +16,7 @@ public class workshop implements Serializable {
 
     /**
      * to string devolve o nome da class
-     * @return 
+     * @return  string com workshop
      */
     @Override
     public String toString() {

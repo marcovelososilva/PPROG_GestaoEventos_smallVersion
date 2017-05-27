@@ -21,7 +21,7 @@ public class exposicao implements EventType, Serializable {
 
     /**
      * devolve uma string com o nome da classe
-     * @return
+     * @return exposicao
      */
     @Override
     public String toStringNomeTipo() {
