@@ -262,12 +262,16 @@ Congresso Ténis;REDES E GRADEAMENTO;2017/5/4;euva;
 Congresso Ténis;TENIS REJEITADOS;2017/5/11;euva;
 end
 decisao
-Exposição Garfos;GARFOS AFIADOS;2016/11/3;Porque parecem fixes;
-Exposição Garfos;GARFOS BICUDOS;2016/11/10;Gostam de garfos;
-Congresso Facas;FACAS DE CORTE S.A;2016/12/3;parabéns à prima;
-Congresso Facas;FACAS DE MANTEIGA LDA;2016/11/2;Lindos Lindos;
-Exposição Badminton;VOLANTES LDA;2017/4/1;conheço lá uma pessoa;
-Exposição Badminton;RAQUETES S.A.;2017/4/3;duas palavras IMPECAVEIS!;
-Congresso Ténis;BOLAS E COMPANHIA;2017/5/3;Uma Delicia;
-Congresso Ténis;REDES E GRADEAMENTO;2017/5/4;Amigos do primo do coiso;
+Exposição Garfos;GARFOS AFIADOS;2016/11/3;byazalde;true;Porque parecem fixes;
+Exposição Garfos;GARFOS BICUDOS;2016/11/10;dveloso;true;Gostam de garfos;
+Exposição Garfos;GARFOS REJEITADOS;2016/11/11;dveloso;false;São feios;
+Congresso Facas;FACAS DE CORTE S.A;2016/12/3;ftaborda;true;parabéns à prima;
+Congresso Facas;FACAS DE MANTEIGA LDA;2016/11/2;euva;true;Lindos Lindos;
+Congresso Facas;FACAS REJEITADAS;2016/11/11;ftaborda;false;Não tem nivel;
+Exposição Badminton;VOLANTES LDA;2017/4/1;byaldi;true;conheço lá uma pessoa;
+Exposição Badminton;RAQUETES S.A.;2017/4/3;euva;true;duas palavras IMPECAVEIS!;
+Exposição Badminton;BADMINTON REJEITADOS;2017/4/11;byaldi;false;Não tem bom feedback;
+Congresso Ténis;BOLAS E COMPANHIA;2017/5/3;byaldi;true;Uma Delicia;
+Congresso Ténis;REDES E GRADEAMENTO;2017/5/4;euva;true;Amigos do primo do coiso;
+Congresso Ténis;TENIS REJEITADOS;2017/5/11;euva;false;Não jogam ténis;
 end
