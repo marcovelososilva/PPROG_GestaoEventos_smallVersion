@@ -174,7 +174,7 @@ public class evento implements Serializable {
 
     /**
      * set ao local do evento
-     * @param local
+     * @param local local do evento
      */
     public void setLocal(String local) {
         this.local = local;
@@ -182,7 +182,7 @@ public class evento implements Serializable {
 
     /**
      * get da data limite de submissao de candidaturas
-     * @return
+     * @return data limite de submissao candidaturas
      */
     public Data getDataLimiteSubmissaoCandidaturas() {
         return this.dataLimiteSubmissaoCandidaturas;
@@ -191,7 +191,7 @@ public class evento implements Serializable {
     /**
      * set data limite de submissao de candidaturas
      * rrecebendo como parametro uma nova data
-     * @param dataLimiteSubmissaoCandidaturas
+     * @param dataLimiteSubmissaoCandidaturas data limite de candidaturas
      */
     public void setDataLimiteSubmissaoCandidaturas(Data dataLimiteSubmissaoCandidaturas) {
         this.dataLimiteSubmissaoCandidaturas = dataLimiteSubmissaoCandidaturas;
@@ -199,7 +199,7 @@ public class evento implements Serializable {
 
     /**
      * get tipo de evento
-     * @return
+     * @return tipo do evento
      */
     public EventType getTipo() {
         return this.tipo;
@@ -207,7 +207,7 @@ public class evento implements Serializable {
 
     /**
      * set tipo de evento recebendo como parametro um tipo
-     * @param tipo
+     * @param tipo tipo do evento
      */
     public void setTipo(EventType tipo) {
         this.tipo = tipo;
@@ -215,7 +215,7 @@ public class evento implements Serializable {
 
     /**
      * get lista de FAEs
-     * @return 
+     * @return lista de faes
      */
     public List getListaFAE() {
         return listaFAE;
@@ -231,8 +231,8 @@ public class evento implements Serializable {
     
     /**
      * get lista de candidaturas
-     * @param FEA
-     * @return 
+     * @param FEA fae
+     * @return lista de candidaturas
      */
     public List getListaCandidaturas(fae FEA) {
         return listaCandidaturas;
@@ -240,7 +240,7 @@ public class evento implements Serializable {
     
     /**
      * get lista de atribuicoes do evento
-     * @return
+     * @return lista de atribuições
      */
     public List getListaAtribuicoes() {
         return listaAtribuicao;
@@ -248,7 +248,7 @@ public class evento implements Serializable {
 
     /**
      * get lista de organizador deste evento
-     * @return
+     * @return lista de organizadores
      */
     public List<organizador> getListaOrganizadores() {
         return listaOrganizadores;
@@ -257,7 +257,7 @@ public class evento implements Serializable {
     /**
      * adiciona uma atribuição à lista de atribuições recebendo 
      * como parametro uma atribuição
-     * @param a
+     * @param a atribuição
      */
     public void registaAtribuicao(atribuicao a) {
         listaAtribuicao.add(a);
@@ -266,7 +266,7 @@ public class evento implements Serializable {
 
     /**
      * Cria uma nova candidatura para o evento onde estamos;
-     * @return 
+     * @return candidatura
      */
     public candidatura selecionaEventoCriaCandidatura() {
         return new candidatura();
@@ -275,8 +275,8 @@ public class evento implements Serializable {
     /**
      * adiciona uma candidatura valida à lista de candidaturas do evento
      *
-     * @param c
-     * @return 
+     * @param c candidatura
+     * @return boolean se esta tudo bem
      */
     public boolean registaCandidatura(candidatura c) {
         boolean ok = validaCandidatura(c);
@@ -305,7 +305,7 @@ public class evento implements Serializable {
 
     /**
      * adiciona um novo fae á lista de FAE recebendo como parametro um utilizador
-     * @param u
+     * @param u utilizador
      */
     public void addUtilizadorFAE(utilizador u) {
         fae novoFAE = new fae(u);

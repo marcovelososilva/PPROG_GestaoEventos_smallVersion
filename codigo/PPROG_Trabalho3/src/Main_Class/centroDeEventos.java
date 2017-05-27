@@ -60,7 +60,7 @@ public class centroDeEventos implements Serializable {
      * Mostra eventos que tem a data submissao caducada e este ainda nao
      * finalizou
      *
-     * @param o ORGANIZADOR do qual se pretende obter a lista de eventos com a
+     * @param OrganizadorEvento ORGANIZADOR do qual se pretende obter a lista de eventos com a
      * submissão finalizada.
      * @return List - eventosFinalizados - Lista de eventos de um ORGANIZADOR
      * que tem a data de submissão finalizada.
@@ -87,7 +87,7 @@ public class centroDeEventos implements Serializable {
      * Mostra eventos que tem a data submissao caducada e este ainda nao
      * finalizou
      *
-     * @param fae FAE do qual se pretende obter a lista de eventos com a
+     * @param FAEEvento FAE do qual se pretende obter a lista de eventos com a
      * submissão finalizada.
      * @return List eventosFinalizados - Lista de eventos de um FAE que tem a
      * data de submissão finalizada.

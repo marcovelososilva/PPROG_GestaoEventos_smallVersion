@@ -27,7 +27,7 @@ public class congresso implements EventType, Serializable {
 
     /**
      * devolve o nome da classe
-     * @return
+     * @return nome do congresso
      */
     @Override
     public String toStringNomeTipo() {
