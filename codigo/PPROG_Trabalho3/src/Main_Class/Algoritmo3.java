@@ -12,53 +12,70 @@ import java.util.List;
  *
  * @author Marco
  */
-public class Algoritmo3 implements algoritmoAtribuicao, Serializable{
-    private final String nome;
+public class Algoritmo3 implements algoritmoAtribuicao, Serializable {
 
+    private final String nome;
     private final String descritivo;
 
+    /**
+     * construtor sem parametro do algoritmo 3
+     */
     public Algoritmo3() {
         nome = "Algoritmo 3 - Ordem Aleatória invertida";
         descritivo = "Algoritmo distribui as candidaturas pelos FAE's \n por ordem Aleatória invertida 1 cada ate acabar";
     }
 
+    /**
+     * devolve o nome do algoritmo
+     * @return 
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * devolve o descritivo do algoritmo
+     * @return 
+     */
     public String getDescritivo() {
         return descritivo;
     }
-    @Override
-    public String toString() {
-        return nome + ",\nDescritivo:\n" + descritivo;
-    }
-    
+
     @Override
     public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
         listaAtribuicoes.clear();
         int indiceFAE = 0;
-        for (candidatura c : listaCandidaturas){
+        for (candidatura c : listaCandidaturas) {
             atribuicao a = new atribuicao();
             a.setFAEeCandidatura(listaFAE.get(indiceFAE), c);
             listaAtribuicoes.add(a);
             indiceFAE = contaFAEs(indiceFAE, listaFAE.size());
         }
-        
-        
+
         return listaAtribuicoes;
     }
-    
-    private static int contaFAEs (int contagemActual, int contMaximo){
-        contagemActual ++;
-        if (contagemActual > contMaximo-1){
+
+    /**
+     * metodo auxiliar que auxilia o runAlgoritmo
+     * @param contagemActual
+     * @param contMaximo
+     * @return 
+     */
+    private static int contaFAEs(int contagemActual, int contMaximo) {
+        contagemActual++;
+        if (contagemActual > contMaximo - 1) {
             return 0;
         } else {
             return contagemActual;
         }
     }
-    
-        @Override
+
+    @Override
+    public String toString() {
+        return nome + ",\nDescritivo:\n" + descritivo;
+    }
+
+    @Override
     public boolean equals(Object outroObjeto) {
         if (this == outroObjeto) {
             return true;
@@ -67,6 +84,6 @@ public class Algoritmo3 implements algoritmoAtribuicao, Serializable{
             return false;
         }
         algoritmoAtribuicao outroAlgoritmo = (algoritmoAtribuicao) outroObjeto;
-        return  this.toString().equalsIgnoreCase(outroAlgoritmo.toString());
+        return this.toString().equalsIgnoreCase(outroAlgoritmo.toString());
     }
 }

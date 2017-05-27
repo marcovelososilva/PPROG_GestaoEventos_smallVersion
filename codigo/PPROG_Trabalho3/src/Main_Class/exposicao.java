@@ -2,8 +2,15 @@ package Main_Class;
 
 import java.io.Serializable;
 
-public class exposicao implements EventType, Serializable{
+/**
+ *
+ * @author Marco
+ */
+public class exposicao implements EventType, Serializable {
 
+    /**
+     *construtor do objecto exposicao sem parametros
+     */
     public exposicao() {
     }
 
@@ -12,9 +19,13 @@ public class exposicao implements EventType, Serializable{
         return "exposicao";
     }
 
+    /**
+     * devolve uma string com o nome da classe
+     * @return
+     */
     @Override
     public String toStringNomeTipo() {
-         return "exposicao";
+        return "exposicao";
     }
 
     @Override

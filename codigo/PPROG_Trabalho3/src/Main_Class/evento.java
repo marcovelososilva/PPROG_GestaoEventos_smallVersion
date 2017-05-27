@@ -5,7 +5,11 @@ import java.util.List;
 import Utils.*;
 import java.io.Serializable;
 
-public class evento implements Serializable{
+/**
+ *
+ * @author Marco
+ */
+public class evento implements Serializable {
 
     private String titulo;
     private String textoDescritivo;
@@ -19,6 +23,17 @@ public class evento implements Serializable{
     private final List<candidatura> listaCandidaturas;
     private EventType tipo;
 
+    /**
+     * construtor com parametros:
+     * titulo, texto descritivo, data de inicio data de fim local data limite de submissao de candidaturas e o tipo  do evento
+     * @param titulo
+     * @param textoDescritivo
+     * @param dataInicio
+     * @param dataFim
+     * @param local
+     * @param dataLimiteSubmissaoCandidaturas
+     * @param tipo
+     */
     public evento(String titulo, String textoDescritivo, Data dataInicio, Data dataFim, String local, Data dataLimiteSubmissaoCandidaturas, EventType tipo) {
         this.titulo = titulo;
         this.textoDescritivo = textoDescritivo;
@@ -33,6 +48,17 @@ public class evento implements Serializable{
         listaCandidaturas = new ArrayList<>();
     }
 
+    /**
+     * construtor com parametros que aceita o tipo de evento em string utilizado pelo
+     * metodo que le o ficheiro de texto 
+     * @param titulo
+     * @param textoDescritivo
+     * @param dataInicio
+     * @param dataFim
+     * @param local
+     * @param dataLimiteSubmissaoCandidaturas
+     * @param tipo
+     */
     public evento(String titulo, String textoDescritivo, Data dataInicio, Data dataFim, String local, Data dataLimiteSubmissaoCandidaturas, String tipo) {
         this.titulo = titulo;
         this.textoDescritivo = textoDescritivo;
@@ -51,6 +77,9 @@ public class evento implements Serializable{
         listaCandidaturas = new ArrayList<>();
     }
 
+    /**
+     * construtor sem parametros
+     */
     public evento() {
         listaFAE = new ArrayList<>();
         listaOrganizadores = new ArrayList<>();
@@ -58,25 +87,11 @@ public class evento implements Serializable{
         listaCandidaturas = new ArrayList<>();
     }
 
-    @Override
-    public String toString() {
-        return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
-                + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
-                + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
-                + "Tipo de Evento: " + tipo.toStringNomeTipo() + "\n";
-    }
-
-    public String toStringComFaeOrganizador() {
-        return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
-                + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
-                + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
-                + "Tipo de Evento: " + tipo.toString() + "\n"
-                + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
-                + "FAE: " + converterListaEmString(listaFAE) + "\n"
-                + "Candidaturas: " + converterListaEmString(listaCandidaturas) + "\n"
-                + "Atribuições: " + converterListaEmString(listaAtribuicao) + "\n";
-    }
-
+    /**
+     * converter a uma lista em string
+     * @param lista
+     * @return 
+     */
     private String converterListaEmString(List lista) {
         String porExtenso = "";
         for (Object o : lista) {
@@ -85,96 +100,173 @@ public class evento implements Serializable{
         return porExtenso;
     }
 
+    /**
+     * get o titulo do evento
+     * @return
+     */
     public String getTitulo() {
         return this.titulo;
     }
 
+    /**
+     * set titulo ao evento
+     * @param titulo
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    /**
+     * get texto descritivo do evento
+     * @return
+     */
     public String getTextoDescritivo() {
         return this.textoDescritivo;
     }
 
+    /**
+     * set texto descritivo do evento
+     * @param textoDescritivo
+     */
     public void setTextoDescritivo(String textoDescritivo) {
         this.textoDescritivo = textoDescritivo;
     }
 
+    /**
+     * get data de incio do evento
+     * @return
+     */
     public Data getDataInicio() {
         return this.dataInicio;
     }
 
+    /**
+     * set data da inicio do evento
+     * @param dataInicio
+     */
     public void setDataInicio(Data dataInicio) {
         this.dataInicio = dataInicio;
     }
 
+    /**
+     * get data de fim do evento
+     * @return
+     */
     public Data getDataFim() {
         return this.dataFim;
     }
 
+    /**
+     * set dat de fim de evento
+     * @param dataFim
+     */
     public void setDataFim(Data dataFim) {
         this.dataFim = dataFim;
     }
 
+    /**
+     * get local do evento
+     * @return
+     */
     public String getLocal() {
         return this.local;
     }
 
+    /**
+     * set ao local do evento
+     * @param local
+     */
     public void setLocal(String local) {
         this.local = local;
     }
 
+    /**
+     * get da data limite de submissao de candidaturas
+     * @return
+     */
     public Data getDataLimiteSubmissaoCandidaturas() {
         return this.dataLimiteSubmissaoCandidaturas;
     }
 
+    /**
+     * set data limite de submissao de candidaturas
+     * rrecebendo como parametro uma nova data
+     * @param dataLimiteSubmissaoCandidaturas
+     */
     public void setDataLimiteSubmissaoCandidaturas(Data dataLimiteSubmissaoCandidaturas) {
         this.dataLimiteSubmissaoCandidaturas = dataLimiteSubmissaoCandidaturas;
     }
 
+    /**
+     * get tipo de evento
+     * @return
+     */
     public EventType getTipo() {
         return this.tipo;
     }
 
+    /**
+     * set tipo de evento recebendo como parametro um tipo
+     * @param tipo
+     */
     public void setTipo(EventType tipo) {
         this.tipo = tipo;
     }
 
     /**
-     *
-     * @param e
+     * get lista de FAEs
+     * @return 
      */
     public List getListaFAE() {
         return listaFAE;
     }
 
     /**
-     *
-     * @param e
+     * get lista de candidaturas
+     * @return 
      */
     public List getListaCandidatura() {
         return listaCandidaturas;
     }
+    
+    /**
+     * get lista de candidaturas
+     * @param FEA
+     * @return 
+     */
+    public List getListaCandidaturas(fae FEA) {
+        return listaCandidaturas;
+    }
+    
+    /**
+     * get lista de atribuicoes do evento
+     * @return
+     */
+    public List getListaAtribuicoes() {
+        return listaAtribuicao;
+    }
 
     /**
-     *
-     * @param la
+     * get lista de organizador deste evento
+     * @return
+     */
+    public List<organizador> getListaOrganizadores() {
+        return listaOrganizadores;
+    }
+    
+    /**
+     * adiciona uma atribuição à lista de atribuições recebendo 
+     * como parametro uma atribuição
+     * @param a
      */
     public void registaAtribuicao(atribuicao a) {
         listaAtribuicao.add(a);
     }
 
-    /**
-     *
-     * @param FEA
-     */
-    public List getListaCandidaturas(fae FEA) {
-        return listaCandidaturas;
-    }
 
     /**
      * Cria uma nova candidatura para o evento onde estamos;
+     * @return 
      */
     public candidatura selecionaEventoCriaCandidatura() {
         return new candidatura();
@@ -184,6 +276,7 @@ public class evento implements Serializable{
      * adiciona uma candidatura valida à lista de candidaturas do evento
      *
      * @param c
+     * @return 
      */
     public boolean registaCandidatura(candidatura c) {
         boolean ok = validaCandidatura(c);
@@ -197,6 +290,7 @@ public class evento implements Serializable{
      * candidatura;
      *
      * @param c
+     * @return 
      */
     public boolean validaCandidatura(candidatura c) {
         boolean candidaturaUnica = true;
@@ -210,8 +304,7 @@ public class evento implements Serializable{
     }
 
     /**
-     *
-     * @param e
+     * adiciona um novo fae á lista de FAE recebendo como parametro um utilizador
      * @param u
      */
     public void addUtilizadorFAE(utilizador u) {
@@ -220,7 +313,7 @@ public class evento implements Serializable{
     }
 
     /**
-     *
+     * adiciona um novo organizador à lista de organizadores recebendo como parametro um utilizador
      * @param u
      */
     public void addUtilizadorOrganizador(utilizador u) {
@@ -228,18 +321,38 @@ public class evento implements Serializable{
         listaOrganizadores.add(novoOrganizador);
     }
 
+    /**
+     *
+     * @param faeSelecionado
+     * @param candidaturaSelecionada
+     */
     public void addAtribuicaoFicheiro(fae faeSelecionado, candidatura candidaturaSelecionada) {
         atribuicao a = new atribuicao();
         a.setFAEeCandidatura(faeSelecionado, candidaturaSelecionada);
         listaAtribuicao.add(a);
     }
 
-    public List getListaAtribuicoes() {
-        return listaAtribuicao;
+    /**
+     * to string personalizado com fae e organizador impresso
+     * @return
+     */
+    public String toStringComFaeOrganizador() {
+        return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
+                + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
+                + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
+                + "Tipo de Evento: " + tipo.toString() + "\n"
+                + "Organizadores: " + converterListaEmString(listaOrganizadores) + "\n"
+                + "FAE: " + converterListaEmString(listaFAE) + "\n"
+                + "Candidaturas: " + converterListaEmString(listaCandidaturas) + "\n"
+                + "Atribuições: " + converterListaEmString(listaAtribuicao) + "\n";
     }
-
-    public List<organizador> getListaOrganizadores() {
-        return listaOrganizadores;
+    
+        @Override
+    public String toString() {
+        return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
+                + "Data de Inicio: " + dataInicio + ",\nData de Fim: " + dataFim + ",\n"
+                + "Local: " + local + ",\nData Limite de Submissão de Candidaturas: " + dataLimiteSubmissaoCandidaturas + ",\n"
+                + "Tipo de Evento: " + tipo.toStringNomeTipo() + "\n";
     }
 
     @Override

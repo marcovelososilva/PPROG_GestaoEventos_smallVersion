@@ -16,11 +16,20 @@ public class escreverFicheiroBinarioController implements Serializable{
     
     private final centroDeEventos ce;
 
+    /**
+     * construtor do objecto escrever ficheiro binario controller
+     * 
+     * @param ce Centro de eventos
+     */
     public escreverFicheiroBinarioController(centroDeEventos ce) {
         this.ce = ce;
     }
     
-    
+    /**
+     *metodo que é responsavel por escrever em ficheiro binário o centro de eventos
+     * para que possa ser restaurado posteriormente - PERCISTÊNCIA
+     * 
+     */
     public void serializationFicheiro () {
       try {
          FileOutputStream fileOut = new FileOutputStream("ficheiroBinarioCentroEventos.bin");

@@ -4,12 +4,20 @@ import Main_Class.*;
 import Utils.Data;
 import java.util.List;
 
+/**
+ *
+ * @author Marco
+ */
 public class criarCandidaturaController {
 
     private centroDeEventos ce;
     private evento eventoSelecionado;
     private candidatura candidaturaEvento;
 
+    /**
+     *
+     * @param ce
+     */
     public criarCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
     }
@@ -26,7 +34,7 @@ public class criarCandidaturaController {
     }
 
     /**
-     * 
+     * recebe um evento e cria uma candidatura par ao mesmo devolvendo a candidatura
      * @param e
      * @return 
      */
@@ -37,7 +45,7 @@ public class criarCandidaturaController {
     }
     
     /**
-     * 
+     * set dados a uma candiadtura préviamente criada
      * @param nomeEmpresa
      * @param responsavelCandidatura
      * @param morada
@@ -53,14 +61,11 @@ public class criarCandidaturaController {
         candidaturaEvento.setDataCandidatura(Data.dataAtual());
     }
 
-    public void validaDados() {
-        candidaturaEvento.validaDadosCandidatura();
-    }
-
     /**
      * validação global da candidatura a ver se já não existe uma igual
      *
-     * @param CANDIDATURA
+     * @param c
+     * @return BOOLEAN informa se a operação foi efectuada com sucesso
      */
     public boolean validaCandidatura(candidatura c) {
         return eventoSelecionado.validaCandidatura(c);
@@ -70,7 +75,7 @@ public class criarCandidaturaController {
      * Método que recebe um candidatura e vai á classe evento fazer uma validação global e adicionar à
      * respectiva lista correspondente, devolve TRUE se a operação for efectuada com sucesso;
      * 
-     * @param CANDIDATURA - a candidatura a ser registada
+     * @param c
      * @return BOOLEAN informando se a operação foi efectuada com sucesso
      */
     public boolean registaCandidatura(candidatura c) {

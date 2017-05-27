@@ -16,6 +16,7 @@ import learnGUI.testGui;
 public class main {
 
     /**
+     * metodo main que inicializa o programa
      * @param args the command line arguments
      */
     public static void main(String[] args) {

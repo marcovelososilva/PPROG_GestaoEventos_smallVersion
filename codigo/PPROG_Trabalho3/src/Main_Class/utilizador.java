@@ -2,77 +2,115 @@ package Main_Class;
 
 import java.io.Serializable;
 
-public class utilizador implements Serializable{
+/**
+ *
+ * @author Marco
+ */
+public class utilizador implements Serializable {
 
-	private String nome;
-	private String email;
-	private String username;
-	private String password;
+    private String nome;
+    private String email;
+    private String username;
+    private String password;
 
-        public utilizador(String nome, String email, String username, String password) {
-            this.nome = nome;
-            this.email = email;
-            this.username = username;
-            this.password = password;
-        }
+    /**
+     * construtor com parametros para inciar o objecto utilizador
+     *
+     * @param nome
+     * @param email
+     * @param username
+     * @param password
+     */
+    public utilizador(String nome, String email, String username, String password) {
+        this.nome = nome;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
-        public utilizador() {
-        }
-        
-        public String getNome() {
-            return this.nome;
-	}
+    /**
+     * construtor sem parametros para inciar o objecto utilizador
+     */
+    public utilizador() {
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    /**
+     * get nome do utilizador
+     *
+     * @return
+     */
+    public String getNome() {
+        return this.nome;
+    }
 
-	public String getEmail() {
-		return this.email;
-	}
+    /**
+     * set nome do utilizador
+     *
+     * @param nome
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    /**
+     * get o email do utilizador
+     *
+     * @return
+     */
+    public String getEmail() {
+        return this.email;
+    }
 
-	public String getUsername() {
-		return this.username;
-	}
+    /**
+     * set email do utilizador
+     *
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    /**
+     * get username do utilizador
+     *
+     * @return
+     */
+    public String getUsername() {
+        return this.username;
+    }
 
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    /**
+     * set ao username do utilizador
+     *
+     * @param username
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    /**
+     * devolve a password do utilizador metodo utilizado pela escrita para txt
+     * @return 
+     */
+    public String getPassword() {
+        return this.password;
+    }
+    
+    /**
+     * faz set à password do utilizador, utilizado para a leitura de txt
+     * @param password 
+     */
+    public void setPassword (String password){
+        this.password = password;
+    }
 
     @Override
     public String toString() {
         return "Utilizador " + "Nome:" + nome + "; Email:" + email + "; Username: " + username;
     }
-    
-    public String utilizadorStringNome(){
-        return nome;
-    }
 
-        
-        
-	public void setConfirmacaoUtilizador() {
-		// TODO - implement utilizador.setConfirmacaoUtilizador
-		throw new UnsupportedOperationException();
-	}
 
-	public void validaDadosUtilizadorInt() {
-		// TODO - implement utilizador.validaDadosUtilizadorInt
-		throw new UnsupportedOperationException();
-	}
-
-         @Override
+    @Override
     public boolean equals(Object outroObjeto) {
         if (this == outroObjeto) {
             return true;
@@ -81,7 +119,9 @@ public class utilizador implements Serializable{
             return false;
         }
         utilizador outroUtilizador = (utilizador) outroObjeto;
-        return this.getUsername().equalsIgnoreCase(outroUtilizador.getUsername()) &&
-                this.getEmail().equalsIgnoreCase(outroUtilizador.getEmail());
+        return this.getUsername().equalsIgnoreCase(outroUtilizador.getUsername())
+                && this.getEmail().equalsIgnoreCase(outroUtilizador.getEmail());
     }
+
+
 }

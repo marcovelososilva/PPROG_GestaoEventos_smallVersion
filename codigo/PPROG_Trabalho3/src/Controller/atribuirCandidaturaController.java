@@ -7,60 +7,53 @@ import Main_Class.organizador;
 import Utils.Data;
 import java.util.List;
 
+/**
+ *
+ * @author Marco
+ */
 public class atribuirCandidaturaController {
 
     private final centroDeEventos ce;
-    private organizador org;
 
+    /**
+     * contrunstor do metodo atribuir candidatura controller
+     * @param ce
+     */
     public atribuirCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
     }
 
     /**
-     *
-     * @param e
+     *  get algoritmos de atribuicao do centro de eventos
+     * @return 
      */
     public List getAlgoritmosAtribuicao() {
         return ce.getAlgoritmosAtribuicao();
     }
 
     /**
-     *
+     * get da lista de FAEs de um evento que recebe por parametro
      * @param e
-     * @return
+     * @return List  - FAEs
      */
     public List getListaFAE(evento e) {
         return e.getListaFAE();
     }
 
     /**
-     *
+     * get lista de candidaturas de um evento que recebe por parametro
      * @param e
+     * @return List - candidaturas
      */
     public List getListaCandidatura(evento e) {
         return e.getListaCandidatura();
     }
 
     /**
-     *
-     * @param listAlg
-     * @param listFAE
-     * @param listCand
+     * metodo que devolve a lista de organizadores unicos que tem eventos de 
+     * com submissao caducada
+     * @return List - organizadores
      */
-    public void executeAlgoritmo(ArrayList listAlg, ArrayList listFAE, ArrayList listCand) {
-        // TODO - implement atribuirCandidaturaController.executeAlgoritmo
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     *
-     * @param la
-     */
-    public void registaAlteracoes(ArrayList la) {
-        // TODO - implement atribuirCandidaturaController.registaAlteracoes
-        throw new UnsupportedOperationException();
-    }
-
     public List<organizador> getListaOrganizadorUnicosComEventosComDataSubmissaoCaducada() {
         List<organizador> listaorganizador = new ArrayList<>();
         List<evento> listaEventos = ce.getListaEvento();
@@ -78,14 +71,22 @@ public class atribuirCandidaturaController {
         return listaorganizador;
     }
         
-    
+    /**
+     * get lista que o centro de eventos devolve de eventos de um determinado organizador
+     * enviado como parametro com a data de submissao finalizada
+     * @param org
+     * @return
+     */
     public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador org) {
         return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
     }
-//    public List criarAtribuicao(int numAtribuicoes, evento e) {
-//	return 	e.novasAtribuicoesSegundoNumFAES(numAtribuicoes);
-//    }
 
+    /**
+     *get lista de atribuições que um determinado evento tem
+     * 
+     * @param e
+     * @return List - atribuições
+     */
     public List getListaAtribuicoes(evento e) {
         return e.getListaAtribuicoes();
     }
