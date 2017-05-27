@@ -152,6 +152,7 @@ public class candidatura implements Serializable {
      * o texto explicativo e um boolean sobre a decisao tomada
      * @param textoExplicativo texto explçicativo
      * @param decisaoFavoravel decisao favoravel
+     * @param faeSelecionado fae selecionado
      */
     public void addDecisaoFicheiro(String textoExplicativo, boolean decisaoFavoravel, fae faeSelecionado) {
         decisaoCandidatura = new decisao(textoExplicativo, decisaoFavoravel);
