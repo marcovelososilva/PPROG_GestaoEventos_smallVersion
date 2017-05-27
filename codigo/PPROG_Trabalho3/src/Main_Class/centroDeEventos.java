@@ -292,7 +292,10 @@ public class centroDeEventos implements Serializable {
         if (eventoSelecionado.getTitulo() != null) {
             candidatura candidaturaSelecionada = encontrarCandidaturaEvento(candidatura, dataCandidatura, eventoSelecionado);
             if (candidaturaSelecionada.getNomeEmpresa() != null) {
-                candidaturaSelecionada.addDecisaoFicheiro(textoExplicativo, decisaoFavoravel);
+                fae faeSelecionado = encontrarFAEEvento(fae, eventoSelecionado);
+                if (faeSelecionado.getUser().getNome() != null){
+                    candidaturaSelecionada.addDecisaoFicheiro(textoExplicativo, decisaoFavoravel, faeSelecionado);
+                }                    
             }
         }
     }

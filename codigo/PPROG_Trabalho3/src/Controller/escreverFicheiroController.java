@@ -209,6 +209,20 @@ public class escreverFicheiroController {
         listaAtribuicoes.add("end");
         listaDecisoes.add("end");
     }
+    
+    /**
+     * metodo responsavel por gravar no ficheirotxt o conteudo do centro de eventos
+     * @param listaUtilizadores
+     * @param listaGestoresEventos
+     * @param listaEventos
+     * @param listaFae
+     * @param listaOrganizadores
+     * @param listaCandidaturas
+     * @param listaAtribuicoes
+     * @param listaDecisoes
+     * @param nomeFile
+     * @return 
+     */
     private boolean gravarFicheiro (List<String> listaUtilizadores, List<String> listaGestoresEventos, List<String> listaEventos, List<String> listaFae, List<String> listaOrganizadores, List<String> listaCandidaturas, List<String> listaAtribuicoes, List<String> listaDecisoes, String nomeFile){
         boolean tudoOK = true;
         try {

@@ -8,12 +8,10 @@ package learnGUI;
 
 import Controller.lerFicheiroController;
 import Main_Class.*;
-import Utils_Consola.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
