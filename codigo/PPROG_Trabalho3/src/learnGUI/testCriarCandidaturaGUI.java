@@ -21,7 +21,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
     private List<evento> listaEventosActivos;
     private candidatura candidaturaFeita;
     private evento e;
-
+    private String ObjButtons[] = {"Sim","Nao"};
     /**
      * Creates new form testAtribuirCandidaturaGUI
      * São colocados todos os campos como nao editaveis ou nao visiveis de forma a nao propagar erros
@@ -345,35 +345,42 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
      * @param evt 
      */
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Criação de uma Candidatura no Evento" + e.getTitulo() + "\n\n"
-                + "Com os seguintes dados:\n" + "\nEmpresa:" + nomeEmpresa.getText()
-                + "\nMorada:" + morada.getText()
-                + "\nTelefone:" + telefone.getText()
-                + "\nResponsavel da Candidatura:" + responsavelCandidatura.getText()
-                + "\nCom o seguinte texto\n" + textoExplicativoCandidatura.getText()
-                + //candidaturaFeita.toString() + 
-                "\n\nConfirma?", "Confirmação dos dados",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-            this.setVisible(false);
-            try {
-                criarCandController.setDadosCandidatura(nomeEmpresa.getText(), responsavelCandidatura.getText(), morada.getText(),
-                        Integer.parseInt(telefone.getText()), textoExplicativoCandidatura.getText());
-                if (criarCandController.registaCandidatura(candidaturaFeita)) {
-                } else {
-                    JOptionPane.showMessageDialog(null, "OPERAÇÃO FRACASSADA: erro a adicionar ao array!", "Informacao", JOptionPane.ERROR_MESSAGE);
-                    //        utilitariosConsola.escreverConsola("OPERAÇÃO FRACASSADA: erro a adicionar ao array!");
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "O Telefone tem que ser um numero");
-                telefone.setEditable(true);
-                botaoSubmeter.setEnabled(true);
-            }
+        if (morada.getText().equals("") || nomeEmpresa.getText().equals("")
+                || telefone.getText().equals("") || responsavelCandidatura.getText().equals("")
+                || textoExplicativoCandidatura.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
+
         } else {
-            botaoConfirmaEvento.setEnabled(true);
-            jListaEventosActivos.setEnabled(true);
-        }
+            if (JOptionPane.showOptionDialog(null, "Criação de uma Candidatura no Evento" + e.getTitulo() + "\n\n"
+                    + "Com os seguintes dados:\n" + "\nEmpresa:" + nomeEmpresa.getText()
+                    + "\nMorada:" + morada.getText()
+                    + "\nTelefone:" + telefone.getText()
+                    + "\nResponsavel da Candidatura:" + responsavelCandidatura.getText()
+                    + "\nCom o seguinte texto\n" + textoExplicativoCandidatura.getText()
+                    + //candidaturaFeita.toString() + 
+                    "\n\nConfirma?", "Confirmação dos dados", JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE, null, ObjButtons, ObjButtons[1]) == JOptionPane.YES_OPTION) {
+                try {
+                    criarCandController.setDadosCandidatura(nomeEmpresa.getText(), responsavelCandidatura.getText(), morada.getText(),
+                            Integer.parseInt(telefone.getText()), textoExplicativoCandidatura.getText());
+                    if (criarCandController.registaCandidatura(candidaturaFeita)) {
+                        this.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "OPERAÇÃO FRACASSADA: erro a adicionar ao array!", "Informacao", JOptionPane.ERROR_MESSAGE);
+                        //        utilitariosConsola.escreverConsola("OPERAÇÃO FRACASSADA: erro a adicionar ao array!");
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "O Telefone tem que ser um numero");
+                    telefone.setEditable(true);
+                    botaoSubmeter.setEnabled(true);
+
+                }
+            } else {
+                botaoConfirmaEvento.setEnabled(true);
+                jListaEventosActivos.setEnabled(true);
+            }
     }//GEN-LAST:event_botaoSubmeterActionPerformed
-    
+    }
     /**
      * Metodo associado ao botao ConfirmaEvento para criar a instancia Candidatura.
      * Ao selecionar o botão coloca a JListaEventosActivos nao selecionavel de forma a nao ser possivel selecionar outro evento.

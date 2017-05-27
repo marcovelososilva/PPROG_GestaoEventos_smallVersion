@@ -34,6 +34,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private candidatura cand;
     private evento e;
     private String textoDecisao;
+    private String ObjButtons[] = {"Sim","Nao"};
 
     /**
      * Creates new form testeDecidirCandidatura
@@ -495,21 +496,29 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         } else {
             textoDecisao = "Não Aceite";
         }
-        if (JOptionPane.showConfirmDialog(null, "A candidatura feita ao evento "+e.getTitulo() +" por: \n" + cand.getNomeEmpresa() 
-                + "\nFoi Considerada:\n" + textoDecisao + "\nCom o seguinte texto Justificado:\n" + descritivoTextoJustificativoDaDecisao.getText()
-                + "\n\nConfirma?", "Confirmação dos dados",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-            decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
-            decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText(),f);
-            this.setVisible(false);
-        } else {
-            jListCandidaturas.setEnabled(true);
-            jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(true);
-            botaoConfirmaCandidatura.setEnabled(true);
-            botaoConfirmaEvento.setEnabled(true);
+        if (bRadioAceite.isSelected() == false && bRadioRecusado.isSelected() == false)
+        {
+             JOptionPane.showMessageDialog(null, "Todos os campos  da decisao \ndevem ser preenchidos");
+        }else{
+           if (descritivoTextoJustificativoDaDecisao.getText().equals(""))
+            {
+             JOptionPane.showMessageDialog(null, "Todos os campos  da decisao \ndevem ser preenchidos");      
+            } else {
+            if (JOptionPane.showOptionDialog(null, "A candidatura feita ao evento " + e.getTitulo() + " por: \n" + cand.getNomeEmpresa()
+                    + "\nFoi Considerada:\n" + textoDecisao + "\nCom o seguinte texto Justificado:\n" + descritivoTextoJustificativoDaDecisao.getText()
+                    + "\n\nConfirma?", "Confirmação dos dados",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, ObjButtons, ObjButtons[1]) == JOptionPane.YES_OPTION) {
+                decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
+                decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText(), f);
+                this.setVisible(false);
+            } else {
+                jListCandidaturas.setEnabled(true);
+                jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(true);
+                botaoConfirmaCandidatura.setEnabled(true);
+                botaoConfirmaEvento.setEnabled(true);
+            }
         }
-        
-        
+        }
 
     }//GEN-LAST:event_botaoSubmeterActionPerformed
     /**

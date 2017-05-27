@@ -43,20 +43,12 @@ public class testeEscreverFicheiro {
 //lista de decisoes (candidaturas);
         List<String> listaDecisoes = efController.getListaDecisoes();
         
-   //     utilitariosConsola.escreverConsola("qual o nome do ficheiro que quer guardar?");
-   //     String nomeFile = utilitariosConsola.lerConsolaNextLine();
-        
+       
         if (!nomeFile.endsWith(".txt")){
             nomeFile = nomeFile + ".txt";
         }
-        
         boolean tudoOK = gravarFicheiro(listaUtilizadores, listaGestoresEventos, listaEventos, listaFae, listaOrganizadores, listaCandidaturas, listaAtribuicoes, listaDecisoes, nomeFile);
-//        
-//        if (tudoOK){
-//            utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
-//        }else{
-//            utilitariosConsola.escreverConsola("OPERAÇÃO NÃO CONCLUIDA! ERRO!");
-//        }
+
         
     }
     
