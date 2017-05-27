@@ -55,7 +55,7 @@ public class testGui extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         botaoCarregarDadosFicheiro = new javax.swing.JButton();
         botaoEscreverDadosFicheiro = new javax.swing.JButton();
-        botaoImprimirDados = new javax.swing.JButton();
+        botaoSair = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -90,10 +90,10 @@ public class testGui extends javax.swing.JFrame {
             }
         });
 
-        botaoImprimirDados.setText("Print");
-        botaoImprimirDados.addActionListener(new java.awt.event.ActionListener() {
+        botaoSair.setText("Exit");
+        botaoSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoImprimirDadosActionPerformed(evt);
+                botaoSairActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class testGui extends javax.swing.JFrame {
 
         jLabel6.setText("Escrever Dados Ficheiro");
 
-        jLabel7.setText("Imprimir Dados");
+        jLabel7.setText("Sair");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,7 +112,7 @@ public class testGui extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botaoCarregarDadosFicheiro)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(botaoImprimirDados, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(botaoSair, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                         .addComponent(botaoEscreverDadosFicheiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +122,7 @@ public class testGui extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botaoCarregarDadosFicheiro, botaoEscreverDadosFicheiro, botaoImprimirDados});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botaoCarregarDadosFicheiro, botaoEscreverDadosFicheiro, botaoSair});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +137,7 @@ public class testGui extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoImprimirDados)
+                    .addComponent(botaoSair)
                     .addComponent(jLabel7))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
@@ -315,14 +315,9 @@ public class testGui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoEscreverDadosFicheiroActionPerformed
 
-    private void botaoImprimirDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImprimirDadosActionPerformed
-        if (ce.getListaEvento().isEmpty()) {
-            JOptionPane.showMessageDialog (null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-        testeImpressao ti = new testeImpressao(ce);
-        ti.setVisible(true);
-        }
-    }//GEN-LAST:event_botaoImprimirDadosActionPerformed
+    private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
+        sair();
+    }//GEN-LAST:event_botaoSairActionPerformed
 
     private void botaoCriarCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCriarCandidaturaActionPerformed
         if (ce.getListaEvento().isEmpty()) {
@@ -356,18 +351,7 @@ public class testGui extends javax.swing.JFrame {
 
     @Override
     public void windowClosing(WindowEvent e) {
-        String ObjButtons[] = {"Sim","Nao"};
-        int confirm = JOptionPane.showOptionDialog(
-             null, "Quer fechar a Aplicação?", 
-             "Confirmação de Saida", JOptionPane.YES_NO_OPTION, 
-             JOptionPane.QUESTION_MESSAGE, null, ObjButtons, ObjButtons[1]);
-        if (confirm == JOptionPane.YES_OPTION) {
-            closeAndSave();
-            System.exit(0);
-        }else{
-            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-//            JOptionPane.ABORT
-        }
+        sair();
     }
 };
 
@@ -414,13 +398,27 @@ public class testGui extends javax.swing.JFrame {
         });
     }
 
+    private void sair(){
+        String ObjButtons[] = {"Sim","Nao"};
+        int confirm = JOptionPane.showOptionDialog(
+             null, "Quer fechar a Aplicação?", 
+             "Confirmação de Saida", JOptionPane.YES_NO_OPTION, 
+             JOptionPane.QUESTION_MESSAGE, null, ObjButtons, ObjButtons[1]);
+        if (confirm == JOptionPane.YES_OPTION) {
+            closeAndSave();
+            System.exit(0);
+        }else{
+            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAtribuirCandidatura;
     private javax.swing.JButton botaoCarregarDadosFicheiro;
     private javax.swing.JButton botaoCriarCandidatura;
     private javax.swing.JButton botaoDecidirCandidatura;
     private javax.swing.JButton botaoEscreverDadosFicheiro;
-    private javax.swing.JButton botaoImprimirDados;
+    private javax.swing.JButton botaoSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

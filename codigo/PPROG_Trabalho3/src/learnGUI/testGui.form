@@ -79,7 +79,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="botaoCarregarDadosFicheiro" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="botaoImprimirDados" linkSize="1" pref="75" max="32767" attributes="0"/>
+                          <Component id="botaoSair" linkSize="1" pref="75" max="32767" attributes="0"/>
                           <Component id="botaoEscreverDadosFicheiro" linkSize="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -108,7 +108,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="botaoImprimirDados" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoSair" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
@@ -134,12 +134,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoEscreverDadosFicheiroActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botaoImprimirDados">
+        <Component class="javax.swing.JButton" name="botaoSair">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Print"/>
+            <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoImprimirDadosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSairActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -154,7 +154,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Imprimir Dados"/>
+            <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
         </Component>
       </SubComponents>
