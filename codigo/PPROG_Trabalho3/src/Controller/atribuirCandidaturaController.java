@@ -66,7 +66,7 @@ public class atribuirCandidaturaController {
         List<evento> listaEventos = ce.getListaEvento();
         for (evento ev : listaEventos) {
             Data hoje = Data.dataAtual();
-            if ((ev.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0 && ev.getDataFim().compareTo(hoje) > 0) {
+            if ((ev.getDataLimiteSubmissaoCandidaturas().compareTo(hoje)) < 0 && ev.getDataFim().compareTo(hoje) > 0 && ev.getListaAtribuicoes().isEmpty()) {
                 List<organizador> listaOrgEvento = ev.getListaOrganizadores();
                 for (organizador org : listaOrgEvento) {
                     if (!listaorganizador.contains(org)) {

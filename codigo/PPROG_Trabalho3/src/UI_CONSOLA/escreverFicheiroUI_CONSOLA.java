@@ -41,6 +41,8 @@ public class escreverFicheiroUI_CONSOLA {
         List<String> listaCandidaturas = efController.getListaCandidaturas();
 //lista de atribuições (atribuicao);     
         List<String> listaAtribuicoes = efController.getListaAtribuicoes();
+//lista de decisoes (candidaturas);
+        List<String> listaDecisoes = efController.getListaDecisoes();
         
    //     utilitariosConsola.escreverConsola("qual o nome do ficheiro que quer guardar?");
    //     String nomeFile = utilitariosConsola.lerConsolaNextLine();
@@ -49,7 +51,7 @@ public class escreverFicheiroUI_CONSOLA {
             nomeFile = nomeFile + ".txt";
         }
         
-        boolean tudoOK = gravarFicheiro(listaUtilizadores, listaGestoresEventos, listaEventos, listaFae, listaOrganizadores, listaCandidaturas, listaAtribuicoes, nomeFile);
+        boolean tudoOK = gravarFicheiro(listaUtilizadores, listaGestoresEventos, listaEventos, listaFae, listaOrganizadores, listaCandidaturas, listaAtribuicoes, listaDecisoes, nomeFile);
         
         if (tudoOK){
             utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
@@ -59,7 +61,7 @@ public class escreverFicheiroUI_CONSOLA {
         
     }
     
-    private boolean gravarFicheiro (List<String> listaUtilizadores, List<String> listaGestoresEventos, List<String> listaEventos, List<String> listaFae, List<String> listaOrganizadores, List<String> listaCandidaturas, List<String> listaAtribuicoes, String nomeFile){
+    private boolean gravarFicheiro (List<String> listaUtilizadores, List<String> listaGestoresEventos, List<String> listaEventos, List<String> listaFae, List<String> listaOrganizadores, List<String> listaCandidaturas, List<String> listaAtribuicoes, List<String> listaDecisoes, String nomeFile){
         boolean tudoOK = true;
         try {
             FileWriter fileWriter =
@@ -109,6 +111,11 @@ public class escreverFicheiroUI_CONSOLA {
                 bufferedWriter.newLine();
             }
             
+            for (String d : listaDecisoes){
+                bufferedWriter.write(d);
+                bufferedWriter.newLine();
+            }
+
             bufferedWriter.close();
         }
         catch(IOException ex) {

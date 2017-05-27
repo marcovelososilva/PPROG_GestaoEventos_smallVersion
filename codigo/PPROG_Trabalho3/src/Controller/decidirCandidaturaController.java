@@ -8,11 +8,7 @@ import java.util.List;
 public class decidirCandidaturaController {
 
     private centroDeEventos ce;
-    private evento eventoSelecionado;
-    private candidatura candidaturaSelecionada;
     private decisao decisaoCandidatura;
-    private List<fae> listaFAEEvento;
-    private fae f;
             
     public decidirCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
@@ -50,27 +46,11 @@ public class decidirCandidaturaController {
         return ce.getListaEventosFAEDataSubmissaoFinalizada(f);
     }
     
-    /**
-     *
-     * @param e
-     * @param u
-     */
-    public void selecionaEvento(evento e, utilizador u) {
-        // TODO - implement decidirCandidaturaController.selecionaEvento
-        throw new UnsupportedOperationException();
-    }
 
     public decisao selecionarCandidaturaCriaDecisao(candidatura cand) {
-        this.candidaturaSelecionada = cand;
-        decisaoCandidatura = cand.selecionaCandidaturaCriaDecisao();
-        return decisaoCandidatura;
+        return cand.selecionaCandidaturaCriaDecisao();
     }
 
-    //deixa de existir 
-//    public void createDecisao() {
-//        // TODO - implement decidirCandidaturaController.createDecisao
-//        throw new UnsupportedOperationException();
-//    }
     
     public List getListaCandidatura(evento e){
         return e.getListaCandidatura();
@@ -85,18 +65,11 @@ public class decidirCandidaturaController {
      * @param d
      * @param txt
      */
-    public void setDecisao(decisao d,boolean aprovacao, String textoDecisao) {
+    public void setDecisao(decisao d,boolean aprovacao, String textoDecisao, fae f ) {
         d.setAprovada(aprovacao);
         d.setTextoDecisao(textoDecisao);
+        d.setFaeAtribuido(f);
     }
 
-    /**
-     *
-     * @param d
-     */
-    public void gravarDecisao(decisao d) {
-        // TODO - implement decidirCandidaturaController.gravarDecisao
-        throw new UnsupportedOperationException();
-    }
 
 }
