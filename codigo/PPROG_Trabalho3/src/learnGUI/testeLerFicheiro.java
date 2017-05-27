@@ -5,7 +5,7 @@
  */
 package learnGUI;
 
-import UI_CONSOLA.*;
+
 import Controller.lerFicheiroController;
 import Main_Class.*;
 import Utils_Consola.*;
@@ -41,7 +41,7 @@ public class testeLerFicheiro {
                 JOptionPane.showMessageDialog (null, "OPERAÇÃO GEROU ERROS E NÃO FOI COMPLETADA", "Informacao", JOptionPane.ERROR_MESSAGE);
             }
         } catch (IOException e) {
-            utilitariosConsola.escreverConsola("O FICHEIRO " + ficheiro + " não existe ou não tem permissões para ser lido!");
+            JOptionPane.showMessageDialog (null,"O FICHEIRO " + ficheiro + " não existe ou não tem permissões para ser lido!","Informacao",JOptionPane.ERROR_MESSAGE);
             
         }
     }

@@ -6,7 +6,6 @@
 package Main_Class;
 
 import Controller.*;
-import UI_CONSOLA.*;
 import learnGUI.testGui;
 
 /**

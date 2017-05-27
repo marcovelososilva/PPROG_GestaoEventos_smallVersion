@@ -5,10 +5,8 @@
  */
 package learnGUI;
 
-import UI_CONSOLA.*;
 import Main_Class.*;
 import Controller.*;
-import Utils_Consola.utilitariosConsola;
 import java.io.*;
 import java.util.List;
 
@@ -53,12 +51,12 @@ public class testeEscreverFicheiro {
         }
         
         boolean tudoOK = gravarFicheiro(listaUtilizadores, listaGestoresEventos, listaEventos, listaFae, listaOrganizadores, listaCandidaturas, listaAtribuicoes, listaDecisoes, nomeFile);
-        
-        if (tudoOK){
-            utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
-        }else{
-            utilitariosConsola.escreverConsola("OPERAÇÃO NÃO CONCLUIDA! ERRO!");
-        }
+//        
+//        if (tudoOK){
+//            utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
+//        }else{
+//            utilitariosConsola.escreverConsola("OPERAÇÃO NÃO CONCLUIDA! ERRO!");
+//        }
         
     }
     
