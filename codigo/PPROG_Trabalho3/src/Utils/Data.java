@@ -42,7 +42,7 @@ public class Data implements Comparable<Data>, Serializable {
 
     /**
      * to string que devolve uma data no formato AAAA/MM/DD
-     * @return
+     * @return data no formato AAA/MM/DD
      */
     public String toStringEmNumeros() {
         return getAno()+"/"+getMes()+"/"+getDia();
@@ -151,7 +151,7 @@ public class Data implements Comparable<Data>, Serializable {
     
     /**
      * excepção apanha o facto do da string inicial estar incorrecto na data que se tentou criar
-     * @param data
+     * @param data uma data em string
      */
     public Data (String data) {
         int ano, mes, dia;

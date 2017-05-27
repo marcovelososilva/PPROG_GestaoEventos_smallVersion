@@ -16,10 +16,10 @@ public class utilizador implements Serializable {
     /**
      * construtor com parametros para inciar o objecto utilizador
      *
-     * @param nome
-     * @param email
-     * @param username
-     * @param password
+     * @param nome nome
+     * @param email email
+     * @param username username
+     * @param password password
      */
     public utilizador(String nome, String email, String username, String password) {
         this.nome = nome;
@@ -37,7 +37,7 @@ public class utilizador implements Serializable {
     /**
      * get nome do utilizador
      *
-     * @return
+     * @return nome
      */
     public String getNome() {
         return this.nome;
@@ -46,7 +46,7 @@ public class utilizador implements Serializable {
     /**
      * set nome do utilizador
      *
-     * @param nome
+     * @param nome nome
      */
     public void setNome(String nome) {
         this.nome = nome;
@@ -55,7 +55,7 @@ public class utilizador implements Serializable {
     /**
      * get o email do utilizador
      *
-     * @return
+     * @return email
      */
     public String getEmail() {
         return this.email;
@@ -64,7 +64,7 @@ public class utilizador implements Serializable {
     /**
      * set email do utilizador
      *
-     * @param email
+     * @param email email
      */
     public void setEmail(String email) {
         this.email = email;
@@ -73,7 +73,7 @@ public class utilizador implements Serializable {
     /**
      * get username do utilizador
      *
-     * @return
+     * @return username
      */
     public String getUsername() {
         return this.username;
@@ -82,7 +82,7 @@ public class utilizador implements Serializable {
     /**
      * set ao username do utilizador
      *
-     * @param username
+     * @param username username
      */
     public void setUsername(String username) {
         this.username = username;
@@ -90,7 +90,7 @@ public class utilizador implements Serializable {
     
     /**
      * devolve a password do utilizador metodo utilizado pela escrita para txt
-     * @return 
+     * @return password
      */
     public String getPassword() {
         return this.password;
@@ -98,7 +98,7 @@ public class utilizador implements Serializable {
     
     /**
      * faz set à password do utilizador, utilizado para a leitura de txt
-     * @param password 
+     * @param password password
      */
     public void setPassword (String password){
         this.password = password;

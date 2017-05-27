@@ -39,7 +39,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
      * Creates new form testeDecidirCandidatura
      * São colocados todos os campos como nao editaveis ou nao visiveis de forma a nao propagar erros
      * Apenas a Lista de FAE e que inicializa como visivel/editavel
-     * @param ce
+     * @param ce centro de eventos
      */
     public testeDecidirCandidatura(centroDeEventos ce) {
         this.ce = ce;

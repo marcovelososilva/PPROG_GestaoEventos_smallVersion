@@ -19,7 +19,7 @@ public class atribuicao implements Serializable {
 
     /**
      * devolve o fae a quem foi atribuida uma candidatura
-     * @return
+     * @return fae
      */
     public fae getFae() {
         return fae;
@@ -27,7 +27,7 @@ public class atribuicao implements Serializable {
 
     /**
      * devolve a candidatura que foi atribuida a um fae 
-     * @return
+     * @return a candidatura
      */
     public candidatura getCandidatura() {
         return candidatura;
@@ -37,8 +37,8 @@ public class atribuicao implements Serializable {
      * set aos dois dados que compoe uma atribuição
      * um fae e uma candidatura
      * 
-     * @param fae
-     * @param candidatura
+     * @param fae fae
+     * @param candidatura candidatura
      */
     public void setFAEeCandidatura(fae fae, candidatura candidatura) {
         this.candidatura = candidatura;

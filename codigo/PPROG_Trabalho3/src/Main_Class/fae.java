@@ -18,7 +18,7 @@ public class fae implements Serializable {
 
     /**
      * construtor com parametros que recebe um utilizador
-     * @param user
+     * @param user utilizador
      */
     public fae(utilizador user) {
         this.user = user;
@@ -26,7 +26,7 @@ public class fae implements Serializable {
 
     /**
      * devolve o utilizador que compoe o fae
-     * @return
+     * @return utilizador
      */
     public utilizador getUser() {
         return user;
@@ -39,7 +39,7 @@ public class fae implements Serializable {
 
     /**
      * devolve o fae e o username do fae
-     * @return
+     * @return string com o username do fae
      */
     public String toStringUsername() {
         return "::FAE::" + " Username=" + user.getUsername();
@@ -47,7 +47,7 @@ public class fae implements Serializable {
 
     /**
      * devolve apenas o nome do username do fae
-     * @return
+     * @return nome do utilizador
      */
     public String toStringNome() {
         return user.getNome();

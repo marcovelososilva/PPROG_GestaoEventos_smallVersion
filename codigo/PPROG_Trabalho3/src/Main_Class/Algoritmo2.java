@@ -24,7 +24,7 @@ public class Algoritmo2 implements algoritmoAtribuicao, Serializable {
 
     /**
      * devolve o nome do algoritmo
-     * @return 
+     * @return o nome do algoritmo
      */
     public String getNome() {
         return nome;
@@ -32,7 +32,7 @@ public class Algoritmo2 implements algoritmoAtribuicao, Serializable {
 
     /**
      * devolve o descritivo do algoritmo
-     * @return 
+     * @return o descritivo do algoritmo
      */
     public String getDescritivo() {
         return descritivo;

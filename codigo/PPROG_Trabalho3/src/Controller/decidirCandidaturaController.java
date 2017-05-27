@@ -16,7 +16,7 @@ public class decidirCandidaturaController {
             
     /**
      * construtor da classe decidir candidatura recebe como parametroo centro de eventos
-     * @param ce
+     * @param ce - centro de eventos
      */
     public decidirCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
@@ -25,7 +25,7 @@ public class decidirCandidaturaController {
 
     /**
      * get lista de FAE unicos que existem nos eventos que tem a data de submissão caducada e com atribuicao efectuada
-     * @return 
+     * @return lista de FAEs
      */
     public List<fae> getListaFAEUnicosDosEventosComDataSubmissaoCaducadaEAtribuicaoEfectuada() {
         List<fae> listaFAE = new ArrayList<>();
@@ -45,21 +45,12 @@ public class decidirCandidaturaController {
         return listaFAE;
     }
 
-    /**
-     * get lista de eventos dos organizadores com data de submissao finalizada 
-     * que é devolida do centro de evento
-     * @param org
-     * @return
-     */
-    public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador org) {
-        return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
-    }
     
     /**
      * get a lista de eventos de um fae com a dta de submissao finalizada de um 
      * determindado fae enviado por parametro
-     * @param f
-     * @return
+     * @param f - fae
+     * @return lista de eventos de fae com data de submissao finalizada
      */
     public List getListaEventosFAEDataSubmissaoFinalizada(fae f){
         return ce.getListaEventosFAEDataSubmissaoFinalizada(f);
@@ -67,8 +58,8 @@ public class decidirCandidaturaController {
     
     /**
      * seleciona uma candidatura e cria uma decisao
-     * @param cand
-     * @return
+     * @param cand - candidatura
+     * @return decisao criada
      */
     public decisao selecionarCandidaturaCriaDecisao(candidatura cand) {
         return cand.selecionaCandidaturaCriaDecisao();
@@ -77,8 +68,8 @@ public class decidirCandidaturaController {
     /**
      * devolve a lista de candidaturas que existe num evento que foi enviado
      * como parametro
-     * @param e
-     * @return
+     * @param e - evento
+     * @return lista de candidaturas
      */
     public List getListaCandidatura(evento e){
         return e.getListaCandidatura();
@@ -86,18 +77,18 @@ public class decidirCandidaturaController {
     
     /**
      * devolve se uma candidatura tem decisao
-     * @param cand
-     * @return
+     * @param cand - candidatura
+     * @return boolean se a candidatura tem decisao ou não
      */
     public boolean temDecisao(candidatura cand){
         return decisaoCandidatura.isAprovada();
     } 
     /**
      * set a uma decisao previamente criada
-     * @param d
-     * @param aprovacao
-     * @param textoDecisao
-     * @param f
+     * @param d - decisao
+     * @param aprovacao - aprovacao
+     * @param textoDecisao - texto desicao
+     * @param f - fae
      */
     public void setDecisao(decisao d,boolean aprovacao, String textoDecisao, fae f ) {
         d.setAprovada(aprovacao);

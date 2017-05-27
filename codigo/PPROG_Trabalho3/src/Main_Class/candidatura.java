@@ -21,12 +21,12 @@ public class candidatura implements Serializable {
      * construtor com parametros que inicializa a candidatura
      * recebe como parametro nome da empresa, responsavel de candidatura 
      * morada, telefone texto explicativo e data de candidatura
-     * @param nomeEmpresa
-     * @param responsavelCandidatura
-     * @param morada
-     * @param telefone
-     * @param textoExplicativoCandidatura
-     * @param dataCandidatura
+     * @param nomeEmpresa - nome empresa
+     * @param responsavelCandidatura - responsavel candidatura
+     * @param morada - morada
+     * @param telefone - telefone
+     * @param textoExplicativoCandidatura texto explicativo candidatura
+     * @param dataCandidatura data candidatura
      */
     public candidatura(String nomeEmpresa, String responsavelCandidatura, String morada, int telefone, String textoExplicativoCandidatura, Data dataCandidatura) {
         this.nomeEmpresa = nomeEmpresa;
@@ -45,7 +45,7 @@ public class candidatura implements Serializable {
 
     /**
      *get do nome da empresa
-     * @return
+     * @return nome da empresa
      */
     public String getNomeEmpresa() {
         return nomeEmpresa;
@@ -53,7 +53,7 @@ public class candidatura implements Serializable {
 
     /**
      * set o nome da empresa
-     * @param nomeEmpresa
+     * @param nomeEmpresa nome da empresa
      */
     public void setNomeEmpresa(String nomeEmpresa) {
         this.nomeEmpresa = nomeEmpresa;
@@ -61,7 +61,7 @@ public class candidatura implements Serializable {
 
     /**
      *get o responsavel da candidatura
-     * @return
+     * @return responsavel candidatura
      */
     public String getResponsavelCandidatura() {
         return responsavelCandidatura;
@@ -69,7 +69,7 @@ public class candidatura implements Serializable {
 
     /**
      * set responvasel pela candidatura
-     * @param responsavelCandidatura
+     * @param responsavelCandidatura responsavel da candidatura
      */
     public void setResponsavelCandidatura(String responsavelCandidatura) {
         this.responsavelCandidatura = responsavelCandidatura;
@@ -77,7 +77,7 @@ public class candidatura implements Serializable {
 
     /**
      * get morada da candidatura
-     * @return
+     * @return morada
      */
     public String getMorada() {
         return morada;
@@ -85,7 +85,7 @@ public class candidatura implements Serializable {
 
     /**
      * set a morada da candidatura
-     * @param morada
+     * @param morada morada
      */
     public void setMorada(String morada) {
         this.morada = morada;
@@ -93,7 +93,7 @@ public class candidatura implements Serializable {
 
     /**
      * get telefone
-     * @return
+     * @return telefone
      */
     public int getTelefone() {
         return telefone;
@@ -101,7 +101,7 @@ public class candidatura implements Serializable {
 
     /**
      * set telefone da candidatura
-     * @param telefone
+     * @param telefone telefone
      */
     public void setTelefone(int telefone) {
         this.telefone = telefone;
@@ -109,7 +109,7 @@ public class candidatura implements Serializable {
 
     /**
      * get ao texto explicativo da candidatura
-     * @return
+     * @return texto explicativo
      */
     public String getTextoExplicativoCandidatura() {
         return textoExplicativoCandidatura;
@@ -117,7 +117,7 @@ public class candidatura implements Serializable {
 
     /**
      * set ao texto explicativo da candidatura
-     * @param textoExplicativoCandidatura
+     * @param textoExplicativoCandidatura texto explicativo da candidatura
      */
     public void setTextoExplicativoCandidatura(String textoExplicativoCandidatura) {
         this.textoExplicativoCandidatura = textoExplicativoCandidatura;
@@ -125,7 +125,7 @@ public class candidatura implements Serializable {
 
     /**
      * get da data de candidatura
-     * @return
+     * @return data candidaturas
      */
     public Data getDataCandidatura() {
         return dataCandidatura;
@@ -133,7 +133,7 @@ public class candidatura implements Serializable {
 
     /**
      * set data da candidatura
-     * @param dataCandidatura
+     * @param dataCandidatura data de candiadtura
      */
     public void setDataCandidatura(Data dataCandidatura) {
         this.dataCandidatura = dataCandidatura;
@@ -141,7 +141,7 @@ public class candidatura implements Serializable {
 
     /**
      *get a decisao da candidatura
-     * @return
+     * @return decisao candidatura
      */
     public decisao getDecisao() {
         return decisaoCandidatura;
@@ -150,8 +150,8 @@ public class candidatura implements Serializable {
     /**
      * cria uma nova decisao para a candidatura recebendo como parametro uma string
      * o texto explicativo e um boolean sobre a decisao tomada
-     * @param textoExplicativo
-     * @param decisaoFavoravel
+     * @param textoExplicativo texto explçicativo
+     * @param decisaoFavoravel decisao favoravel
      */
     public void addDecisaoFicheiro(String textoExplicativo, boolean decisaoFavoravel, fae faeSelecionado) {
         decisaoCandidatura = new decisao(textoExplicativo, decisaoFavoravel);
@@ -160,8 +160,8 @@ public class candidatura implements Serializable {
 
     /**
      *cria uma nova decisao para a candidatura
-     * @return 
-     */
+     * @return decisao candidatura
+     */ 
     public decisao selecionaCandidaturaCriaDecisao() {
         decisaoCandidatura = new decisao();
         return decisaoCandidatura;
@@ -170,7 +170,7 @@ public class candidatura implements Serializable {
     
     /**
      * return a string com o nome da empresa e data de candidatura
-     * @return
+     * @return to string empresa data
      */
     public String toStringEmpresaData() {
         return " Empresa: " + nomeEmpresa + ", candidatura data: " + dataCandidatura;

@@ -13,7 +13,7 @@ public class gestorDeEventos implements Serializable {
     /**
      *contrutor com parametros do gestor de eventos
      * recebe um utilizador
-     * @param user
+     * @param user utilizador
      */
     public gestorDeEventos(utilizador user) {
         this.user = user;
@@ -21,7 +21,7 @@ public class gestorDeEventos implements Serializable {
 
     /**
      * devolde o utilizador contido no gestor de eventos
-     * @return
+     * @return utilizador
      */
     public utilizador getUser() {
         return user;

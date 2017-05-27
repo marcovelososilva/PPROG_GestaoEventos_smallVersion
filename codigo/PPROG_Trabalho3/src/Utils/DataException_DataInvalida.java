@@ -20,7 +20,7 @@ public class DataException_DataInvalida extends IllegalArgumentException {
     
     /**
      * excepção apanha o facto do da string inicial estar incorrecto na data que se tentou criar
-     * @param mensagem
+     * @param mensagem - mensagem gerada
      */
     public DataException_DataInvalida(String mensagem) {
         super(mensagem);

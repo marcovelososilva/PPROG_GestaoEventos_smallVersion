@@ -17,7 +17,7 @@ public class atribuirCandidaturaController {
 
     /**
      * contrunstor do metodo atribuir candidatura controller
-     * @param ce
+     * @param ce centro de evento
      */
     public atribuirCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
@@ -25,7 +25,7 @@ public class atribuirCandidaturaController {
 
     /**
      *  get algoritmos de atribuicao do centro de eventos
-     * @return 
+     * @return a lista de algoritmos de atribuição
      */
     public List getAlgoritmosAtribuicao() {
         return ce.getAlgoritmosAtribuicao();
@@ -33,7 +33,7 @@ public class atribuirCandidaturaController {
 
     /**
      * get da lista de FAEs de um evento que recebe por parametro
-     * @param e
+     *@param e- evento - evento
      * @return List  - FAEs
      */
     public List getListaFAE(evento e) {
@@ -42,7 +42,7 @@ public class atribuirCandidaturaController {
 
     /**
      * get lista de candidaturas de um evento que recebe por parametro
-     * @param e
+     *@param e- evento
      * @return List - candidaturas
      */
     public List getListaCandidatura(evento e) {
@@ -74,8 +74,8 @@ public class atribuirCandidaturaController {
     /**
      * get lista que o centro de eventos devolve de eventos de um determinado organizador
      * enviado como parametro com a data de submissao finalizada
-     * @param org
-     * @return
+     * @param org organizador
+     * @return lista de eventos do organizador com submissao finalizada
      */
     public List getListaEventosOrganizadorDataSubmissaoFinalizada(organizador org) {
         return ce.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
@@ -84,7 +84,7 @@ public class atribuirCandidaturaController {
     /**
      *get lista de atribuições que um determinado evento tem
      * 
-     * @param e
+     *@param e- evento
      * @return List - atribuições
      */
     public List getListaAtribuicoes(evento e) {

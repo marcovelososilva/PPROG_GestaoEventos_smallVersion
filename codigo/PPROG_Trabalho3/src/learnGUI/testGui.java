@@ -28,7 +28,7 @@ public class testGui extends javax.swing.JFrame {
 
     /**
      * Creates new form testGui
-     * @param ce
+     * @param ce centro de eventos
      */
     public testGui(centroDeEventos ce) {
         addWindowListener(exitListener);

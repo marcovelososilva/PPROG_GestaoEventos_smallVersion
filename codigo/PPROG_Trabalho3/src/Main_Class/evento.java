@@ -51,13 +51,13 @@ public class evento implements Serializable {
     /**
      * construtor com parametros que aceita o tipo de evento em string utilizado pelo
      * metodo que le o ficheiro de texto 
-     * @param titulo
-     * @param textoDescritivo
-     * @param dataInicio
-     * @param dataFim
-     * @param local
-     * @param dataLimiteSubmissaoCandidaturas
-     * @param tipo
+     * @param titulo titulo
+     * @param textoDescritivo texto descritivo
+     * @param dataInicio data inicio
+     * @param dataFim data fim
+     * @param local local
+     * @param dataLimiteSubmissaoCandidaturas data limite submissao candidatura
+     * @param tipo tipo
      */
     public evento(String titulo, String textoDescritivo, Data dataInicio, Data dataFim, String local, Data dataLimiteSubmissaoCandidaturas, String tipo) {
         this.titulo = titulo;
@@ -89,8 +89,8 @@ public class evento implements Serializable {
 
     /**
      * converter a uma lista em string
-     * @param lista
-     * @return 
+     * @param lista uma lista de objectos
+     * @return string 
      */
     private String converterListaEmString(List lista) {
         String porExtenso = "";
@@ -102,7 +102,7 @@ public class evento implements Serializable {
 
     /**
      * get o titulo do evento
-     * @return
+     * @return titulo
      */
     public String getTitulo() {
         return this.titulo;
@@ -110,7 +110,7 @@ public class evento implements Serializable {
 
     /**
      * set titulo ao evento
-     * @param titulo
+     * @param titulo titulo
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -118,7 +118,7 @@ public class evento implements Serializable {
 
     /**
      * get texto descritivo do evento
-     * @return
+     * @return texto descritivo
      */
     public String getTextoDescritivo() {
         return this.textoDescritivo;
@@ -126,7 +126,7 @@ public class evento implements Serializable {
 
     /**
      * set texto descritivo do evento
-     * @param textoDescritivo
+     * @param textoDescritivo texto descritivo
      */
     public void setTextoDescritivo(String textoDescritivo) {
         this.textoDescritivo = textoDescritivo;
@@ -134,7 +134,7 @@ public class evento implements Serializable {
 
     /**
      * get data de incio do evento
-     * @return
+     * @return data inicio
      */
     public Data getDataInicio() {
         return this.dataInicio;
@@ -142,7 +142,7 @@ public class evento implements Serializable {
 
     /**
      * set data da inicio do evento
-     * @param dataInicio
+     * @param dataInicio data de inicio
      */
     public void setDataInicio(Data dataInicio) {
         this.dataInicio = dataInicio;
@@ -150,7 +150,7 @@ public class evento implements Serializable {
 
     /**
      * get data de fim do evento
-     * @return
+     * @return data
      */
     public Data getDataFim() {
         return this.dataFim;
@@ -158,7 +158,7 @@ public class evento implements Serializable {
 
     /**
      * set dat de fim de evento
-     * @param dataFim
+     * @param dataFim data da fim
      */
     public void setDataFim(Data dataFim) {
         this.dataFim = dataFim;
@@ -166,7 +166,7 @@ public class evento implements Serializable {
 
     /**
      * get local do evento
-     * @return
+     * @return local do evento
      */
     public String getLocal() {
         return this.local;
@@ -314,7 +314,7 @@ public class evento implements Serializable {
 
     /**
      * adiciona um novo organizador à lista de organizadores recebendo como parametro um utilizador
-     * @param u
+     * @param u utilizador
      */
     public void addUtilizadorOrganizador(utilizador u) {
         organizador novoOrganizador = new organizador(u);
@@ -323,8 +323,8 @@ public class evento implements Serializable {
 
     /**
      *
-     * @param faeSelecionado
-     * @param candidaturaSelecionada
+     * @param faeSelecionado fae selecionado
+     * @param candidaturaSelecionada candidatura selecionada
      */
     public void addAtribuicaoFicheiro(fae faeSelecionado, candidatura candidaturaSelecionada) {
         atribuicao a = new atribuicao();
@@ -334,7 +334,7 @@ public class evento implements Serializable {
 
     /**
      * to string personalizado com fae e organizador impresso
-     * @return
+     * @return string personalizada
      */
     public String toStringComFaeOrganizador() {
         return "\nEVENTO:" + "\nTitulo: " + titulo + ",\nTexto Descritivo: " + textoDescritivo + ",\n"
