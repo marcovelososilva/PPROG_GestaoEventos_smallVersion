@@ -559,6 +559,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     private void botaoEmparelharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoEmparelharMouseClicked
         evento e = ListaEventosOrganizadorDataSubmissaoFinalizada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
         listaAtribuicoesEvento = atribuirController.getListaAtribuicoes(e);
+        listaAtribuicoesEvento.clear();
         alg = ListaAlgoritmos.get(jListAlgoritmos.getSelectedIndex());
         atribuicaoTEMP = alg.runAlgoritmo(listaFAEdoEvento, listaCandidaturasEvento, listaAtribuicoesEvento);
         String[] columns = {"FAE","Candidatura/Empresa"};
@@ -577,12 +578,14 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoEmparelharMouseClicked
 
     private void botaoSubmeterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSubmeterMouseClicked
-        if (listaAtribuicoesEvento.size()==atribuicaoTEMP.size()){;
-        listaAtribuicoesEvento.addAll(atribuicaoTEMP);
+        if (JOptionPane.showConfirmDialog(null, "Foi gerado com sucesso o seguinte emparelhamento\n" + listaAtribuicoesEvento.toString() + "\n\nConfirma?", "Confirmação dos dados",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            this.setVisible(false);
+        
+        if (listaAtribuicoesEvento.size() == atribuicaoTEMP.size()) {;
+            listaAtribuicoesEvento.addAll(atribuicaoTEMP);
         }
-        JOptionPane.showMessageDialog(null, "Foi gerado com sucesso o seguinte emparelhamento\n"+
-                listaAtribuicoesEvento.toString(), "Informação", JOptionPane.INFORMATION_MESSAGE);
-        this.setVisible(false);
+        }
     }//GEN-LAST:event_botaoSubmeterMouseClicked
 
     private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked

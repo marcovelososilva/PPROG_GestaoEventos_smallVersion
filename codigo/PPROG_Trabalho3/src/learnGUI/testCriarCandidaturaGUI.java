@@ -326,35 +326,33 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoLimparDadosActionPerformed
 
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
-        nomeEmpresa.setEditable(false);
-        responsavelCandidatura.setEditable(false);
-        morada.setEditable(false);
-        telefone.setEditable(false);
-        textoExplicativoCandidatura.setEditable(false);
-        jListaEventosActivos.setEnabled(true);
-        botaoConfirmaEvento.setEnabled(false);
-        botaoLimparDados.setEnabled(false);
-        botaoSubmeter.setEnabled(false);
-        try {
-            criarCandController.setDadosCandidatura(nomeEmpresa.getText(), responsavelCandidatura.getText(), morada.getText(),
-                    Integer.parseInt(telefone.getText()), textoExplicativoCandidatura.getText());
-            if (criarCandController.registaCandidatura(candidaturaFeita)) {
-                JOptionPane.showMessageDialog(null, "Criação de uma Candidatura no Evento " + e.getTitulo() + "\n"
-                + "Com os seguintes dados: \n"+
-                candidaturaFeita.toString());
-                this.setVisible(false);
-//JOptionPane.showMessageDialog(null, "OPERAÇÃO REALIZADA  COM SUCESSO!", "Informacao", JOptionPane.INFORMATION_MESSAGE);
-                //        utilitariosConsola.escreverConsola("OPERAÇÃO REALIZADA COM SUCESSO!");
-            } else {
-                JOptionPane.showMessageDialog(null, "OPERAÇÃO FRACASSADA: erro a adicionar ao array!", "Informacao", JOptionPane.ERROR_MESSAGE);
-                //        utilitariosConsola.escreverConsola("OPERAÇÃO FRACASSADA: erro a adicionar ao array!");
+        if (JOptionPane.showConfirmDialog(null, "Criação de uma Candidatura no Evento" + e.getTitulo() + "\n\n"
+                + "Com os seguintes dados:\n" + "\nEmpresa:" + nomeEmpresa.getText()
+                + "\nMorada:" + morada.getText()
+                + "\nTelefone:" + telefone.getText()
+                + "\nResponsavel da Candidatura:" + responsavelCandidatura.getText()
+                + "\nCom o seguinte texto\n" + textoExplicativoCandidatura.getText()
+                + //candidaturaFeita.toString() + 
+                "\n\nConfirma?", "Confirmação dos dados",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            this.setVisible(false);
+            try {
+                criarCandController.setDadosCandidatura(nomeEmpresa.getText(), responsavelCandidatura.getText(), morada.getText(),
+                        Integer.parseInt(telefone.getText()), textoExplicativoCandidatura.getText());
+                if (criarCandController.registaCandidatura(candidaturaFeita)) {
+                } else {
+                    JOptionPane.showMessageDialog(null, "OPERAÇÃO FRACASSADA: erro a adicionar ao array!", "Informacao", JOptionPane.ERROR_MESSAGE);
+                    //        utilitariosConsola.escreverConsola("OPERAÇÃO FRACASSADA: erro a adicionar ao array!");
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "O Telefone tem que ser um numero");
+                telefone.setEditable(true);
+                botaoSubmeter.setEnabled(true);
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "O Telefone tem que ser um numero");
-            telefone.setEditable(true);
-            botaoSubmeter.setEnabled(true);
+        } else {
+            botaoConfirmaEvento.setEnabled(true);
+            jListaEventosActivos.setEnabled(true);
         }
-
     }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked

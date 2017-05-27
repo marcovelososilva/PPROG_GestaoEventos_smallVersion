@@ -482,23 +482,27 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
-        System.out.println(cand.getNomeEmpresa());
-        decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
-        decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText());
-        bRadioAceite.setEnabled(false);
-        bRadioRecusado.setEnabled(false);
-        botaoLimparDados.setEnabled(false);
-        botaoSubmeter.setEnabled(false);
-        descritivoTextoJustificativoDaDecisao.setEnabled(false);
-        if (decisaoFavoravel){
+        if (decisaoFavoravel) {
             textoDecisao = "Aceite";
-        }else{
+        } else {
             textoDecisao = "Não Aceite";
         }
-        JOptionPane.showMessageDialog(null, "A candidatura feita por "+cand.getNomeEmpresa()+" teve o seguinte resultado\n"
-                +textoDecisao+"\nCom o seguinte texto explicativo:\n"+decisaoFeita.getTextoDecisao()
-                , "Informação", JOptionPane.INFORMATION_MESSAGE);
-        this.setVisible(false);
+        if (JOptionPane.showConfirmDialog(null, "A candidatura feita ao evento "+e.getTitulo() +" por: \n" + cand.getNomeEmpresa() 
+                + "\nFoi Considerada:\n" + textoDecisao + "\nCom o seguinte texto Justificado:\n" + descritivoTextoJustificativoDaDecisao.getText()
+                + "\n\nConfirma?", "Confirmação dos dados",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
+            decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText());
+            this.setVisible(false);
+        } else {
+            jListCandidaturas.setEnabled(true);
+            jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(true);
+            botaoConfirmaCandidatura.setEnabled(true);
+            botaoConfirmaEvento.setEnabled(true);
+        }
+        
+        
+
     }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     private void jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
@@ -561,7 +565,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setModel(dlmjleventos);
             for (evento e : ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada) {
                 dlmjleventos.addElement(e.getTitulo());
-                System.out.println(e.getTitulo());
     }//GEN-LAST:event_botaoConfirmaFAEActionPerformed
             jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setVisible(true);
             botaoConfirmaFAE.setEnabled(false);
