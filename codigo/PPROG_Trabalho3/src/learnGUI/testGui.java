@@ -11,6 +11,7 @@ import Main_Class.centroDeEventos;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -355,13 +356,17 @@ public class testGui extends javax.swing.JFrame {
 
     @Override
     public void windowClosing(WindowEvent e) {
+        String ObjButtons[] = {"Sim","Nao"};
         int confirm = JOptionPane.showOptionDialog(
              null, "Quer fechar a Aplicação?", 
              "Confirmação de Saida", JOptionPane.YES_NO_OPTION, 
-             JOptionPane.QUESTION_MESSAGE, null, null, null);
-        if (confirm == 0) {
+             JOptionPane.QUESTION_MESSAGE, null, ObjButtons, ObjButtons[1]);
+        if (confirm == JOptionPane.YES_OPTION) {
             closeAndSave();
             System.exit(0);
+        }else{
+            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+//            JOptionPane.ABORT
         }
     }
 };

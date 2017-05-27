@@ -36,6 +36,7 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     private algoritmoAtribuicao alg;
     private organizador org;
     private List listaAtribuicoesEvento;
+    private String ObjButtons[] = {"Sim","Nao"};
     
     /**
      * Creates new form testeAtribuirCandidatura
@@ -632,8 +633,9 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
      * @param evt 
      */
     private void botaoSubmeterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSubmeterMouseClicked
-        if (JOptionPane.showConfirmDialog(null, "Foi gerado com sucesso o seguinte emparelhamento\n" + listaAtribuicoesEvento.toString() + "\n\nConfirma?", "Confirmação dos dados",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+        if (JOptionPane.showOptionDialog(null, "Foi gerado com sucesso o seguinte emparelhamento\n" + listaAtribuicoesEvento.toString() + "\n\nConfirma?", "Confirmação dos dados",
+                JOptionPane.YES_NO_OPTION, 
+             JOptionPane.QUESTION_MESSAGE, null, ObjButtons, ObjButtons[1]) == JOptionPane.YES_OPTION) {
             this.setVisible(false);
         
         if (listaAtribuicoesEvento.size() == atribuicaoTEMP.size()) {;
