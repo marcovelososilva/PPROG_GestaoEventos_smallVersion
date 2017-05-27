@@ -13,14 +13,11 @@ import Main_Class.centroDeEventos;
 import Main_Class.evento;
 import Main_Class.fae;
 import Main_Class.organizador;
-import Utils_Consola.utilitariosConsola;
 import java.awt.Dimension;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.*;
 
 /**
  *
@@ -39,8 +36,13 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
     private algoritmoAtribuicao alg;
     private organizador org;
     private List listaAtribuicoesEvento;
+    
     /**
      * Creates new form testeAtribuirCandidatura
+     * Creates new form testeDecidirCandidatura
+     * São colocados todos os campos como nao editaveis ou nao visiveis de forma a nao propagar erros
+     * Apenas a Lista de Organizadores e que inicializa como visivel/editavel
+     * @param ce
      */
     public testeAtribuirCandidatura(centroDeEventos ce) {
         this.ce = ce;
@@ -408,11 +410,6 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
                 botaoSubmeterMouseClicked(evt);
             }
         });
-        botaoSubmeter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSubmeterActionPerformed(evt);
-            }
-        });
 
         jTableEmparelhamentoFAECandidatura.getTableHeader().setReorderingAllowed(false);
         jScrollPane8.setViewportView(jTableEmparelhamentoFAECandidatura);
@@ -483,19 +480,35 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Metodo associado ao click na JList representativa da listaEventosDataSubmissaocaducada.
+     * Ao selecionar um elemento da Jlist e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListaEventosOrganizadorDataSubmissaoFinalizada.
+     * Com o metodo .get da List vai retornar o evento da lista.
+     * Atribui a informação do evento para as caixas de texto com o metodo .setText.
+     * Cria a listaFAEdoEVento atraves do metodo getListaFAE da classe atribuirCandidaturaController.
+     * Activa o botao confirmaEvento.
+     * Desactiva o botao confirmaOrganizador.
+     * @param evt 
+     */
     private void jListaEventosDataSubmissaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosDataSubmissaoCaducadaMouseClicked
-        System.out.println(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
         evento e = ListaEventosOrganizadorDataSubmissaoFinalizada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
         descritivoTitulo.setText(e.getTitulo());
         descritivoDescricao.setText(e.getTextoDescritivo());
         descritivoLocal.setText(e.getLocal());
         descritivoDataInicio.setText(e.getDataInicio().toString());
         descritivoDataFim.setText(e.getDataFim().toString());
-        listaFAEdoEvento = atribuirController.getListaFAE(e);
         botaoConfirmaOrganizador.setEnabled(false);
         botaoConfirmaEvento.setEnabled(true);
     }//GEN-LAST:event_jListaEventosDataSubmissaoCaducadaMouseClicked
-
+    
+    /**
+     * Metodo associado ao click na JList representativa da ListOrganizador.
+     * Ao selecionar um elemento da Jlist e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListOrganizador.
+     * Com o metodo .get da List vai retornar o organizador da lista ListOrganizador.
+     * Atribui a informação do organizador para as caixas de texto com o metodo .setText.
+     * Activa o botao ConfirmaOrganizador.
+     * @param evt 
+     */
     private void jListOrganizadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListOrganizadorMouseClicked
         org = listaOrganizador.get(jListOrganizador.getSelectedIndex());
         descritivoNome.setText(org.getUser().getNome());
@@ -503,6 +516,16 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         botaoConfirmaOrganizador.setEnabled(true);
     }//GEN-LAST:event_jListOrganizadorMouseClicked
 
+    /**
+     * Metodo associado ao botao ConfirmaOrganizador.
+     * Ao estar selecionado um elemento da Jlist e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListOrganizador.
+     * Com o metodo .get da List vai retornar o organizador da lista ListOrganizador.
+     * Cria a ListaEventosOrganizadorDataSubmissaoFinalizada atravez do metodo getListaEventosOrganizadorDataSubmissaoFinalizada da classe atribuirCandidaturaColller.
+     * Adiciona atravez do metodo .addElement, os elementos da ListaEventosOrganizadorDataSubmissaoFinalizada à jListaEventosDataSubmissaoCaducada.
+     * Activa a jListaEventosDataSubmissaoCaducada.
+     * Desactiva a jListOrganizador.
+     * @param evt 
+     */
     private void botaoConfirmaOrganizadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaOrganizadorMouseClicked
         org = listaOrganizador.get(jListOrganizador.getSelectedIndex());
         ListaEventosOrganizadorDataSubmissaoFinalizada = atribuirController.getListaEventosOrganizadorDataSubmissaoFinalizada(org);
@@ -518,7 +541,19 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
             jListaEventosDataSubmissaoCaducada.setVisible(true);
         }
     }//GEN-LAST:event_botaoConfirmaOrganizadorMouseClicked
-
+    /**
+     * Metodo associado ao botao ConfirmaEvento.
+     * Ao estar selecionado um elemento da jListaEventosDataSubmissaoCaducada e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListaEventosOrganizadorDataSubmissaoFinalizada.
+     * Com o metodo .get da List vai retornar o evento da lista ListaEventosOrganizadorDataSubmissaoFinalizada.
+     * Cria a listaFAEdoEvento atravez do metodo getListaFAE da classe atribuirCandidaturaController.
+     * Adiciona atravez do metodo .addElement, os elementos da listaFAEdoEvento à jListFAEDoEvento.
+     * Cria a listaCandidaturasEvento atravez do metodo getListaCandidatura da classe atribuirCandidaturaController.
+     * Adiciona atravez do metodo .addElement, os elementos da listaCandidaturasEvento à jListCandidaturasDoEvento.
+     * Adiciona atravez do metodo .addElement, os elementos da ListaAlgoritmos à jListAlgoritmos.
+     * Activa jList Algoritmos, jList Algoritmos, jList FAEDoEvento e jList CandidaturasDoEvento.
+     * Desactiva jLista EventosDataSubmissaoCaducada e o botao ConfirmaEvento.
+     * @param evt 
+     */
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
         evento e = ListaEventosOrganizadorDataSubmissaoFinalizada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
         listaFAEdoEvento = atribuirController.getListaFAE(e);
@@ -547,7 +582,14 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         jListCandidaturasDoEvento.setVisible(true);
         botaoConfirmaEvento.setEnabled(false);
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
-
+    /**
+     * Metodo associado ao click na JList representativa da ListAlgoritmos.
+     * Ao selecionar um elemento da Jlist e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListaAlgoritmos.
+     * Com o metodo .get da List vai retornar o algoritmoAtribuicao da lista ListaAlgoritmos.
+     * Atribui a informação do algoritmo  para as caixas de texto com o metodo .setText.
+     * Activa o botao Emparelhar.
+     * @param evt 
+     */
     private void jListAlgoritmosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAlgoritmosMouseClicked
         algoritmoAtribuicao alg = ListaAlgoritmos.get(jListAlgoritmos.getSelectedIndex());
         descritivoAlgoritmos.setMaximumSize(new Dimension(250,100));
@@ -555,7 +597,15 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         botaoEmparelhar.setEnabled(true);
 
     }//GEN-LAST:event_jListAlgoritmosMouseClicked
-
+    /**
+     * Metodo associado ao botao Emparelhar.
+     * Ao estar selecionado um elemento da Jlist e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListaEventosOrganizadorDataSubmissaoFinalizada.
+     * Com o metodo .get da List vai retornar o evento da lista ListaEventosOrganizadorDataSubmissaoFinalizada.
+     * Cria a listaAtribuicoesEvento atravez do metodo getListaAtribuicoes da classe atribuirCandidaturaColller.
+     * Adiciona atravez do metodo .setValueAt, os elementos da atribuicaoTEMP à jTableEmparelhamentoFAECandidatura.
+     * Activa o botao Submeter.
+     * @param evt 
+     */
     private void botaoEmparelharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoEmparelharMouseClicked
         evento e = ListaEventosOrganizadorDataSubmissaoFinalizada.get(jListaEventosDataSubmissaoCaducada.getSelectedIndex());
         listaAtribuicoesEvento = atribuirController.getListaAtribuicoes(e);
@@ -576,7 +626,11 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         jTableEmparelhamentoFAECandidatura.setModel(dtmEmparelhamento);
         botaoSubmeter.setEnabled(true);
     }//GEN-LAST:event_botaoEmparelharMouseClicked
-
+    /**
+     * Metodo associado ao botao submeter.
+     * Mostra uma caixa onde representa as atribuições efectuadas com opção de Sim ou Nao.
+     * @param evt 
+     */
     private void botaoSubmeterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSubmeterMouseClicked
         if (JOptionPane.showConfirmDialog(null, "Foi gerado com sucesso o seguinte emparelhamento\n" + listaAtribuicoesEvento.toString() + "\n\nConfirma?", "Confirmação dos dados",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
@@ -587,14 +641,13 @@ public class testeAtribuirCandidatura extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_botaoSubmeterMouseClicked
-
+    /**
+     * Metodo associado ao botao Sair
+     * @param evt 
+     */
     private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked
         this.setVisible(false);
     }//GEN-LAST:event_botaoSairMouseClicked
-
-    private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSubmeterActionPerformed
 
     /**
      * @param args the command line arguments

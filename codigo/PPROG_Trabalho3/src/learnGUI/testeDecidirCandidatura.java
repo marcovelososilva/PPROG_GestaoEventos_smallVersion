@@ -12,7 +12,6 @@ import Main_Class.centroDeEventos;
 import Main_Class.decisao;
 import Main_Class.evento;
 import Main_Class.fae;
-import Main_Class.organizador;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -31,7 +30,6 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
     private decisao decisaoFeita;
     private boolean decisaoFavoravel;
     private decisao decisaoCandidatura;
-    private organizador org;
     private fae f;
     private candidatura cand;
     private evento e;
@@ -39,6 +37,9 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
     /**
      * Creates new form testeDecidirCandidatura
+     * São colocados todos os campos como nao editaveis ou nao visiveis de forma a nao propagar erros
+     * Apenas a Lista de FAE e que inicializa como visivel/editavel
+     * @param ce
      */
     public testeDecidirCandidatura(centroDeEventos ce) {
         this.ce = ce;
@@ -480,7 +481,14 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodo associado ao botao Submeter.
+     * Atribui uma string ao resultado selecionado na escolha dos Radio Buttons (Aceite/Nao Aceite).
+     * Mostra uma caixa onde reperesenta as atribuições efectuadas com opção de Sim ou nao.
+     * Cria a decisão e atribui os dados da decisao.
+     * Activa a jListCandidaturas, jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada, botaoConfirmaCandidatura e botaoConfirmaEvento.
+     * @param evt 
+     */
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
         if (decisaoFavoravel) {
             textoDecisao = "Aceite";
@@ -492,7 +500,7 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
                 + "\n\nConfirma?", "Confirmação dos dados",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             decisaoFeita = decidirCandController.selecionarCandidaturaCriaDecisao(cand);
-            decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText());
+            decidirCandController.setDecisao(decisaoFeita, decisaoFavoravel, descritivoTextoJustificativoDaDecisao.getText(),f);
             this.setVisible(false);
         } else {
             jListCandidaturas.setEnabled(true);
@@ -504,7 +512,15 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_botaoSubmeterActionPerformed
-
+    /**
+     * Metodo associado ao click na jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada representativa da ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked.
+     * Ao selecionar um elemento da jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.
+     * Com o metodo .get da List vai retornar o evento da lista ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.
+     * Atribui a informação do evento  para as caixas de texto com o metodo .setText.
+     * Activa o botao Confirma Evento.
+     * @param evt 
+     */
+    
     private void jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
         e = ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.get(jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.getSelectedIndex());
         descritivoTitulo.setText(e.getTitulo());
@@ -514,7 +530,15 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         descritivoDataFim.setText(e.getDataFim().toString());
         botaoConfirmaEvento.setEnabled(true);
     }//GEN-LAST:event_jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducadaMouseClicked
-
+    /**
+     * Metodo associado ao click na jListCandidaturas representativa da listaCandidaturas.
+     * Ao selecionar um elemento da jListCandidaturas e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na listaCandidaturas.
+     * Com o metodo .get da List vai retornar a candidatura da lista listaCandidaturas.
+     * Atribui a informação da candidatura para as caixas de texto com o metodo .setText.
+     * Activa o botao ConfirmaCandidatura.
+     * VErifica se ja existem decisoes sobre a candidatura e se houver apresenta alterando o botao para "Alterar Candidatura".
+     * @param evt 
+     */
     private void jListCandidaturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCandidaturasMouseClicked
         cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
         descritivoNomeDaEmpresa.setText(cand.getNomeEmpresa());
@@ -540,20 +564,39 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jListCandidaturasMouseClicked
-
+    /**
+     * Metodo a ser usado no botao Limpar Dados.
+     * Limpa a selecção dos botoes "Radio" e limpa a caixa de texto "Texto Justificativo".
+     * @param evt 
+     */
     private void botaoLimparDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparDadosActionPerformed
         grupoDeBotao.clearSelection();
         descritivoTextoJustificativoDaDecisao.setText(null);
     }//GEN-LAST:event_botaoLimparDadosActionPerformed
-
+    /**
+     * Atribui a true à variavel decisaoFavoravel a selecção do botao "aceite".
+     * @param evt 
+     */
     private void bRadioAceiteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bRadioAceiteMouseClicked
         decisaoFavoravel = true;
     }//GEN-LAST:event_bRadioAceiteMouseClicked
-
+    /**
+     * Atribui a false à variavel decisaoFavoravel a selecção do botao "Recusado".
+     * @param evt 
+     */
     private void bRadioRecusadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bRadioRecusadoMouseClicked
         decisaoFavoravel = false;
     }//GEN-LAST:event_bRadioRecusadoMouseClicked
-
+    /**
+     * Metodo associado ao botao Confirma FAE.
+     * Ao estar selecionado um elemento da jListFAE e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListFAE.
+     * Com o metodo .get da List vai retornar o FAE da lista ListFAE.
+     * Cria a ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada atravez do metodo getListaEventosFAEDataSubmissaoFinalizada da classe decidirCandidaturaColller.
+     * Apresenta uma janela no caso do FAE nao ter Eventos associados.
+     * Adiciona atravez do metodo .setModel, os elementos da ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada à jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.
+     * Desactiva o botao Confirma FAE.
+     * @param evt 
+     */
     private void botaoConfirmaFAEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmaFAEActionPerformed
         f = ListFAE.get(jListFAE.getSelectedIndex());
         ListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada = decidirCandController.getListaEventosFAEDataSubmissaoFinalizada(f);
@@ -570,38 +613,60 @@ public class testeDecidirCandidatura extends javax.swing.JFrame {
             botaoConfirmaFAE.setEnabled(false);
         }
     }
-    
+    /**
+     * Metodo associado ao botao Confirma evento.
+     * Cria a listaCandidaturas atravez do metodo getListaCandidatura da classe decidirCandidaturaColller.
+     * Adiciona atravez do metodo .setModel, os elementos da listaCandidaturas à jListCandidaturas.
+     * Desactiva o botao Confirma Evento.
+     * @param evt 
+     */
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
-        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(false);
-        jListCandidaturas.setVisible(true);
-        botaoConfirmaEvento.setEnabled(false);
         listaCandidaturas = decidirCandController.getListaCandidatura(e);
         DefaultListModel dlmjlcand = new DefaultListModel();
         jListCandidaturas.setModel(dlmjlcand);
         for (candidatura cand : listaCandidaturas) {
             dlmjlcand.addElement(cand.getNomeEmpresa());
         }
+        jListaEventosComDataSubmissaoCaducadaEDataFinalNaoCaducada.setEnabled(false);
+        jListCandidaturas.setVisible(true);
+        botaoConfirmaEvento.setEnabled(false);
     }//GEN-LAST:event_botaoConfirmaEventoMouseClicked
-
+    /**
+     * Metodo associado ao click na jListFAE representativa da ListFAE.
+     * Ao estar selecionado um elemento da jListFAE e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na ListFAE.
+     * Com o metodo .get da List vai retornar o FAE da lista ListFAE.
+     * Atribui a informação do FAE para as caixas de texto com o metodo .setText.
+     * Activa o botao Confirma FAE.
+     * @param evt 
+     */
     private void jListFAEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFAEMouseClicked
         f = ListFAE.get(jListFAE.getSelectedIndex());
         descritivoNome.setText(f.getUser().getNome());
         descritivoEmail.setText(f.getUser().getEmail());
         botaoConfirmaFAE.setEnabled(true);
     }//GEN-LAST:event_jListFAEMouseClicked
-
+    /**
+     * Metodo associado ao botao Confirma candidatura.
+     * Ao estar selecionado um elemento da jListCandidaturas e usando o metodo .getSelectedIndex, vai retornar o indice a ser usado na listaCandidaturas.
+     * Com o metodo .get da List vai retornar a candidatura da lista listaCandidaturas.
+     * Activa os RadioButtons de decisao,a caixa de texto TextoJustificativo, os botoes Limpar Dados e o botao submeter.
+     * Desactiva a jListCandidaturas e o botao Confirma Candidatura.
+     * @param evt 
+     */
     private void botaoConfirmaCandidaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaCandidaturaMouseClicked
         cand = listaCandidaturas.get(jListCandidaturas.getSelectedIndex());
         jListCandidaturas.setEnabled(false);
         botaoConfirmaCandidatura.setEnabled(false);
-        bRadioAceite.setEnabled(true);
         bRadioAceite.setEnabled(true);
         bRadioRecusado.setEnabled(true);
         botaoLimparDados.setEnabled(true);
         botaoSubmeter.setEnabled(true);
         descritivoTextoJustificativoDaDecisao.setEditable(true);
     }//GEN-LAST:event_botaoConfirmaCandidaturaMouseClicked
-
+    /**
+     * Metodo associado ao botao Sair.
+     * @param evt 
+     */
     private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked
         this.setVisible(false);
     }//GEN-LAST:event_botaoSairMouseClicked

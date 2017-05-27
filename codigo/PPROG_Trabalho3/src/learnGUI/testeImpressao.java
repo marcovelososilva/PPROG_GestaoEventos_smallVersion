@@ -21,6 +21,10 @@ public class testeImpressao extends javax.swing.JFrame {
      */
     private final centroDeEventos ce;
     
+    /**
+     *
+     * @param ce
+     */
     public testeImpressao(centroDeEventos ce) {
         this.ce=ce;
         initComponents();
