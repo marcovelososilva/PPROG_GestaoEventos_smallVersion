@@ -40,6 +40,10 @@ public class Data implements Comparable<Data>, Serializable {
      */
     private static final int DIA_POR_OMISSAO = 1;
 
+    /**
+     * to string que devolve uma data no formato AAAA/MM/DD
+     * @return
+     */
     public String toStringEmNumeros() {
         return getAno()+"/"+getMes()+"/"+getDia();
     }
@@ -145,6 +149,10 @@ public class Data implements Comparable<Data>, Serializable {
         setData(ano,mes,dia);
     }
     
+    /**
+     * excepção apanha o facto do da string inicial estar incorrecto na data que se tentou criar
+     * @param data
+     */
     public Data (String data) {
         int ano, mes, dia;
         try{
@@ -163,7 +171,7 @@ public class Data implements Comparable<Data>, Serializable {
     }
 
     /**
-     * Constrói uma instância de Data com a data por omissão.
+     * Constroi uma instância de Data com a data por omissão.
      */
     public Data() {
         ano = ANO_POR_OMISSAO;

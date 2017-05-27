@@ -25,6 +25,10 @@ public class escreverFicheiroController {
     private final List<String> listaAtribuicoes;
     private final List<String> listaDecisoes;
 
+    /**
+     * construtor do escrever ficheiro controller
+     * @param ce
+     */
     public escreverFicheiroController(centroDeEventos ce) {
         this.ce = ce;
         this.listaUtilizadores = new ArrayList<>();
@@ -37,37 +41,82 @@ public class escreverFicheiroController {
         this.listaDecisoes = new ArrayList<>();
     }
 
+    /**
+     *String  get lista Utilizadores 
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaUtilizadores() {
         return listaUtilizadores;
     }
 
+    /**
+     *String  get lista de gestor de eventos
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaGestoresEventos() {
         return listaGestoresEventos;
     }
 
+    /**
+     *String  get lista de Eventos
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaEventos() {
         return listaEventos;
     }
 
+    /**
+     *String  get Lista de FAEs
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaFae() {
         return listaFae;
     }
 
+    /**
+     *String get lista de organizadores
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaOrganizadores() {
         return listaOrganizadores;
     }
 
+    /**
+     *String  get lista de candidaturas
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaCandidaturas() {
         return listaCandidaturas;
     }
 
+    /**
+     *String  get lista de Atribuicoes
+     * 
+     * @return String - List<String>
+     */
     public List<String> getListaAtribuicoes() {
         return listaAtribuicoes;
     }
+
+    /**
+     *String get lista de decisoes
+     * @return String - List<String>
+     */
     public List<String> getListaDecisoes() {
         return listaDecisoes;
     }
      
+    /**
+     * run collect informação - coleciona a informação de esta no documento de texto a ser lido conforme 
+     * descrito nos comentários ao longo do código
+     * 
+     */
     public void runCollectInformacao(){
         listaUtilizadores.add("utilizadores");
         listaGestoresEventos.add("gestoreseventos");
@@ -145,15 +194,7 @@ public class escreverFicheiroController {
                     String adicionaAtribuicao = e.getTitulo() + ";" + a.getCandidatura().getNomeEmpresa() + ";" + 
                             a.getCandidatura().getDataCandidatura().toStringEmNumeros() + ";" + a.getFae().getUser().getUsername() + ";";
                     listaAtribuicoes.add(adicionaAtribuicao);
-                }
-//                
-//    //lista de decisões (decisao)
-//                //ex:Exposição Garfos;GARFOS AFIADOS;2016/11/03;byazalde;True;Porque parecem fixes;
-//                //Expo Carros;JulinhoSA;2017/06/24;uestrela;True;Porque sim
-//                //   nome do evento;  nome candi; data cand; FAE;        Decisao;   justificação;
-//                List <decisao> listaParaGravarDecisao = e.
-//                
-                   
+                }                
         }
         
         listaUtilizadores.add("end");

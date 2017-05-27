@@ -8,24 +8,41 @@ package Main_Class;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ *
+ * @author Marco
+ */
 public class Algoritmo1 implements algoritmoAtribuicao, Serializable {
+
     private final String nome;
     private final String descritivo;
 
+    /**
+     * construtor vazio que inicia o algoritmo 1
+     */
     public Algoritmo1() {
         nome = "Algoritmo 1 - TUDO A 1";
         descritivo = "Algoritmo distribui as candidaturas apenas por um FAE.";
     }
-    
-    
+
+    /**
+     * devolve o nome do algoritmo
+     *
+     * @return
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * devolve o descritivo do algoritmo
+     *
+     * @return
+     */
     public String getDescritivo() {
         return descritivo;
     }
-    
+
     @Override
     public String toString() {
         return nome + ",\nDescritivo:\n" + descritivo;
@@ -34,18 +51,16 @@ public class Algoritmo1 implements algoritmoAtribuicao, Serializable {
     @Override
     public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes) {
         listaAtribuicoes.clear();
-        for (candidatura c : listaCandidaturas){
+        for (candidatura c : listaCandidaturas) {
             atribuicao a = new atribuicao();
             a.setFAEeCandidatura(listaFAE.get(0), c);
             listaAtribuicoes.add(a);
         }
-        
-        
+
         return listaAtribuicoes;
     }
 
-
-     @Override
+    @Override
     public boolean equals(Object outroObjeto) {
         if (this == outroObjeto) {
             return true;
@@ -54,8 +69,7 @@ public class Algoritmo1 implements algoritmoAtribuicao, Serializable {
             return false;
         }
         algoritmoAtribuicao outroAlgoritmo = (algoritmoAtribuicao) outroObjeto;
-        return  this.toString().equalsIgnoreCase(outroAlgoritmo.toString());
+        return this.toString().equalsIgnoreCase(outroAlgoritmo.toString());
     }
-   
-    
+
 }

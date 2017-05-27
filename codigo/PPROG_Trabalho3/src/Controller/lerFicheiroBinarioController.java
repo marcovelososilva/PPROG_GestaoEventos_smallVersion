@@ -15,6 +15,11 @@ import javax.swing.JOptionPane;
  */
 public class lerFicheiroBinarioController implements Serializable {
     
+    /**
+     *  método responsavel por fazer a leitura de um ficheiro binario
+     * responsavel por restaurar o centro de eventos ao programa PERCISTENCIA de dados
+     * @return 
+     */
     public centroDeEventos lerBinario() {
         centroDeEventos ce = new centroDeEventos();
         try {
