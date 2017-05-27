@@ -5,16 +5,14 @@
  */
 package learnGUI;
 
-import learnGUI.testCriarCandidaturaGUI;
+
 import Controller.escreverFicheiroBinarioController;
 import Main_Class.centroDeEventos;
-import UI_CONSOLA.escreverFicheiroUI_CONSOLA;
-import UI_CONSOLA.lerFicheiroUI_CONSOLA;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.JOptionPane;
-import learnGUI.testeDecidirCandidatura;
+
 
 /**
  *
@@ -287,14 +285,15 @@ public class testGui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoCarregarDadosFicheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCarregarDadosFicheiroActionPerformed
-        lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
+        testeLerFicheiro lerFicheiro= new testeLerFicheiro(ce);
+//        lerFicheiroUI_CONSOLA lfUI_CONSOLA = new lerFicheiroUI_CONSOLA(ce);
         String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
         if (ficheiro != null) {
-            lfUI_CONSOLA.run(ficheiro);
+            lerFicheiro.run(ficheiro);
         }
     }//GEN-LAST:event_botaoCarregarDadosFicheiroActionPerformed
     private void botaoAtribuirCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAtribuirCandidaturaActionPerformed
-        if (ce.getListaEvento().size() == 0) {
+        if (ce.getListaEvento().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
         } else {
             testeAtribuirCandidatura ac = new testeAtribuirCandidatura(ce);
@@ -303,19 +302,20 @@ public class testGui extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoAtribuirCandidaturaActionPerformed
 
     private void botaoEscreverDadosFicheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEscreverDadosFicheiroActionPerformed
-        if (ce.getListaEvento().size()==0) {
+        if (ce.getListaEvento().isEmpty()) {
             JOptionPane.showMessageDialog (null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
         }else{
-        escreverFicheiroUI_CONSOLA efUI_CONSOLA = new escreverFicheiroUI_CONSOLA(ce);
-        String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
-        if (ficheiro != null) {
-            efUI_CONSOLA.run(ficheiro);
+            testeEscreverFicheiro escreverFicheiro = new testeEscreverFicheiro(ce);
+//            escreverFicheiroUI_CONSOLA efUI_CONSOLA = new escreverFicheiroUI_CONSOLA(ce);
+            String ficheiro = JOptionPane.showInputDialog("Qual e o ficheiro?");
+            if (ficheiro != null) {
+                escreverFicheiro.run(ficheiro);
         }
         }
     }//GEN-LAST:event_botaoEscreverDadosFicheiroActionPerformed
 
     private void botaoImprimirDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImprimirDadosActionPerformed
-        if (ce.getListaEvento().size()==0) {
+        if (ce.getListaEvento().isEmpty()) {
             JOptionPane.showMessageDialog (null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
         }else{
         testeImpressao ti = new testeImpressao(ce);
@@ -324,7 +324,7 @@ public class testGui extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoImprimirDadosActionPerformed
 
     private void botaoCriarCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCriarCandidaturaActionPerformed
-        if (ce.getListaEvento().size() == 0) {
+        if (ce.getListaEvento().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
         } else {
 
@@ -334,7 +334,7 @@ public class testGui extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCriarCandidaturaActionPerformed
 
     private void botaoDecidirCandidaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDecidirCandidaturaActionPerformed
-        if (ce.getListaEvento().size() == 0) {
+        if (ce.getListaEvento().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Sem dados no Centro de Eventos", "Informação", JOptionPane.INFORMATION_MESSAGE);
         } else {
             testeDecidirCandidatura dc = new testeDecidirCandidatura(ce);
