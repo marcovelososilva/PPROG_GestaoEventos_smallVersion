@@ -23,7 +23,7 @@ public class testeImpressao extends javax.swing.JFrame {
     
     /**
      *
-     * @param ce
+     * @param ce centro de eventos
      */
     public testeImpressao(centroDeEventos ce) {
         this.ce=ce;

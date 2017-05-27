@@ -16,7 +16,7 @@ public class criarCandidaturaController {
 
     /**
      *
-     * @param ce
+     * @param ce centro de eventos
      */
     public criarCandidaturaController(centroDeEventos ce) {
         this.ce = ce;
@@ -35,8 +35,8 @@ public class criarCandidaturaController {
 
     /**
      * recebe um evento e cria uma candidatura par ao mesmo devolvendo a candidatura
-     * @param e
-     * @return 
+     * @param e- evento
+     * @return uma candidatura ao evento
      */
     public candidatura selecionarEvento(evento e) {
         eventoSelecionado = e;
@@ -46,11 +46,11 @@ public class criarCandidaturaController {
     
     /**
      * set dados a uma candiadtura préviamente criada
-     * @param nomeEmpresa
-     * @param responsavelCandidatura
-     * @param morada
-     * @param telefone
-     * @param textoExplicativoCandidatura 
+     * @param nomeEmpresa - nome da empresa
+     * @param responsavelCandidatura - responsavel candidatura
+     * @param morada - morada
+     * @param telefone - telefone
+     * @param textoExplicativoCandidatura - texto explicativo da candidatura 
      */
     public void setDadosCandidatura(String nomeEmpresa, String responsavelCandidatura, String morada, int telefone, String textoExplicativoCandidatura) {
         candidaturaEvento.setNomeEmpresa(nomeEmpresa);
@@ -64,7 +64,7 @@ public class criarCandidaturaController {
     /**
      * validação global da candidatura a ver se já não existe uma igual
      *
-     * @param c
+     * @param c - candidatura
      * @return BOOLEAN informa se a operação foi efectuada com sucesso
      */
     public boolean validaCandidatura(candidatura c) {
@@ -75,7 +75,7 @@ public class criarCandidaturaController {
      * Método que recebe um candidatura e vai á classe evento fazer uma validação global e adicionar à
      * respectiva lista correspondente, devolve TRUE se a operação for efectuada com sucesso;
      * 
-     * @param c
+     * @param c - candidatura
      * @return BOOLEAN informando se a operação foi efectuada com sucesso
      */
     public boolean registaCandidatura(candidatura c) {

@@ -26,7 +26,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
      * Creates new form testAtribuirCandidaturaGUI
      * São colocados todos os campos como nao editaveis ou nao visiveis de forma a nao propagar erros
      * Apenas a Lista de Eventos e que inicializa como visivel/editavel
-     * @param ce
+     * @param ce - centro de eventos
      */
     public testCriarCandidaturaGUI(centroDeEventos ce) {
         this.ce = ce;
@@ -311,7 +311,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
      * Ao selecionar um campo na JlistEventosActivos vai criar um evento com comparação na ListaEventos activos.
      * Utiliza o metodo de Jlist (getSelectedIndex) para saber qual é o indice a ser usado na ListEventos activos.
      * Ao selecionar o evento vai preencher as caixas de texto com a sua informação com o metodo .setText.
-     * @param evt 
+     * @param evt - on event - on event
      */
     private void jListaEventosActivosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListaEventosActivosMouseClicked
         e = listaEventosActivos.get(jListaEventosActivos.getSelectedIndex());
@@ -326,7 +326,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jListaEventosActivosMouseClicked
     /**
      * Metodo associado ao botao LimparDados para limpar as caixas de texto da candidatura.
-     * @param evt 
+     * @param evt - on event - on event 
      */
     private void botaoLimparDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparDadosActionPerformed
         morada.setText(null);
@@ -342,7 +342,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
      * O metodo usa os dados das caixas de texto associados a candidatura com o metodo .get.
      * Faz verificação com um try-catch para ver se o telefone é numerico.
      * Para submeter, utiliza o metodo .setDadosCandidatura da classe criarCandidaturaController.
-     * @param evt 
+     * @param evt - on event - on event 
      */
     private void botaoSubmeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSubmeterActionPerformed
         if (morada.getText().equals("") || nomeEmpresa.getText().equals("")
@@ -385,7 +385,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
      * Metodo associado ao botao ConfirmaEvento para criar a instancia Candidatura.
      * Ao selecionar o botão coloca a JListaEventosActivos nao selecionavel de forma a nao ser possivel selecionar outro evento.
      * Coloca os campos e os botõeseditaveis da candidatura.
-     * @param evt 
+     * @param evt - on event - on event 
      */
     private void botaoConfirmaEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoConfirmaEventoMouseClicked
 
@@ -403,7 +403,7 @@ public class testCriarCandidaturaGUI extends javax.swing.JFrame {
     
     /**
      * Metodo associado ao botao Sair para fechar a janela
-     * @param evt 
+     * @param evt - on event 
      */
     private void SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseClicked
         this.setVisible(false);

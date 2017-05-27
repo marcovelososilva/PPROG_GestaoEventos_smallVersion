@@ -20,8 +20,8 @@ public class decisao implements Serializable {
 
     /**
      * construtor com parametros da decisao que espera uma strign com o texto da decisao e um boolean com a aprovação não aprovação
-     * @param textoDecisao
-     * @param aprovada
+     * @param textoDecisao texto decisao
+     * @param aprovada aprovada
      */
     public decisao(String textoDecisao, boolean aprovada) {
         this.aprovada = aprovada;
@@ -30,7 +30,7 @@ public class decisao implements Serializable {
 
     /**
      * devolveo texto de decisao
-     * @return
+     * @return texto Decisao
      */
     public String getTextoDecisao() {
         return textoDecisao;
@@ -38,7 +38,7 @@ public class decisao implements Serializable {
 
     /**
      * faz set ao texto de decisao
-     * @param textoDecisao
+     * @param textoDecisao texto decisao
      */
     public void setTextoDecisao(String textoDecisao) {
         this.textoDecisao = textoDecisao;
@@ -46,7 +46,7 @@ public class decisao implements Serializable {
 
     /**
      * responde se a decisao foi aprovada ou não
-     * @return
+     * @return aprovada
      */
     public boolean isAprovada() {
         return aprovada;
@@ -54,7 +54,7 @@ public class decisao implements Serializable {
 
     /**
      * faz set à aprovação, aceita um boolean  com a aprovação
-     * @param aprovada
+     * @param aprovada aprovada
      */
     public void setAprovada(boolean aprovada) {
         this.aprovada = aprovada;
@@ -62,7 +62,7 @@ public class decisao implements Serializable {
 
     /**
      * get fae que decidiu esta candidatura
-     * @return
+     * @return fae atribuido
      */
     public fae getFaeAtribuido() {
         return faeAtribuido;
@@ -70,7 +70,7 @@ public class decisao implements Serializable {
     
     /**
      * set ao fae que fez a decisao
-     * @param faeAtribuido 
+     * @param faeAtribuido fae atribuido
      */
     public void setFaeAtribuido(fae faeAtribuido) {
         this.faeAtribuido = faeAtribuido;

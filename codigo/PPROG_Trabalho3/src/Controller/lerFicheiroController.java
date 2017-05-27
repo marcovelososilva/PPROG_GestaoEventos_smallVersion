@@ -18,7 +18,7 @@ public class lerFicheiroController {
 
     /**
      * construtor que inicializa o controller do ler ficheiro de texto
-     * @param ce
+     * @param ce - centro de eventos
      */
     public lerFicheiroController(centroDeEventos ce) {
         this.ce = ce;
@@ -26,7 +26,7 @@ public class lerFicheiroController {
 
     /**
      * método que é responsavel por inicializar o utilizador
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerUtilizadorController(String[] conteudo) {
         String nome = conteudo[0];
@@ -38,7 +38,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar o evento
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerEventoController(String[] conteudo) {
         String titulo = conteudo[0];
@@ -53,7 +53,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar o FAE
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerFAEController(String[] conteudo) {
         String evento = conteudo[0];
@@ -63,7 +63,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar a Candidatura
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerCandidatura(String[] conteudo) {
         String evento = conteudo[0];
@@ -79,7 +79,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar o Organizador
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerOrganizadorController(String[] conteudo) {
         String evento = conteudo[0];
@@ -89,7 +89,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar o Gestor Eventos
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerGestorController(String[] conteudo) {
         String utilizador = conteudo[0];
@@ -98,7 +98,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar a Atribuicao
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerAtribuicoes(String[] conteudo) {
         String evento = conteudo[0];
@@ -110,7 +110,7 @@ public class lerFicheiroController {
 
     /**
      * * método que é responsavel por inicializar a decisao
-     * @param conteudo
+     * @param conteudo string que contem a informação para instanciar o objecto
      */
     public void lerDecisoes(String[] conteudo) {
         String evento = conteudo[0];

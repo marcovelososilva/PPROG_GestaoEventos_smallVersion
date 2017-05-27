@@ -12,7 +12,7 @@ public class organizador implements Serializable {
 
     /**
      * construtor do metodo organizador com parametros um utilizador
-     * @param user
+     * @param user utilizador
      */
     public organizador(utilizador user) {
         this.user = user;
@@ -20,7 +20,7 @@ public class organizador implements Serializable {
 
     /**
      * devolve o utilizador que está contido no organizador
-     * @return
+     * @return utilizador
      */
     public utilizador getUser() {
         return user;

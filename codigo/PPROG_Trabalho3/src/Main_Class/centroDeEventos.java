@@ -60,7 +60,7 @@ public class centroDeEventos implements Serializable {
      * Mostra eventos que tem a data submissao caducada e este ainda nao
      * finalizou
      *
-     * @param o - ORGANIZADOR do qual se pretende obter a lista de eventos com a
+     * @param o ORGANIZADOR do qual se pretende obter a lista de eventos com a
      * submissão finalizada.
      * @return List - eventosFinalizados - Lista de eventos de um ORGANIZADOR
      * que tem a data de submissão finalizada.
@@ -87,7 +87,7 @@ public class centroDeEventos implements Serializable {
      * Mostra eventos que tem a data submissao caducada e este ainda nao
      * finalizou
      *
-     * @param fae - FAE do qual se pretende obter a lista de eventos com a
+     * @param fae FAE do qual se pretende obter a lista de eventos com a
      * submissão finalizada.
      * @return List - eventosFinalizados - Lista de eventos de um FAE que tem a
      * data de submissão finalizada.
@@ -113,7 +113,7 @@ public class centroDeEventos implements Serializable {
     /**
      * Devolve a lista de algoritmos que temos no programa;
      *
-     * @return List - Lista de Algoritmos
+     * @return List Lista de Algoritmos
      */
     public List getAlgoritmosAtribuicao() {
         return ListaAlgoritmos;
@@ -123,7 +123,7 @@ public class centroDeEventos implements Serializable {
      * adiciona um gestor de eventos à lista de gestores de eventos, utilizador
      * previamente validado e testado.
      *
-     * @param ge - GESTOR DE EVENTOs - um utilizador com papel de gestor de
+     * @param ge GESTOR DE EVENTOs - um utilizador com papel de gestor de
      * eventos
      */
     public void criarGestorEventos(gestorDeEventos ge) {
@@ -134,7 +134,7 @@ public class centroDeEventos implements Serializable {
      * adiciona à lista de eventos um evento previamente criado validado e
      * testado
      *
-     * @param e - EVENTO - recebe um evento para adicionar à lista de eventos
+     * @param e EVENTO - recebe um evento para adicionar à lista de eventos
      */
     public void createEvento(evento e) {
         ListaEventos.add(e);
@@ -143,7 +143,7 @@ public class centroDeEventos implements Serializable {
     /**
      * devolve a lista de eventos do centro de eventos
      *
-     * @return List - lista dos eventos
+     * @return List lista dos eventos
      */
     public List getListaEvento() {
         return ListaEventos;
@@ -213,13 +213,13 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que cria o evento, utilizado para a inicialização através de ficheiro
-     * @param event
-     * @param nomeEmpresa
-     * @param responsavelCandidatura
-     * @param morada
-     * @param telefone
-     * @param textoExplicativoCandidatura
-     * @param dataCandidatura 
+     * @param event evento
+     * @param nomeEmpresa nome empresa
+     * @param responsavelCandidatura responsavel da candidatura
+     * @param morada morada
+     * @param telefone telefone
+     * @param textoExplicativoCandidatura texto explicativo da candidatura
+     * @param dataCandidatura  data candidatura
      */
     public void novoRegistoCandidaturaEmEventoFicheiro(String event, String nomeEmpresa, String responsavelCandidatura, String morada, int telefone, String textoExplicativoCandidatura, String dataCandidatura) {
         evento eventoEncontrado = encontrarEventoLista(event);
@@ -231,8 +231,8 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que cria o organizador, utilizado para a inicialização através de ficheiro
-     * @param event
-     * @param user 
+     * @param event evento
+     * @param user usuario
      */
     public void novoRegistoOrganizadorEmEventoFicheiro(String event, String user) {
         evento eventoEncontrado = encontrarEventoLista(event);
@@ -246,7 +246,7 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que cria o gestor de evento, utilizado para a inicialização através de ficheiro
-     * @param user 
+     * @param user usuario
      */
     public void novoRegistoGestorFicheiro(String user) {
         utilizador novoUserGestor = encontrarUtilizadorLista(user);
@@ -259,10 +259,10 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que cria a atribuicao, utilizado para a inicialização através de ficheiro
-     * @param evento
-     * @param candidatura
-     * @param dataCandidatura
-     * @param fae 
+     * @param evento evento
+     * @param candidatura candidattura
+     * @param dataCandidatura data candidatura
+     * @param fae fae 
      */
     public void novoRegistoAtribuicoesFicheiro(String evento, String candidatura, Data dataCandidatura, String fae) {
         evento eventoSelecionado = encontrarEventoLista(evento);
@@ -280,12 +280,12 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que cria a decisao, utilizado para a inicialização através de ficheiro
-     * @param evento
-     * @param candidatura
-     * @param dataCandidatura
-     * @param fae
-     * @param decisaoFavoravel
-     * @param textoExplicativo 
+     * @param evento evento
+     * @param candidatura candidatura
+     * @param dataCandidatura data candidatura
+     * @param fae fae
+     * @param decisaoFavoravel decisao boolean
+     * @param textoExplicativo  texto explicativo
      */
     public void novoRegistoDecisoesFicheiro(String evento, String candidatura, Data dataCandidatura, String fae, Boolean decisaoFavoravel, String textoExplicativo) {
         evento eventoSelecionado = encontrarEventoLista(evento);
@@ -302,8 +302,8 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que encontra um utilizador atraves de uma string fornecida na lista desse objecto
-     * @param user
-     * @return 
+     * @param user utilizador
+     * @return novo utilizador
      */
     private utilizador encontrarUtilizadorLista(String user) {
         for (utilizador u : ListaUtilizadores) {
@@ -316,8 +316,8 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que encontra um evento atraves de uma string fornecida na lista desse objecto
-     * @param event
-     * @return 
+     * @param event evento
+     * @return novo evento
      */
     private evento encontrarEventoLista(String event) {
         for (evento e : ListaEventos) {
@@ -330,10 +330,10 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que encontra uma candidatura atraves de uma string fornecida na lista desse objecto
-     * @param newCandidatura
-     * @param newDataCandida
-     * @param NewEvento
-     * @return 
+     * @param newCandidatura nova candidatura
+     * @param newDataCandida nova data de candidatura
+     * @param NewEvento novo evento
+     * @return candidatura 
      */
     private candidatura encontrarCandidaturaEvento(String newCandidatura, Data newDataCandida, evento NewEvento) {
         List<candidatura> listaCandidaturasEvento = NewEvento.getListaCandidatura();
@@ -347,9 +347,9 @@ public class centroDeEventos implements Serializable {
 
     /**
      * metodo que encontra um FAE atraves de uma string fornecida na lista desse objecto
-     * @param newFAE
-     * @param NewEvento
-     * @return 
+     * @param newFAE novo fae
+     * @param NewEvento novo evento
+     * @return fae
      */
     private fae encontrarFAEEvento(String newFAE, evento NewEvento) {
         List<fae> listaFaeEvento = NewEvento.getListaFAE();

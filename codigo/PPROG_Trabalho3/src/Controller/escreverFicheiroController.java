@@ -30,7 +30,7 @@ public class escreverFicheiroController {
 
     /**
      * construtor do escrever ficheiro controller
-     * @param ce
+     * @param ce centro de eventos
      */
     public escreverFicheiroController(centroDeEventos ce) {
         this.ce = ce;
@@ -47,7 +47,7 @@ public class escreverFicheiroController {
     /**
      *String  get lista Utilizadores 
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaUtilizadores() {
         return listaUtilizadores;
@@ -56,7 +56,7 @@ public class escreverFicheiroController {
     /**
      *String  get lista de gestor de eventos
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaGestoresEventos() {
         return listaGestoresEventos;
@@ -65,7 +65,7 @@ public class escreverFicheiroController {
     /**
      *String  get lista de Eventos
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaEventos() {
         return listaEventos;
@@ -74,7 +74,7 @@ public class escreverFicheiroController {
     /**
      *String  get Lista de FAEs
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaFae() {
         return listaFae;
@@ -83,7 +83,7 @@ public class escreverFicheiroController {
     /**
      *String get lista de organizadores
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaOrganizadores() {
         return listaOrganizadores;
@@ -92,7 +92,7 @@ public class escreverFicheiroController {
     /**
      *String  get lista de candidaturas
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaCandidaturas() {
         return listaCandidaturas;
@@ -101,7 +101,7 @@ public class escreverFicheiroController {
     /**
      *String  get lista de Atribuicoes
      * 
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaAtribuicoes() {
         return listaAtribuicoes;
@@ -109,7 +109,7 @@ public class escreverFicheiroController {
 
     /**
      *String get lista de decisoes
-     * @return String - List<String>
+     * @return String - List de strings
      */
     public List<String> getListaDecisoes() {
         return listaDecisoes;
@@ -221,7 +221,7 @@ public class escreverFicheiroController {
      * @param listaAtribuicoes
      * @param listaDecisoes
      * @param nomeFile
-     * @return 
+     * @return boolean se tudo correr bem
      */
     private boolean gravarFicheiro (List<String> listaUtilizadores, List<String> listaGestoresEventos, List<String> listaEventos, List<String> listaFae, List<String> listaOrganizadores, List<String> listaCandidaturas, List<String> listaAtribuicoes, List<String> listaDecisoes, String nomeFile){
         boolean tudoOK = true;

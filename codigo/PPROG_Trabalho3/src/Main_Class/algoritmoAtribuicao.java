@@ -11,10 +11,10 @@ public interface algoritmoAtribuicao {
     /**
      * metodo que vai fazer correr o algoritmo responsavel pela distribuição de fae por candidaturas
      * implementado em todos o smetodos que implementem o algoritmoAtibuicao
-     * @param listaFAE
-     * @param listaCandidaturas
-     * @param listaAtribuicoes
-     * @return
+     * @param listaFAE - lista de faes
+     * @param listaCandidaturas -  lista de candidaturas
+     * @param listaAtribuicoes - lista de atribuições
+     * @return uma lista que resulta do algoritmo
      */
     public List runAlgoritmo(List<fae> listaFAE, List<candidatura> listaCandidaturas, List<atribuicao> listaAtribuicoes);
 

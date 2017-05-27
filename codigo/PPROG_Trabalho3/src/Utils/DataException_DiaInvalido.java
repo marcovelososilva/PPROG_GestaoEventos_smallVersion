@@ -15,7 +15,7 @@ public class DataException_DiaInvalido extends IllegalArgumentException {
     
     /**
      * excepção apanha o facto do dia estar incorrecto na data que se tentou criar
-     * @param mensagem
+     * @param mensagem - mensagem gerada
      */
     public DataException_DiaInvalido(String mensagem) {
         super(mensagem);
