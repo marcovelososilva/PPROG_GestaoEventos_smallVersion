@@ -27,7 +27,7 @@ public class centroDeEventos implements Serializable {
 
     /**
      * get lista de utilizadores
-     * @return 
+     * @return lista de utilizadores
      */
     public List getListaUtilizadores() {
         return ListaUtilizadores;
@@ -35,7 +35,7 @@ public class centroDeEventos implements Serializable {
     
     /**
      * get a lista de gestores de eventos
-     * @return 
+     * @return lista de gestores de eventos
      */
     public List<gestorDeEventos> getListaGestoresEventos() {
         return ListaGestorEventos;
@@ -43,7 +43,7 @@ public class centroDeEventos implements Serializable {
 
     /**
      * get lista de eventos que contem a submissao activa
-     * @return
+     * @return lista de eventos que contem a submissao activa
      */
     public List getListaEventosSubmissaoActiva() {
         List<evento> eventosActivos = new ArrayList<>();
@@ -89,7 +89,7 @@ public class centroDeEventos implements Serializable {
      *
      * @param fae FAE do qual se pretende obter a lista de eventos com a
      * submissão finalizada.
-     * @return List - eventosFinalizados - Lista de eventos de um FAE que tem a
+     * @return List eventosFinalizados - Lista de eventos de um FAE que tem a
      * data de submissão finalizada.
      */
     public List getListaEventosFAEDataSubmissaoFinalizada(fae FAEEvento) {
@@ -123,7 +123,7 @@ public class centroDeEventos implements Serializable {
      * adiciona um gestor de eventos à lista de gestores de eventos, utilizador
      * previamente validado e testado.
      *
-     * @param ge GESTOR DE EVENTOs - um utilizador com papel de gestor de
+     * @param ge GESTOR DE EVENTOs um utilizador com papel de gestor de
      * eventos
      */
     public void criarGestorEventos(gestorDeEventos ge) {
@@ -134,7 +134,7 @@ public class centroDeEventos implements Serializable {
      * adiciona à lista de eventos um evento previamente criado validado e
      * testado
      *
-     * @param e EVENTO - recebe um evento para adicionar à lista de eventos
+     * @param e EVENTO recebe um evento para adicionar à lista de eventos
      */
     public void createEvento(evento e) {
         ListaEventos.add(e);
@@ -153,7 +153,7 @@ public class centroDeEventos implements Serializable {
      * adiciona à lista de utilizadores um utilizador previamente criado
      * validade e testado
      *
-     * @param u - UTILIZADOR - recebe um utilizador para adicionar à lista de
+     * @param u UTILIZADOR - recebe um utilizador para adicionar à lista de
      * utilizadores
      */
     public void addRegistoUtilizadores(utilizador u) {
@@ -178,16 +178,16 @@ public class centroDeEventos implements Serializable {
      * método responsavel pela instânciação de eventos aquando da leitura
      * apartir de ficheiro
      *
-     * @param titulo - TITULO - String que contem o titulo do evento
-     * @param textoDescritivo - TEXTO DESCRITIVO - String que contem o texto
+     * @param titulo TITULO - String que contem o titulo do evento
+     * @param textoDescritivo TEXTO DESCRITIVO - String que contem o texto
      * descritivo do evento
-     * @param dataInicio - DATA DE INICIO - Data que contem a data de inicio do
+     * @param dataInicio  DATA DE INICIO - Data que contem a data de inicio do
      * evento
-     * @param dataFim - DATA DE FIM - Data que contem a data de fim do evento
-     * @param local - LOCAL - String que contem o local do evento
+     * @param dataFim  DATA DE FIM - Data que contem a data de fim do evento
+     * @param local  LOCAL - String que contem o local do evento
      * @param dataLimiteSubmissaoCandidaturas - DATA LIMITE - Data que contem a
      * data limite de submissao de candidaturas do evento
-     * @param tipo - TIPO DE EVENTO - EventoType que contem o tipo de evento que
+     * @param tipo  TIPO DE EVENTO - EventoType que contem o tipo de evento que
      * se trata
      */
     public void novoRegistoEventoFicheiro(String titulo, String textoDescritivo, String dataInicio, String dataFim, String local, String dataLimiteSubmissaoCandidaturas, String tipo) {
